@@ -851,13 +851,14 @@ function fmtTime(s){const m=Math.floor(s/60),ss=s%60;return m+':'+(ss<10?'0':'')
 function startTest(){
 S.test.ans=new Array(20).fill(-1);S.test.cur=0;S.test.end=Date.now()+1200000;S.test.done=false;
 if(S.test.timer){clearInterval(S.test.timer);S.test.timer=null;}
-S.tab='test';render();
+S.tab='test';
 S.test.timer=setInterval(()=>{
 const left=testLeft();
 const el=document.getElementById('t-timer');
 if(el){el.textContent=fmtTime(left);if(left<=60)el.classList.add('red');}
 if(left<=0){clearInterval(S.test.timer);S.test.timer=null;finishTest();}
 },500);
+render();
 }
 function finishTest(){
 if(S.test.timer){clearInterval(S.test.timer);S.test.timer=null;}
@@ -878,13 +879,13 @@ function prevQ(){if(S.test.cur>0){S.test.cur--;renderTestQ();}}
 function startFinal(){
 S.final.ans=new Array(50).fill(-1);S.final.cur=0;S.final.end=Date.now()+3000000;S.final.done=false;
 if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}
-render();
 S.final.timer=setInterval(()=>{
 const left=finalLeft();
 const el=document.getElementById('f-timer');
 if(el){el.textContent=fmtTime(left);if(left<=120)el.classList.add('red');}
 if(left<=0){clearInterval(S.final.timer);S.final.timer=null;finishFinal();}
 },500);
+render();
 }
 function finishFinal(){
 if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}

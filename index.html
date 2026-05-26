@@ -799,12 +799,15 @@ try{const s=localStorage.getItem('bio1adv');if(s)savedScores=JSON.parse(s);}catc
 
 const S={
 view:'dashboard',uid:1,tab:'guide',prac:{},
-test:{ans:new Array(20).fill(-1),cur:0,left:1200,timer:null,done:false},
+test:{ans:new Array(20).fill(-1),cur:0,end:0,timer:null,done:false},
 fc:{uid:'all',idx:0,flipped:false,known:[],unknown:[],order:[]},
-final:{ans:new Array(50).fill(-1),cur:0,left:3000,timer:null,done:false},
+final:{ans:new Array(50).fill(-1),cur:0,end:0,timer:null,done:false},
 diag:{which:'animal',selected:null,answers:{},wrong:null},
 scores:savedScores
 };
+
+function testLeft(){return Math.max(0,Math.round((S.test.end-Date.now())/1000));}
+function finalLeft(){return Math.max(0,Math.round((S.final.end-Date.now())/1000));}
 
 function uc(){return UNITS.find(u=>u.id===S.uid)}
 function setColor(c){document.documentElement.style.setProperty('--uc',c||'#3B6EA5')}
@@ -817,13 +820,13 @@ S.view='dashboard';setColor('#3B6EA5');render();window.scrollTo(0,0);
 }
 function openUnit(id){S.uid=id;S.tab='guide';S.view='unit';setColor(uc().color);render();window.scrollTo(0,0);}
 function setTab(t){
-if(t==='test'&&!S.test.done){S.test.ans=new Array(20).fill(-1);S.test.cur=0;S.test.left=1200;S.test.done=false;if(S.test.timer){clearInterval(S.test.timer);S.test.timer=null;}}
+if(t==='test'&&!S.test.done){S.test.ans=new Array(20).fill(-1);S.test.cur=0;S.test.end=0;S.test.done=false;if(S.test.timer){clearInterval(S.test.timer);S.test.timer=null;}}
 S.tab=t;render();window.scrollTo(0,0);
 }
 function openFC(){S.view='flashcards';setColor('#3B6EA5');initFC();render();window.scrollTo(0,0);}
 function openFinal(){
 S.view='final';setColor('#1A5E96');
-S.final.ans=new Array(50).fill(-1);S.final.cur=0;S.final.left=3000;S.final.done=false;
+S.final.ans=new Array(50).fill(-1);S.final.cur=0;S.final.end=0;S.final.done=false;
 if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}
 render();window.scrollTo(0,0);
 }
@@ -846,14 +849,15 @@ function fcUnknow(){S.fc.unknown.push(S.fc.idx);fcNext();}
 function fmtTime(s){const m=Math.floor(s/60),ss=s%60;return m+':'+(ss<10?'0':'')+ss;}
 
 function startTest(){
-S.test.ans=new Array(20).fill(-1);S.test.cur=0;S.test.left=1200;S.test.done=false;
+S.test.ans=new Array(20).fill(-1);S.test.cur=0;S.test.end=Date.now()+1200000;S.test.done=false;
+if(S.test.timer){clearInterval(S.test.timer);S.test.timer=null;}
 S.tab='test';render();
 S.test.timer=setInterval(()=>{
-S.test.left--;
+const left=testLeft();
 const el=document.getElementById('t-timer');
-if(el){el.textContent=fmtTime(S.test.left);if(S.test.left<=60)el.classList.add('red');}
-if(S.test.left<=0){clearInterval(S.test.timer);S.test.timer=null;finishTest();}
-},1000);
+if(el){el.textContent=fmtTime(left);if(left<=60)el.classList.add('red');}
+if(left<=0){clearInterval(S.test.timer);S.test.timer=null;finishTest();}
+},500);
 }
 function finishTest(){
 if(S.test.timer){clearInterval(S.test.timer);S.test.timer=null;}
@@ -872,14 +876,15 @@ function nextQ(){if(S.test.cur<19){S.test.cur++;renderTestQ();}}
 function prevQ(){if(S.test.cur>0){S.test.cur--;renderTestQ();}}
 
 function startFinal(){
-S.final.ans=new Array(50).fill(-1);S.final.cur=0;S.final.left=3000;S.final.done=false;
+S.final.ans=new Array(50).fill(-1);S.final.cur=0;S.final.end=Date.now()+3000000;S.final.done=false;
+if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}
 render();
 S.final.timer=setInterval(()=>{
-S.final.left--;
+const left=finalLeft();
 const el=document.getElementById('f-timer');
-if(el){el.textContent=fmtTime(S.final.left);if(S.final.left<=120)el.classList.add('red');}
-if(S.final.left<=0){clearInterval(S.final.timer);S.final.timer=null;finishFinal();}
-},1000);
+if(el){el.textContent=fmtTime(left);if(left<=120)el.classList.add('red');}
+if(left<=0){clearInterval(S.final.timer);S.final.timer=null;finishFinal();}
+},500);
 }
 function finishFinal(){
 if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}
@@ -890,7 +895,7 @@ S.scores.final.push({score,total:50,ts:Date.now()});
 saveScores();render();window.scrollTo(0,0);
 }
 function retakeFinal(){
-S.final.ans=new Array(50).fill(-1);S.final.cur=0;S.final.left=3000;S.final.done=false;
+S.final.ans=new Array(50).fill(-1);S.final.cur=0;S.final.end=0;S.final.done=false;
 if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}
 startFinal();
 }
@@ -1132,7 +1137,8 @@ return renderTestInProgress(u);
 function renderTestInProgress(u){
 const q=u.test[S.test.cur];const sel=S.test.ans[S.test.cur];
 const pct=Math.round((S.test.cur/20)*100);
-let h='<div class="test-wrap"><div class="test-top"><div class="test-title">Unit '+u.id+' Mock Test</div><div class="timer'+(S.test.left<=60?' red':'')+'" id="t-timer">'+fmtTime(S.test.left)+'</div></div>';
+const _tl=testLeft();
+let h='<div class="test-wrap"><div class="test-top"><div class="test-title">Unit '+u.id+' Mock Test</div><div class="timer'+(_tl<=60?' red':'')+'" id="t-timer">'+fmtTime(_tl)+'</div></div>';
 h+='<div class="tprog"><div class="tprog-bar" style="width:'+pct+'%"></div></div>';
 h+='<div class="t-counter">Question '+(S.test.cur+1)+' of 20</div><div class="t-q">'+q.q+'</div>';
 h+='<div class="t-opts">';
@@ -1244,8 +1250,9 @@ const app=document.getElementById('app');
 const q=FINAL[S.final.cur];const sel=S.final.ans[S.final.cur];
 const pct=Math.round((S.final.cur/50)*100);
 const uName=UNITS.find(u=>u.id===q.unit)?.title||'';
+const _fl=finalLeft();
 let h=hdr('Final Exam');
-h+='<div class="test-wrap"><div class="test-top"><div class="test-title">Final Exam</div><div class="timer'+(S.final.left<=120?' red':'')+'" id="f-timer">'+fmtTime(S.final.left)+'</div></div>';
+h+='<div class="test-wrap"><div class="test-top"><div class="test-title">Final Exam</div><div class="timer'+(_fl<=120?' red':'')+'" id="f-timer">'+fmtTime(_fl)+'</div></div>';
 h+='<div class="tprog"><div class="tprog-bar" style="width:'+pct+'%"></div></div>';
 h+='<div class="t-ubadge">Unit '+q.unit+': '+uName+'</div>';
 h+='<div class="t-counter">Question '+(S.final.cur+1)+' of 50</div>';

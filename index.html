@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>BIO 1 ADV &mdash; Semester 2 Study Hub</title>
+<title>BIO 1 ADV — Semester 2 Study Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,22 +12,36 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:var(--ff);background:var(--bg);color:var(--tx);min-height:100vh;font-size:15px;line-height:1.6}
 .hdr{background:var(--sf);border-bottom:1px solid var(--bd);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.logo{font-family:var(--fd);font-size:18px;font-weight:600;cursor:pointer;color:var(--tx);letter-spacing:.01em;border:none;background:none;font-size:18px}
+.logo{font-family:var(--fd);font-size:18px;font-weight:600;cursor:pointer;color:var(--tx);letter-spacing:.01em;border:none;background:none}
 .logo em{font-style:italic;color:var(--mu);font-weight:400}
 .hdr-rt{font-size:13px;color:var(--mu);font-weight:300}
 .dash{max-width:1080px;margin:0 auto;padding:52px 40px 80px}
 .kicker{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);margin-bottom:10px}
 .dash h1{font-family:var(--fd);font-size:52px;font-weight:600;line-height:1.1;margin-bottom:14px;letter-spacing:-.01em}
-.dash-sub{color:var(--mu);font-size:15px;font-weight:300;max-width:500px;line-height:1.7;margin-bottom:52px}
+.dash-sub{color:var(--mu);font-size:15px;font-weight:300;max-width:500px;line-height:1.7;margin-bottom:40px}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:14px;margin-top:40px}
 .ugrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:48px}
 .ucard{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:28px;cursor:pointer;transition:transform .18s,box-shadow .18s;position:relative;overflow:hidden}
 .ucard:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
 .ucard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--uc)}
+.fcard{background:var(--sf);border:1.5px solid var(--bd);border-radius:14px;padding:22px 24px;cursor:pointer;transition:transform .18s,box-shadow .18s;display:flex;align-items:flex-start;gap:14px}
+.fcard:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.07);border-color:var(--uc)}
+.fcard-icon{font-size:22px;line-height:1;margin-top:2px}
+.fcard-title{font-weight:600;font-size:15px;margin-bottom:3px}
+.fcard-sub{font-size:12px;color:var(--mu);line-height:1.5}
 .card-num{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--uc);margin-bottom:8px}
 .card-title{font-family:var(--fd);font-size:24px;font-weight:600;margin-bottom:6px;line-height:1.2}
 .card-sub{font-size:13px;color:var(--mu);font-weight:300;margin-bottom:22px;line-height:1.55}
 .card-tags{display:flex;gap:8px;flex-wrap:wrap}
 .ctag{font-size:11px;padding:3px 9px;border-radius:20px;border:1px solid var(--bd);color:var(--mu);background:var(--bg)}
+.prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.prog-card{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:14px 16px}
+.prog-unit{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--mu);margin-bottom:4px}
+.prog-score{font-family:var(--fd);font-size:26px;font-weight:600;line-height:1}
+.prog-detail{font-size:12px;color:var(--mu);margin-top:3px}
+.prog-bar{height:4px;border-radius:2px;background:var(--bd);margin-top:8px;overflow:hidden}
+.prog-fill{height:100%;border-radius:2px;transition:width .4s}
 .upage{display:flex;max-width:1080px;margin:0 auto;padding:0 40px 80px;gap:36px}
 .sidebar{width:210px;flex-shrink:0;padding-top:32px;position:sticky;top:70px;height:fit-content}
 .sb-back{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--mu);cursor:pointer;margin-bottom:22px;background:none;border:none;font-family:var(--ff);padding:0;transition:color .1s}
@@ -72,7 +86,7 @@ body{font-family:var(--ff);background:var(--bg);color:var(--tx);min-height:100vh
 .pq-tf.ok{background:#E8F5EE;border-color:#3D8C5A;color:#1F5C38}
 .pq-tf.no{background:#FAE8E8;border-color:#C45252;color:#7A2020}
 .pq-tf:disabled{cursor:default}
-.pq-rev{padding:8px 16px;background:var(--uc);color:white;border:none;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--ff);transition:opacity .1s}
+.pq-rev{padding:8px 16px;background:var(--uc);color:white;border:none;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--ff)}
 .pq-rev:hover{opacity:.85}
 .expl{background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:11px 14px;font-size:13px;line-height:1.65;margin-top:8px;display:none;color:#444}
 .expl.show{display:block}
@@ -88,11 +102,12 @@ body{font-family:var(--ff);background:var(--bg);color:var(--tx);min-height:100vh
 .ti-val{font-family:var(--fd);font-size:32px;font-weight:600;color:var(--uc);line-height:1;margin-bottom:4px}
 .ti-lbl{font-size:12px;color:var(--mu)}
 .test-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-.test-title{font-family:var(--fd);font-size:24px;font-weight:600}
+.test-title{font-family:var(--fd);font-size:22px;font-weight:600}
 .timer{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--uc);background:var(--sf);border:1px solid var(--bd);padding:7px 16px;border-radius:8px;letter-spacing:.03em}
 .timer.red{color:#C45252;border-color:#C45252}
 .tprog{height:3px;background:var(--bd);border-radius:2px;margin-bottom:32px;overflow:hidden}
 .tprog-bar{height:100%;background:var(--uc);border-radius:2px;transition:width .3s}
+.t-ubadge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;border:1px solid var(--bd);color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;background:var(--bg)}
 .t-counter{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:8px}
 .t-q{font-size:18px;font-weight:500;margin-bottom:24px;line-height:1.5}
 .t-opts{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
@@ -100,7 +115,7 @@ body{font-family:var(--ff);background:var(--bg);color:var(--tx);min-height:100vh
 .t-opt:hover:not(.sel){border-color:var(--uc)}
 .t-opt.sel{border-color:var(--uc);background:#EEF4FF;font-weight:500}
 .t-nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.q-dots{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;max-width:250px}
+.q-dots{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;max-width:300px}
 .q-dot{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--bd);background:var(--bg);cursor:pointer;transition:all .1s;padding:0}
 .q-dot.has{background:var(--uc);border-color:var(--uc)}
 .q-dot.cur{border-color:var(--uc);background:white;box-shadow:0 0 0 3px rgba(59,110,165,.2)}
@@ -125,531 +140,806 @@ body{font-family:var(--ff);background:var(--bg);color:var(--tx);min-height:100vh
 .rbk-ca{font-size:12px;color:var(--mu);margin-top:3px}
 .rbk-ok{color:#3D8C5A;font-weight:600;font-size:13px;text-align:right}
 .rbk-no{color:#C45252;font-weight:600;font-size:13px;text-align:right}
+.res-breakdown{margin-top:24px;background:var(--sf);border:1px solid var(--bd);border-radius:12px;overflow:hidden;margin-bottom:24px}
+.res-bd-title{padding:14px 20px;border-bottom:1px solid var(--bd);font-weight:600;font-size:14px;background:var(--bg)}
+.res-bd-row{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid var(--bd);font-size:13.5px}
+.res-bd-row:last-child{border-bottom:none}
+.res-bd-warn{font-size:11px;color:#C45252;margin-left:6px}
+.fc-wrap{max-width:680px;margin:0 auto;padding:44px 40px 80px}
+.fc-hdr h2{font-family:var(--fd);font-size:32px;font-weight:600;margin-bottom:6px}
+.fc-hdr p{font-size:13px;color:var(--mu)}
+.fc-unit-sel{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.fc-unit-btn{padding:7px 16px;border-radius:20px;font-size:13px;cursor:pointer;border:1.5px solid var(--bd);background:var(--bg);color:var(--mu);font-family:var(--ff);transition:all .12s}
+.fc-unit-btn:hover{border-color:var(--uc)}
+.fc-unit-btn.act{background:var(--uc);color:white;border-color:var(--uc)}
+.fc-progress{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.fc-count{font-size:13px;color:var(--mu)}
+.fc-stats{display:flex;gap:12px;font-size:12px}
+.fc-k{color:#3D8C5A;font-weight:600}
+.fc-u{color:#C45252;font-weight:600}
+.fc-scene{perspective:1200px;height:250px;margin-bottom:20px;cursor:pointer}
+.fc-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.fc-inner.flipped{transform:rotateY(180deg)}
+.fc-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px;text-align:center;border:1px solid var(--bd)}
+.fc-front{background:var(--sf)}
+.fc-back{background:#EEF4FF;border-color:#C5D8F0;transform:rotateY(180deg)}
+.fc-face-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:12px;position:absolute;top:16px}
+.fc-q{font-family:var(--fd);font-size:26px;font-weight:600;line-height:1.3}
+.fc-a{font-size:14px;line-height:1.75;color:#333;text-align:left;width:100%}
+.fc-hint{font-size:12px;color:var(--mu);text-align:center;margin-bottom:12px}
+.fc-actions{display:flex;gap:10px;justify-content:center;margin-bottom:16px}
+.fc-btn-k{padding:10px 24px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid #3D8C5A;background:#E8F5EE;color:#1F5C38;font-family:var(--ff)}
+.fc-btn-u{padding:10px 24px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid #C45252;background:#FAE8E8;color:#7A2020;font-family:var(--ff)}
+.fc-btn-k:hover{background:#D4EDDA}
+.fc-btn-u:hover{background:#F5D0D0}
+.fc-nav-row{display:flex;align-items:center;justify-content:space-between}
+.fc-pbar{height:3px;background:var(--bd);border-radius:2px;margin-bottom:20px;overflow:hidden}
+.fc-pfill{height:100%;border-radius:2px;background:var(--uc);transition:width .3s}
+.fc-done{text-align:center;padding:60px 40px;background:var(--sf);border:1px solid var(--bd);border-radius:16px}
+.fc-done h3{font-family:var(--fd);font-size:28px;font-weight:600;margin-bottom:8px}
+.fc-done p{color:var(--mu);font-size:14px;margin-bottom:24px}
+.diag-wrap{max-width:820px;margin:0 auto;padding:44px 40px 80px}
+.diag-hdr h2{font-family:var(--fd);font-size:32px;font-weight:600;margin-bottom:6px}
+.diag-hdr p{font-size:13px;color:var(--mu)}
+.diag-tabs{display:flex;gap:8px;margin-bottom:24px}
+.diag-tab{padding:8px 18px;border-radius:20px;font-size:13px;cursor:pointer;border:1.5px solid var(--bd);background:var(--bg);color:var(--mu);font-family:var(--ff)}
+.diag-tab.act{background:var(--uc);color:white;border-color:var(--uc)}
+.diag-canvas{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:20px;margin-bottom:20px}
+.diag-canvas svg{width:100%;height:auto;display:block}
+.word-bank-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:10px}
+.word-bank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.wb-btn{padding:8px 16px;border-radius:8px;font-size:13px;cursor:pointer;border:1.5px solid var(--bd);background:var(--sf);color:var(--tx);font-family:var(--ff);transition:all .12s}
+.wb-btn:hover{border-color:var(--uc)}
+.wb-btn.sel{border-color:#E67E22;background:#FDF0E0}
+.wb-btn.used{opacity:.35;cursor:default;text-decoration:line-through}
+.diag-score{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
+.diag-score-n{font-family:var(--fd);font-size:28px;font-weight:600;color:var(--uc)}
+.diag-score-lbl{font-size:13px;color:var(--mu)}
+.diag-instr{font-size:13px;color:var(--mu);margin-bottom:16px;padding:10px 14px;background:var(--bg);border-radius:8px;line-height:1.6}
+.hotspot-circle{cursor:pointer;transition:fill .15s}
+.hotspot-text{font-size:11px;font-weight:700;fill:white;text-anchor:middle;dominant-baseline:central;pointer-events:none;user-select:none}
 @media(max-width:780px){
-.dash{padding:32px 20px 60px}
-.dash h1{font-size:38px}
-.hdr{padding:0 20px}
-.upage{flex-direction:column;padding:0 20px 60px}
-.sidebar{width:100%;position:static;padding-top:20px}
+.dash{padding:32px 20px 60px}.dash h1{font-size:38px}.hdr{padding:0 20px}
+.upage{flex-direction:column;padding:0 20px 60px}.sidebar{width:100%;position:static;padding-top:20px}
 .sb-nav{flex-direction:row;overflow-x:auto;padding-bottom:4px}
-.test-wrap{padding:32px 20px 60px}
-.ti-grid{flex-direction:column;align-items:center}
+.test-wrap,.fc-wrap,.diag-wrap{padding:32px 20px 60px}.ti-grid{flex-direction:column;align-items:center}
 }
 </style>
 </head>
 <body>
 <div id="app"></div>
 <script>
+
 const UNITS=[
-{
-id:1,title:"Cells",subtitle:"Cell theory, organelles, osmosis & microscopy",color:"#3B6EA5",objs:22,
+{id:1,title:"Cells",subtitle:"Cell theory, organelles, osmosis & microscopy",color:"#3B6EA5",objs:22,
 guide:[
 {title:"Why Are Cells Small?",parts:[
-{t:'p',s:"Cells must stay small to maintain a high surface area to volume (SA:V) ratio. As a cell grows larger, its volume increases much faster than its surface area, reducing efficiency."},
-{t:'ul',items:["Surface area controls how much material can enter or exit the cell","Volume determines the metabolic demands of the cell","As cell size doubles, volume increases 8x but SA increases only 4x","SA formula for cube: SA = 6s\u00b2, V = s\u00b3, Ratio = SA\u00f7V (normalize to V=1)","1 cm cube \u2192 6:1 ratio; 2 cm cube \u2192 3:1; 3 cm cube \u2192 2:1"]},
+{t:'p',s:"Cells must stay small to maintain a high surface area to volume (SA:V) ratio. As a cell grows larger, its volume increases much faster than its surface area."},
+{t:'ul',items:["Surface area controls how much material can enter or exit the cell","Volume determines the metabolic demands","As cell size doubles, volume increases 8x but SA increases only 4x","SA formula for cube: SA = 6s\u00b2, V = s\u00b3, Ratio = SA\u00f7V"]},
 {t:'tbl',headers:["Cube Side","Surface Area","Volume","SA:V Ratio"],rows:[["1 cm","6 cm\u00b2","1 cm\u00b3","6:1"],["2 cm","24 cm\u00b2","8 cm\u00b3","3:1"],["3 cm","54 cm\u00b2","27 cm\u00b3","2:1"]]}
 ]},
 {title:"Cell Theory and History",parts:[
-{t:'p',s:"Cell theory is the foundational scientific theory that describes the properties of all living cells. It has three core statements."},
-{t:'ul',items:["1. All living things are made of one or more cells","2. The cell is the basic unit of structure and organization of living things","3. All cells come from pre-existing cells"]},
+{t:'ul',items:["1. All living things are made of one or more cells","2. The cell is the basic unit of structure and organization","3. All cells come from pre-existing cells"]},
 {t:'h4',s:"Key Scientists"},
-{t:'ul',items:["Robert Hooke (1665): named cells after observing cork under a microscope","Antonie van Leeuwenhoek (~1675): first to observe living microorganisms","Matthias Schleiden (1838): concluded all plants are made of cells","Theodor Schwann (1839): concluded all animals are made of cells","Rudolf Virchow (1855): proposed all cells come from pre-existing cells"]}
+{t:'ul',items:["Robert Hooke (1665): named cells after observing cork","Antonie van Leeuwenhoek: first to observe living microorganisms","Matthias Schleiden (1838): all plants made of cells","Theodor Schwann (1839): all animals made of cells","Rudolf Virchow (1855): all cells from pre-existing cells"]}
 ]},
 {title:"Cell Organelles and Functions",parts:[
-{t:'p',s:"Organelles are specialized structures within eukaryotic cells that carry out specific functions."},
 {t:'tbl',headers:["Organelle","Function","Found In"],rows:[
-["Cell membrane","Controls what enters and leaves the cell","All cells"],
-["Cytoplasm","Area between membrane and nucleus; site of many reactions","All cells"],
-["Nucleus","Information center; controls all cell activities","Eukaryotes"],
-["Mitochondria","Produces ATP energy via cellular respiration","Eukaryotes"],
-["Ribosomes","Makes proteins","All cells"],
-["Golgi apparatus","Packages and ships chemicals made by the cell","Eukaryotes"],
-["Endoplasmic reticulum","Transport system; rough ER has ribosomes attached","Eukaryotes"],
-["Chloroplasts","Site of photosynthesis; makes glucose using sunlight","Plant cells"],
-["Vacuole","Storage; central vacuole is large in plant cells","Eukaryotes"],
-["Cell wall","Protection and support; made of cellulose in plants","Plants, bacteria, fungi"],
-["Cilia / Flagella","Movement of cell or moving materials across surface","Some eukaryotes"]
+["Cell membrane","Controls what enters and leaves","All cells"],["Cytoplasm","Area between membrane and nucleus","All cells"],
+["Nucleus","Controls all cell activities","Eukaryotes"],["Mitochondria","Produces ATP via cellular respiration","Eukaryotes"],
+["Ribosomes","Makes proteins","All cells"],["Golgi apparatus","Packages and ships chemicals","Eukaryotes"],
+["Endoplasmic reticulum","Transport; rough ER has ribosomes","Eukaryotes"],["Chloroplasts","Site of photosynthesis","Plant cells"],
+["Vacuole","Storage; large central vacuole in plants","Eukaryotes"],["Cell wall","Protection and support; cellulose","Plants, bacteria, fungi"]
 ]}
 ]},
-{title:"Cell Membrane Structure",parts:[
-{t:'p',s:"The plasma membrane is made of a phospholipid bilayer, meaning two layers of phospholipid molecules arranged tail-to-tail."},
-{t:'ul',items:["Each phospholipid has a hydrophilic (water-loving) head and hydrophobic (water-fearing) tails","Heads face outward toward water; tails face inward","The Fluid Mosaic Model: membrane is flexible with embedded proteins","Proteins act as channels, receptors, and pumps","The membrane is selectively permeable: allows some substances through but not others"]}
+{title:"Cell Membrane and Osmosis",parts:[
+{t:'ul',items:["Phospholipid bilayer: hydrophilic heads face outward, hydrophobic tails inward","Selectively permeable: allows only certain substances through","Osmosis: water moves from HIGH water concentration to LOW water concentration","Hypotonic: fewer solutes than cell \u2192 water enters \u2192 cell swells","Hypertonic: more solutes than cell \u2192 water leaves \u2192 cell shrinks","Isotonic: equal concentration \u2192 no net water movement"]}
 ]},
 {title:"Prokaryotes vs. Eukaryotes",parts:[
 {t:'tbl',headers:["Characteristic","Prokaryote","Eukaryote"],rows:[
-["Nucleus","No (DNA in nucleoid region)","Yes (membrane-bound)"],
-["Membrane-bound organelles","No","Yes"],
-["Size","Smaller (1\u201310 \u03bcm)","Larger (10\u2013100 \u03bcm)"],
-["DNA shape","Circular, in cytoplasm","Linear, in nucleus"],
-["Examples","Bacteria, Archaea","Plants, Animals, Fungi, Protists"],
-["Fossil record","~3.5 billion years ago","~2 billion years ago"]
+["Nucleus","No","Yes"],["Organelles","No membrane-bound","Yes"],["DNA","Circular, in cytoplasm","Linear, in nucleus"],
+["Examples","Bacteria, Archaea","Plants, Animals, Fungi"],["Fossil record","~3.5 bya","~2 bya"]
 ]}
 ]},
-{title:"Plant Cells vs. Animal Cells",parts:[
-{t:'tbl',headers:["Structure","Plant Cell","Animal Cell"],rows:[
-["Cell wall (cellulose)","Yes","No"],
-["Chloroplasts","Yes","No"],
-["Large central vacuole","Yes","No (or very small)"],
-["Centrioles","No","Yes"],
-["Cell membrane","Yes","Yes"],
-["Mitochondria","Yes","Yes"],
-["Ribosomes","Yes","Yes"]
-]}
+{title:"Plant vs. Animal Cells and Bacteria",parts:[
+{t:'tbl',headers:["Structure","Plant","Animal"],rows:[
+["Cell wall","Yes","No"],["Chloroplasts","Yes","No"],["Large central vacuole","Yes","No"],["Centrioles","No","Yes"]
 ]},
-{title:"Bacteria: Shapes, Naming, and Gram Staining",parts:[
-{t:'h4',s:"Three Main Shapes"},
-{t:'ul',items:["Coccus (spherical): e.g. staphylococci (grape clusters), streptococci (chains)","Bacillus (rod-shaped): e.g. staphylobacillus, streptobacillus","Spirillum (spiral/corkscrew-shaped)"]},
-{t:'h4',s:"Naming Conventions"},
-{t:'ul',items:["Staphylo- = grape-like cluster arrangement","Strepto- = chain arrangement","Diplo- = pairs","Example: Streptococcus = spherical bacteria in chains"]},
-{t:'h4',s:"Gram Staining"},
-{t:'ul',items:["Gram-positive (+): thick peptidoglycan wall; stains purple; generally more antibiotic-susceptible","Gram-negative (\u2212): thin wall + outer lipopolysaccharide membrane; stains pink/red; more antibiotic-resistant"]}
+{t:'h4',s:"Bacterial Shapes and Naming"},
+{t:'ul',items:["Coccus (spherical): staphylococci (clusters), streptococci (chains)","Bacillus (rod-shaped)","Spirillum (spiral)","Gram+: thick wall, stains purple. Gram-: thin wall, stains pink."]}
 ]},
-{title:"Microscope Parts and Magnification",parts:[
-{t:'tbl',headers:["Part","Function"],rows:[
-["Eyepiece (ocular lens)","Lens you look through; typically 10x"],
-["Objective lenses","Near specimen; commonly 4x, 10x, 40x, 100x"],
-["Nosepiece","Rotating piece that holds objective lenses"],
-["Stage","Flat platform where the slide is placed"],
-["Coarse adjustment knob","Moves stage large distances for initial focus"],
-["Fine adjustment knob","Small adjustments for sharp detailed focus"],
-["Diaphragm","Controls the amount of light passing through specimen"]
-]},
-{t:'ul',items:["Total magnification = eyepiece \u00d7 objective lens (e.g. 10x \u00d7 40x = 400x)","Lowest power objective: largest field of view, least detail","Highest power objective: smallest field of view, most detail"]}
-]},
-{title:"Diffusion, Osmosis, and the Egg Lab",parts:[
-{t:'p',s:"Diffusion is the movement of molecules from an area of high concentration to low concentration. Osmosis is the diffusion of water specifically across a selectively permeable membrane."},
-{t:'ul',items:["Diffusion: high \u2192 low concentration; passive (no energy needed)","Osmosis: water moves from HIGH water concentration to LOW water concentration","Hypotonic solution: fewer solutes than cell \u2192 water enters cell \u2192 cell swells","Hypertonic solution: more solutes than cell \u2192 water leaves cell \u2192 cell shrinks","Isotonic solution: equal solute concentration \u2192 no net water movement"]},
-{t:'h4',s:"Egg Lab Interpretation"},
-{t:'ul',items:["Egg losing weight over time \u2192 hypertonic solution (more concentrated than egg)","Egg gaining weight over time \u2192 hypotonic solution (less concentrated than egg)","Egg unchanged \u2192 isotonic solution (same concentration as egg)","Inside of egg NOT red \u2192 membrane is selectively permeable (dye molecules too large to pass)"]}
-]},
-{title:"Earth Timeline, Scientific Notation, and Endosymbiosis",parts:[
-{t:'ul',items:["Earth formed: ~4,600 mya (4.6 \u00d7 10\u2079)","First prokaryotes: ~3,500 mya (3.5 \u00d7 10\u2079)","Free O\u2082 in atmosphere: ~2,510 mya","First eukaryotes: ~2,000 mya (almost 2 billion years after prokaryotes)","Scientific notation: write one non-zero digit left of decimal; count moved places = exponent","Example: 3,500,000,000 = 3.5 \u00d7 10\u2079"]},
-{t:'h4',s:"Endosymbiosis Theory"},
-{t:'ul',items:["Proposes mitochondria and chloroplasts were once free-living prokaryotes","A large cell engulfed a smaller prokaryote; a mutualistic relationship formed","Evidence: both have their own DNA, own ribosomes, and reproduce by binary fission"]}
+{title:"Microscope and Endosymbiosis",parts:[
+{t:'tbl',headers:["Part","Function"],rows:[["Eyepiece","10x; you look through this"],["Objective lenses","4x, 10x, 40x, 100x"],["Nosepiece","Rotates to switch objectives"],["Stage","Holds the slide"],["Coarse knob","Large initial focus"],["Fine knob","Sharp detail focus"],["Diaphragm","Controls light amount"]]},
+{t:'ul',items:["Total magnification = eyepiece x objective (e.g. 10x x 40x = 400x)","Endosymbiosis: mitochondria and chloroplasts were once free-living prokaryotes","Evidence: own DNA, own ribosomes, reproduce by binary fission","Earth: 4.6 bya; prokaryotes: 3.5 bya; eukaryotes: 2 bya"]}
 ]}
 ],
 practice:[
-{type:"mc",q:"A cube with sides of 3 cm has a surface area to volume ratio of:",opts:["6:1","3:1","2:1","1:1"],ans:2,expl:"SA = 6 \u00d7 3\u00b2 = 54 cm\u00b2. V = 3\u00b3 = 27 cm\u00b3. Ratio = 54/27 = 2:1."},
-{type:"mc",q:"Which scientist first observed and named cells after looking at cork under a microscope?",opts:["Virchow","Schleiden","Hooke","Leeuwenhoek"],ans:2,expl:"Robert Hooke (1665) observed cork cells and named them 'cells' because they resembled small rooms."},
-{type:"mc",q:"Which organelle is responsible for producing ATP energy in the cell?",opts:["Nucleus","Ribosome","Chloroplast","Mitochondria"],ans:3,expl:"Mitochondria are the site of cellular respiration, which produces ATP."},
-{type:"mc",q:"A microscope has a 10x eyepiece and a 40x objective. Total magnification is:",opts:["50x","400x","4x","140x"],ans:1,expl:"Total magnification = eyepiece \u00d7 objective = 10 \u00d7 40 = 400x."},
-{type:"mc",q:"A cell placed in a hypotonic solution will:",opts:["Shrink","Stay the same","Swell and gain water","Lose water"],ans:2,expl:"Hypotonic = fewer solutes, more water than cell. Water moves INTO the cell by osmosis, causing it to swell."},
-{type:"mc",q:"Which bacteria arrangement is described as 'staphylo' (grape-like cluster)?",opts:["Rods in a chain","Spheres in grape-like clusters","Spiral bacteria","Single rod bacteria"],ans:1,expl:"Staphylo- means cluster arrangement. Staphylococci are spherical bacteria arranged in grape-like clusters."},
-{type:"tf",q:"Prokaryotic cells have membrane-bound organelles.",ans:false,expl:"FALSE. Only eukaryotic cells have membrane-bound organelles. Prokaryotes lack a true nucleus; their DNA is in the cytoplasm."},
-{type:"tf",q:"Plant cells have a cell wall but animal cells do not.",ans:true,expl:"TRUE. Plant cell walls are made of cellulose and provide structural support. Animal cells only have a cell membrane."},
-{type:"tf",q:"Osmosis requires energy (active transport) to move water across a membrane.",ans:false,expl:"FALSE. Osmosis is passive transport. Water moves from high to low water concentration without energy input."},
-{type:"sa",q:"State the three parts of cell theory.",ans:"<strong>1.</strong> All living things are made of one or more cells.<br><strong>2.</strong> The cell is the basic unit of structure and organization of living things.<br><strong>3.</strong> All cells come from pre-existing cells."},
-{type:"sa",q:"Explain the difference between a hypotonic and hypertonic solution and what happens to a cell in each.",ans:"<strong>Hypotonic:</strong> fewer solutes than the cell (more water). Water enters the cell by osmosis; the cell swells.<br><strong>Hypertonic:</strong> more solutes than the cell (less water). Water leaves the cell by osmosis; the cell shrinks."},
-{type:"sa",q:"Explain the endosymbiosis theory. What evidence supports it?",ans:"The theory proposes that mitochondria and chloroplasts were once free-living prokaryotes engulfed by a larger cell, forming a mutualistic relationship. <strong>Evidence:</strong> (1) both organelles have their own DNA, (2) they have their own ribosomes, and (3) they reproduce independently by binary fission, similar to bacteria."}
+{type:"mc",q:"A cube with sides of 3 cm has a surface area to volume ratio of:",opts:["6:1","3:1","2:1","1:1"],ans:2,expl:"SA = 6\u00d73\u00b2 = 54 cm\u00b2. V = 3\u00b3 = 27 cm\u00b3. Ratio = 54/27 = 2:1."},
+{type:"mc",q:"Which scientist named cells after observing cork under a microscope?",opts:["Virchow","Schleiden","Hooke","Leeuwenhoek"],ans:2,expl:"Robert Hooke (1665) observed cork cells and named them 'cells.'"},
+{type:"mc",q:"Which organelle produces ATP energy in the cell?",opts:["Nucleus","Ribosome","Chloroplast","Mitochondria"],ans:3,expl:"Mitochondria produce ATP through cellular respiration."},
+{type:"mc",q:"10x eyepiece, 40x objective: total magnification?",opts:["50x","400x","4x","140x"],ans:1,expl:"10 \u00d7 40 = 400x."},
+{type:"mc",q:"A cell placed in a hypotonic solution will:",opts:["Shrink","Stay the same","Swell and gain water","Lose water"],ans:2,expl:"Hypotonic = more water than cell. Water moves INTO the cell."},
+{type:"mc",q:"'Staphylo-' describes bacteria arranged as:",opts:["Chains","Grape-like clusters","Pairs","Spirals"],ans:1,expl:"Staphylo- = grape-like cluster arrangement."},
+{type:"tf",q:"Prokaryotic cells have membrane-bound organelles.",ans:false,expl:"FALSE. Only eukaryotic cells have membrane-bound organelles."},
+{type:"tf",q:"Plant cells have a cell wall but animal cells do not.",ans:true,expl:"TRUE. Plant cell walls are made of cellulose. Animal cells only have a cell membrane."},
+{type:"tf",q:"Osmosis requires energy (active transport) to move water.",ans:false,expl:"FALSE. Osmosis is passive transport. No energy is required."},
+{type:"sa",q:"State the three parts of cell theory.",ans:"<strong>1.</strong> All living things are made of one or more cells.<br><strong>2.</strong> The cell is the basic unit of structure and organization.<br><strong>3.</strong> All cells come from pre-existing cells."},
+{type:"sa",q:"Explain the difference between a hypotonic and hypertonic solution.",ans:"<strong>Hypotonic:</strong> fewer solutes than the cell. Water enters; cell swells.<br><strong>Hypertonic:</strong> more solutes than the cell. Water leaves; cell shrinks."},
+{type:"sa",q:"Explain the endosymbiosis theory and evidence supporting it.",ans:"Proposes that mitochondria and chloroplasts were once free-living prokaryotes. <strong>Evidence:</strong> (1) own DNA, (2) own ribosomes, (3) reproduce by binary fission."}
 ],
 test:[
-{q:"Why can't cells grow to be very large?",opts:["Larger cells have a lower SA:V ratio","Smaller cells have a greater SA:V ratio","Smaller cells are more protected by the membrane","Larger cells would have greater SA:V ratio"],ans:1},
-{q:"What is the SA:V ratio for a cube with sides of 1 cm?",opts:["2:1","4:1","6:1","8:1"],ans:2},
-{q:"Which scientist stated that all cells come from pre-existing cells?",opts:["Schleiden","Schwann","Hooke","Virchow"],ans:3},
-{q:"Who first named cells 'cells' after observing cork under a microscope?",opts:["Virchow","Leeuwenhoek","Hooke","Schleiden"],ans:2},
-{q:"Who stated that all plants are made of cells?",opts:["Schleiden","Schwann","Hooke","Virchow"],ans:0},
-{q:"Which of the following is NOT part of the cell theory?",opts:["All living things are made of cells","All cells come from other cells","Cells are the basic unit of structure","Cells can differ because of their DNA"],ans:3},
-{q:"Cell membranes are made of how many layers of lipid material?",opts:["One","Two","Three","Four"],ans:1},
-{q:"Which is found in eukaryotic but NOT prokaryotic cells?",opts:["Ribosomes","DNA","Membrane-bound organelles","Cell membrane"],ans:2},
-{q:"Which cell type does NOT have a nucleus?",opts:["Plant cells","Fungi cells","Animal cells","Eubacterial cells"],ans:3},
-{q:"Which is NOT found in a typical animal cell?",opts:["Cytoplasm","Cell membrane","Cell wall","Golgi apparatus"],ans:2},
-{q:"A 10x eyepiece with a 40x objective gives total magnification of:",opts:["50x","400x","4000x","14x"],ans:1},
-{q:"Which objective lens provides the LARGEST field of view?",opts:["High power (40x)","Medium power (10x)","Low power (4x)","All equal"],ans:2},
-{q:"An egg weighs 75g at 30 min and 62g at 90 min. The solution is:",opts:["Hypotonic","Isotonic","Hypertonic","Distilled water only"],ans:2},
-{q:"In osmosis, water moves from __ to __ water concentration.",opts:["Low to high","High to low","Stays equal","Depends on temperature"],ans:1},
-{q:"Inside of egg was not red after the lab. This means the membrane is:",opts:["Permeable","Impermeable","Selectively permeable","Using active transport"],ans:2},
-{q:"A cell with 90% water in a 98% water solution will:",opts:["Not change","Gain water","Lose water","Cannot determine"],ans:1},
-{q:"Movement of molecules from high to low concentration is:",opts:["Osmosis","Active transport","Diffusion","Endocytosis"],ans:2},
-{q:"Endosymbiosis theory proposes these organelles were once free-living prokaryotes:",opts:["Nucleus and Golgi","Mitochondria and chloroplasts","Ribosomes and vacuoles","ER and nucleus"],ans:1},
-{q:"Prokaryotes first appeared in the fossil record approximately:",opts:["1 billion years ago","2 billion years ago","3.5 billion years ago","4.6 billion years ago"],ans:2},
-{q:"Spherical bacteria in grape-like clusters are called:",opts:["Streptobacilli","Staphylococci","Streptococci","Spirilli"],ans:1}
-]
-},
-{
-id:2,title:"Photosynthesis, Respiration & Carbon Cycle",subtitle:"Energy flow, metabolism, and Earth's carbon pathways",color:"#4A8C6F",objs:13,
+{q:"Why can't cells grow very large?",opts:["Larger cells have lower SA:V ratio","Smaller cells have greater SA:V ratio","Smaller cells are more protected","Larger cells would have greater SA:V"],ans:1},
+{q:"SA:V ratio for a cube with sides of 1 cm:",opts:["2:1","4:1","6:1","8:1"],ans:2},
+{q:"Who stated all cells come from pre-existing cells?",opts:["Schleiden","Schwann","Hooke","Virchow"],ans:3},
+{q:"Who named cells after observing cork?",opts:["Virchow","Leeuwenhoek","Hooke","Schleiden"],ans:2},
+{q:"Which is NOT part of the cell theory?",opts:["All living things made of cells","All cells come from other cells","Cells are basic unit of life","Cells differ because of their DNA"],ans:3},
+{q:"Cell membranes are made of how many lipid layers?",opts:["One","Two","Three","Four"],ans:1},
+{q:"Found in eukaryotes but NOT prokaryotes:",opts:["Ribosomes","DNA","Membrane-bound organelles","Cell membrane"],ans:2},
+{q:"Which cell type does NOT have a nucleus?",opts:["Plant cells","Fungi cells","Animal cells","Bacterial cells"],ans:3},
+{q:"NOT found in a typical animal cell:",opts:["Cytoplasm","Cell membrane","Cell wall","Golgi apparatus"],ans:2},
+{q:"10x eyepiece + 40x objective: magnification?",opts:["50x","400x","4000x","14x"],ans:1},
+{q:"Which objective lens gives the LARGEST field of view?",opts:["High power (40x)","Medium power (10x)","Low power (4x)","All equal"],ans:2},
+{q:"Egg weighs 75g at 30 min, 62g at 90 min. Solution is:",opts:["Hypotonic","Isotonic","Hypertonic","Distilled water"],ans:2},
+{q:"In osmosis, water moves from __ to __ water concentration.",opts:["Low to high","High to low","Stays equal","Depends on temp"],ans:1},
+{q:"Egg inside not red. Membrane is:",opts:["Permeable","Impermeable","Selectively permeable","Using active transport"],ans:2},
+{q:"Cell with 90% water in 98% water solution will:",opts:["Not change","Gain water","Lose water","Cannot determine"],ans:1},
+{q:"Movement from high to low concentration is:",opts:["Osmosis","Active transport","Diffusion","Endocytosis"],ans:2},
+{q:"Endosymbiosis says these were once free-living prokaryotes:",opts:["Nucleus and Golgi","Mitochondria and chloroplasts","Ribosomes and vacuoles","ER and nucleus"],ans:1},
+{q:"Prokaryotes appeared in fossil record approximately:",opts:["1 bya","2 bya","3.5 bya","4.6 bya"],ans:2},
+{q:"Spherical bacteria in grape-like clusters:",opts:["Streptobacilli","Staphylococci","Streptococci","Spirilli"],ans:1},
+{q:"Which organelle packages chemicals for transport?",opts:["Ribosome","Mitochondria","Golgi apparatus","Vacuole"],ans:2}
+]},
+{id:2,title:"Photosynthesis, Respiration & Carbon Cycle",subtitle:"Energy flow, metabolism, and Earth's carbon pathways",color:"#4A8C6F",objs:13,
 guide:[
 {title:"Van Helmont's Experiment",parts:[
-{t:'p',s:"Jan Baptist van Helmont (1580-1644) performed a landmark experiment on plant growth."},
-{t:'ul',items:["Planted a 2.3 kg willow sapling in 90.9 kg of dry soil; watered only with rainwater for 5 years","After 5 years: tree weighed 76.7 kg; soil lost only 0.06 kg","His conclusion: the ~74 kg of new mass came from water (mostly wrong)","Reality: most plant mass comes from CO\u2082 in the air via photosynthesis (carbon fixation)","His contribution: pioneered experimental methods in biology"]}
+{t:'ul',items:["Planted 2.3 kg willow in 90.9 kg soil; watered with rainwater only for 5 years","Tree gained ~74 kg; soil lost only 0.06 kg","His conclusion: mass came from water (mostly incorrect)","Reality: most plant mass comes from CO\u2082 in air via photosynthesis"]}
 ]},
 {title:"Photosynthesis Overview",parts:[
-{t:'p',s:"Photosynthesis converts light energy into chemical energy stored in glucose. It occurs in chloroplasts in plant cells and algae."},
-{t:'ul',items:["Overall equation: 6CO\u2082 + 6H\u2082O + light energy \u2192 C\u2086H\u2081\u2082O\u2086 + 6O\u2082","Location: chloroplasts (thylakoid membranes for light reactions; stroma for dark reactions)","Reactants: CO\u2082, water, and light energy","Products: glucose (sugar) and O\u2082 gas","Two stages: Light Reactions (light-dependent) and Dark Reactions (Calvin Cycle)"]}
+{t:'ul',items:["Overall: 6CO\u2082 + 6H\u2082O + light energy \u2192 C\u2086H\u2081\u2082O\u2086 + 6O\u2082","Location: chloroplasts","Two stages: Light Reactions (thylakoid) and Dark Reactions/Calvin Cycle (stroma)","Water is split during light reactions (photolysis) \u2192 releases O\u2082"]}
 ]},
-{title:"Light Reactions (Light-Dependent)",parts:[
-{t:'p',s:"Light reactions occur in the thylakoid membranes of the chloroplast and directly require sunlight."},
-{t:'ul',items:["Reactants: sunlight, water (H\u2082O), ADP, NADP+","Products: ATP, NADPH, oxygen gas (O\u2082)","Water is split (photolysis) \u2192 releases electrons, H+ ions, and O\u2082 as a byproduct","Chlorophyll absorbs light energy (mostly red and blue wavelengths; reflects green)","ATP and NADPH produced here power the dark reactions"]},
-{t:'h4',s:"Opposite Process"},
-{t:'ul',items:["The light reaction is the OPPOSITE of the electron transport chain in cellular respiration"]}
-]},
-{title:"Dark Reactions (Calvin Cycle)",parts:[
-{t:'p',s:"Dark reactions occur in the stroma of the chloroplast. They do not directly need light but depend on ATP and NADPH from light reactions."},
-{t:'ul',items:["Reactants: CO\u2082, ATP, NADPH","Products: glucose (sugar), ADP, NADP+ (recycled back to light reactions)","CO\u2082 is 'fixed' (attached to organic molecules) using energy from ATP and NADPH","The oxygen atoms in glucose come from CO\u2082 gas from the air","Does NOT produce O\u2082 (that happens only in light reactions)"]}
-]},
-{title:"Chlorophyll, Stomata, and Guard Cells",parts:[
-{t:'ul',items:["Chlorophyll: green pigment inside chloroplasts; absorbs red and blue light; reflects green light","Stomata: small pores on leaf surfaces that allow gas exchange (CO\u2082 in, O\u2082 out during photosynthesis)","Guard cells: surround each stoma and control opening and closing","Open stomata allow CO\u2082 in for dark reactions but also cause water loss","Plants close stomata during drought or at night to prevent excess water loss"]}
-]},
-{title:"ATP, ADP, and AMP",parts:[
-{t:'p',s:"ATP (Adenosine Triphosphate) is the primary energy currency of all cells."},
-{t:'tbl',headers:["Molecule","Full Name","Phosphates","High-Energy Bonds","Energy Level"],rows:[
-["ATP","Adenosine Triphosphate","3","2","Most"],
-["ADP","Adenosine Diphosphate","2","1","Middle"],
-["AMP","Adenosine Monophosphate","1","0","Least"]
-]},
-{t:'ul',items:["ATP \u2192 ADP: 1 bond broken, energy released for cell work","ADP \u2192 AMP: 1 more bond broken, more energy released","Adding a phosphate back to ADP restores ATP (requires energy input)"]}
-]},
-{title:"Cellular Respiration",parts:[
-{t:'p',s:"Cellular respiration breaks down glucose to produce ATP. Under aerobic conditions 38 ATP are produced from one glucose."},
-{t:'ul',items:["Overall: C\u2086H\u2081\u2082O\u2086 + 6O\u2082 \u2192 6CO\u2082 + 6H\u2082O + 38 ATP","This is the OPPOSITE of photosynthesis","Takes place in the mitochondria (except glycolysis which is in the cytoplasm)"]},
-{t:'tbl',headers:["Stage","Location","Requires O\u2082?","Products"],rows:[
-["Glycolysis","Cytoplasm","No (anaerobic)","2 pyruvic acid, 2 ATP, 2 NADH"],
-["Krebs Cycle","Mitochondria matrix","Yes (aerobic)","CO\u2082, NADH, FADH\u2082, 2 ATP"],
-["Electron Transport Chain","Inner mito. membrane","Yes (aerobic)","~34 ATP, H\u2082O"]
+{title:"Light Reactions and Dark Reactions",parts:[
+{t:'tbl',headers:["Stage","Location","Reactants","Products"],rows:[
+["Light Reactions","Thylakoid membranes","Sunlight, H\u2082O, ADP, NADP+","ATP, NADPH, O\u2082"],
+["Dark Reactions (Calvin)","Stroma","CO\u2082, ATP, NADPH","Glucose, ADP, NADP+"]
 ]}
 ]},
-{title:"Fermentation",parts:[
-{t:'p',s:"When O\u2082 is unavailable, cells produce a small amount of ATP through fermentation (anaerobic). Both types begin with glycolysis."},
-{t:'tbl',headers:["Type","Organism","Reactants","Products"],rows:[
-["Lactic acid fermentation","Muscle cells, bacteria","Glucose","Lactic acid, 2 ATP"],
-["Alcohol fermentation","Yeast, bacteria","Glucose","Ethanol, CO\u2082, 2 ATP"]
+{title:"ATP and Cellular Respiration",parts:[
+{t:'tbl',headers:["Molecule","Phosphates","Energy Level"],rows:[["ATP","3","Highest"],["ADP","2","Middle"],["AMP","1","Lowest"]]},
+{t:'tbl',headers:["Stage","Location","O\u2082?","Products"],rows:[
+["Glycolysis","Cytoplasm","No","2 pyruvic acid, 2 ATP"],
+["Krebs Cycle","Mitochondria matrix","Yes","CO\u2082, NADH, 2 ATP"],
+["ETC","Inner mito. membrane","Yes","~34 ATP, H\u2082O"]
 ]},
-{t:'ul',items:["Lactic acid buildup in muscles causes the burning sensation and fatigue during intense exercise","Alcohol fermentation by yeast used in brewing (beer/wine) and baking (CO\u2082 makes bread rise)"]}
+{t:'ul',items:["Overall respiration: C\u2086H\u2081\u2082O\u2086 + 6O\u2082 \u2192 6CO\u2082 + 6H\u2082O + 38 ATP"]}
 ]},
-{title:"The Carbon Cycle",parts:[
+{title:"Fermentation and Carbon Cycle",parts:[
+{t:'tbl',headers:["Type","Organism","Products"],rows:[["Lactic acid","Muscle cells, bacteria","Lactic acid + 2 ATP"],["Alcohol","Yeast","Ethanol + CO\u2082 + 2 ATP"]]},
 {t:'tbl',headers:["Sphere","Carbon Added By","Carbon Removed By"],rows:[
-["Atmosphere","Combustion, respiration, decomposition","Photosynthesis, dissolution"],
-["Biosphere","Photosynthesis (carbon fixation)","Respiration, death, decomposition"],
-["Geosphere","Burial of organic matter","Combustion, volcanic activity"],
-["Hydrosphere","Dissolution of atmospheric CO\u2082","Marine organisms, precipitation"]
-]},
-{t:'ul',items:["Processes adding carbon to ATMOSPHERE: combustion, cellular respiration, decomposition","Processes adding carbon to HYDROSPHERE: dissolution","Photosynthesis REMOVES carbon from the atmosphere","Burial REMOVES carbon from biosphere to geosphere (forms fossil fuels over millions of years)"]}
+["Atmosphere","Combustion, respiration","Photosynthesis"],
+["Biosphere","Photosynthesis","Respiration, death"],
+["Geosphere","Burial of organic matter","Combustion, volcanic activity"]
+]}
 ]}
 ],
 practice:[
-{type:"mc",q:"The overall equation for photosynthesis is:",opts:["O\u2082 + Glucose \u2192 CO\u2082 + H\u2082O","6CO\u2082 + 6H\u2082O + light \u2192 C\u2086H\u2081\u2082O\u2086 + 6O\u2082","C\u2086H\u2081\u2082O\u2086 \u2192 2 Pyruvic acid + ATP","CO\u2082 + H\u2082O \u2192 O\u2082 + Glucose"],ans:1,expl:"Photosynthesis takes in CO\u2082 and water, uses light energy, and produces glucose and oxygen gas."},
-{type:"mc",q:"Where in the cell does photosynthesis take place?",opts:["Mitochondria","Nucleus","Ribosomes","Chloroplasts"],ans:3,expl:"Photosynthesis occurs in chloroplasts. Light reactions in thylakoid membranes; dark reactions in the stroma."},
-{type:"mc",q:"Which stage of cellular respiration produces the MOST ATP?",opts:["Glycolysis","Krebs Cycle","Electron Transport Chain","Fermentation"],ans:2,expl:"The ETC produces ~34 ATP (out of ~38 total). Glycolysis = 2 ATP; Krebs = 2 ATP."},
-{type:"mc",q:"What chemical builds up in muscle cells during intense exercise?",opts:["Pyruvic acid","Acetyl CoA","Lactic acid","NADPH"],ans:2,expl:"When O\u2082 is limited, muscles perform lactic acid fermentation. Lactic acid accumulation causes muscle fatigue."},
-{type:"mc",q:"Van Helmont incorrectly concluded that the willow tree's mass increase came from:",opts:["Soil","Water","Sunlight","Carbon dioxide"],ans:1,expl:"The soil barely changed in mass, so he concluded mass came from water. In reality, most plant mass comes from CO\u2082 via photosynthesis."},
-{type:"mc",q:"Which processes DIRECTLY add carbon to the atmosphere?",opts:["Photosynthesis and burial","Cellular respiration and combustion","Dissolution and photosynthesis","Burial and dissolution"],ans:1,expl:"Cellular respiration releases CO\u2082 into the air. Combustion (burning fossil fuels and organic matter) also releases CO\u2082."},
-{type:"tf",q:"The oxygen released during photosynthesis comes from carbon dioxide (CO\u2082).",ans:false,expl:"FALSE. The O\u2082 released during photosynthesis comes from the splitting of WATER molecules (photolysis), not from CO\u2082."},
-{type:"tf",q:"Glycolysis is an anaerobic process that occurs in the cytoplasm.",ans:true,expl:"TRUE. Glycolysis occurs in the cytoplasm and does not require oxygen. It is the first step in both aerobic respiration and fermentation."},
-{type:"tf",q:"The dark reactions of photosynthesis can only occur in the dark.",ans:false,expl:"FALSE. The dark reactions (Calvin cycle) do not directly need light, but they can occur in either light or dark conditions. They use ATP and NADPH from the light reactions."},
-{type:"sa",q:"Compare the light reactions and dark reactions of photosynthesis. Include reactants, products, and location.",ans:"<strong>Light reactions</strong> (thylakoid membranes): Reactants = sunlight, water, ADP, NADP+. Products = ATP, NADPH, O\u2082 (released).<br><strong>Dark reactions</strong> (stroma): Reactants = CO\u2082, ATP, NADPH. Products = glucose, ADP, NADP+ (recycled)."},
-{type:"sa",q:"Compare lactic acid fermentation and alcohol fermentation (organisms, products, and conditions).",ans:"Both are <strong>anaerobic</strong> and begin with glycolysis.<br><strong>Lactic acid:</strong> muscle cells & bacteria; produces lactic acid + 2 ATP; no CO\u2082.<br><strong>Alcohol:</strong> yeast & bacteria; produces ethanol + CO\u2082 + 2 ATP."},
-{type:"sa",q:"Trace how a carbon atom in CO\u2082 gas moves through the biosphere, then to the geosphere, and back to the atmosphere.",ans:"A plant absorbs CO\u2082 from the air during photosynthesis and incorporates it into glucose (biosphere). The plant dies and is buried over millions of years, becoming fossil fuel (geosphere). When the fossil fuel is burned (combustion), the carbon returns to the atmosphere as CO\u2082."}
+{type:"mc",q:"The overall equation for photosynthesis is:",opts:["O\u2082+Glucose\u2192CO\u2082+H\u2082O","6CO\u2082+6H\u2082O+light\u2192C\u2086H\u2081\u2082O\u2086+6O\u2082","C\u2086H\u2081\u2082O\u2086\u21922 Pyruvic acid+ATP","CO\u2082+H\u2082O\u2192O\u2082+Glucose"],ans:1,expl:"Photosynthesis takes in CO\u2082 and water, uses light energy, and produces glucose and oxygen."},
+{type:"mc",q:"Which stage of cellular respiration produces the MOST ATP?",opts:["Glycolysis","Krebs Cycle","Electron Transport Chain","Fermentation"],ans:2,expl:"ETC produces ~34 ATP (out of ~38 total)."},
+{type:"mc",q:"What builds up in muscle cells during intense exercise?",opts:["Pyruvic acid","Acetyl CoA","Lactic acid","NADPH"],ans:2,expl:"Lactic acid fermentation causes lactic acid buildup, leading to muscle fatigue."},
+{type:"mc",q:"Van Helmont incorrectly concluded mass came from:",opts:["Soil","Water","Sunlight","Carbon dioxide"],ans:1,expl:"The soil barely changed, so he concluded mass came from water. Most plant mass actually comes from CO\u2082."},
+{type:"mc",q:"Which DIRECTLY adds carbon to the atmosphere?",opts:["Photosynthesis and burial","Cellular respiration and combustion","Dissolution and photosynthesis","Burial and dissolution"],ans:1,expl:"Cellular respiration and combustion both release CO\u2082 into the atmosphere."},
+{type:"mc",q:"Light reactions occur in the:",opts:["Stroma","Thylakoid membranes","Cytoplasm","Nucleus"],ans:1,expl:"Light reactions (light-dependent stage) occur in the thylakoid membranes."},
+{type:"tf",q:"The oxygen released during photosynthesis comes from CO\u2082.",ans:false,expl:"FALSE. O\u2082 comes from splitting WATER molecules (photolysis), not from CO\u2082."},
+{type:"tf",q:"Glycolysis is an anaerobic process that occurs in the cytoplasm.",ans:true,expl:"TRUE. Glycolysis occurs in the cytoplasm and does not require oxygen."},
+{type:"tf",q:"Dark reactions can only occur in the dark.",ans:false,expl:"FALSE. Dark reactions don't directly need light but can occur in either condition."},
+{type:"sa",q:"Compare light reactions and dark reactions (reactants, products, location).",ans:"<strong>Light reactions</strong> (thylakoid): Reactants = sunlight, water. Products = ATP, NADPH, O\u2082.<br><strong>Dark reactions</strong> (stroma): Reactants = CO\u2082, ATP, NADPH. Products = glucose."},
+{type:"sa",q:"Compare lactic acid fermentation and alcohol fermentation.",ans:"Both are <strong>anaerobic</strong> and begin with glycolysis.<br><strong>Lactic acid:</strong> muscle cells; lactic acid + 2 ATP.<br><strong>Alcohol:</strong> yeast; ethanol + CO\u2082 + 2 ATP."},
+{type:"sa",q:"Trace a carbon atom from CO\u2082 through the biosphere then to the geosphere, back to the atmosphere.",ans:"Plant absorbs CO\u2082 via photosynthesis (biosphere). Plant dies and is buried, becoming fossil fuel (geosphere). When burned (combustion), carbon returns as CO\u2082 (atmosphere)."}
 ],
 test:[
 {q:"ATP stands for:",opts:["Adenosine triphosphate","Adenosine triple phosphorus","Adenyl tripeptide","Adenosine triphosphorus"],ans:0},
-{q:"How many ATP can be made from one glucose molecule aerobically?",opts:["2","12","36","38"],ans:3},
-{q:"Breaking down glucose into two pyruvic acid molecules is called:",opts:["Fermentation","Glycolysis","Krebs cycle","Cellular respiration"],ans:1},
-{q:"The reaction CO\u2082 + H\u2082O \u2192 glucose + O\u2082 takes place in:",opts:["Animal cells (cellular respiration)","The mitochondria","The dark, without light","Plant cells (photosynthesis)"],ans:3},
-{q:"The energy source for photosynthesis is:",opts:["ATP","The sun","Heat","Sugar"],ans:1},
-{q:"During the photosynthesis dark reaction, what is MADE?",opts:["Water is split","Sugar (glucose)","Oxygen gas","Chlorophyll"],ans:1},
+{q:"ATP from one glucose molecule aerobically:",opts:["2","12","36","38"],ans:3},
+{q:"Breaking glucose into two pyruvic acids:",opts:["Fermentation","Glycolysis","Krebs cycle","Cellular respiration"],ans:1},
+{q:"Photosynthesis takes place in:",opts:["Animal cells","Mitochondria","The dark","Plant cells"],ans:3},
+{q:"Energy source for photosynthesis:",opts:["ATP","The sun","Heat","Sugar"],ans:1},
+{q:"During dark reaction, what is MADE?",opts:["Water is split","Sugar (glucose)","Oxygen gas","Chlorophyll"],ans:1},
 {q:"Chlorophyll is found:",opts:["In the mitochondria","On the cell wall","In the nucleus","Inside chloroplasts"],ans:3},
-{q:"The O\u2082 produced during photosynthesis comes from:",opts:["Chlorophyll","Water","Carbon dioxide","Broken-down glucose"],ans:1},
-{q:"Direction of gas movement through stomata during photosynthesis:",opts:["Water in, CO\u2082 out","O\u2082 out, CO\u2082 in","O\u2082 in, CO\u2082 in","O\u2082 in, CO\u2082 out"],ans:1},
-{q:"The reaction O\u2082 + glucose \u2192 CO\u2082 + H\u2082O + ATP is called:",opts:["Cellular respiration","Photosynthesis","Fermentation","Glycolysis"],ans:0},
-{q:"Which chemical builds up in muscle cells during intense exercise?",opts:["Pyruvic acid","Acetyl CoA","Lactic acid","NADPH"],ans:2},
-{q:"Yeast cells under anaerobic conditions perform:",opts:["Alcohol fermentation","Krebs cycle","Cellular respiration","Lactic acid fermentation"],ans:0},
-{q:"If a plant cannot obtain O\u2082 from the environment, the rate of photosynthesis will:",opts:["Slow down","Stop quickly","Not be affected","Speed up"],ans:2},
-{q:"Which DIRECTLY adds carbon to the atmosphere?",opts:["Cellular respiration and combustion","Photosynthesis and burial","Burial and dissolution","Dissolution only"],ans:0},
-{q:"Which DIRECTLY adds carbon to the hydrosphere?",opts:["Combustion","Burial","Dissolution","Photosynthesis"],ans:2},
-{q:"Van Helmont (incorrectly) concluded plant mass came from:",opts:["Soil","Water","Sunlight","Carbon dioxide"],ans:1},
-{q:"Which set of processes produces ATP?",opts:["Light and dark reactions only","Glycolysis, Krebs cycle, ETC","Fermentation only","Photosynthesis only"],ans:1},
-{q:"In the light reaction, water is split to release:",opts:["Carbon dioxide","Glucose","Oxygen gas","ATP only"],ans:2},
-{q:"When TWO high-energy bonds are broken off ATP, it becomes:",opts:["ADP","ABP","AMP","Acetyl CoA"],ans:2},
-{q:"Which occurs during the photosynthesis light reaction?",opts:["Sugar is made","Carbon dioxide is used","Water is split and ATP is produced","Glucose is broken down"],ans:2}
-]
-},
-{
-id:3,title:"Mitosis and Meiosis",subtitle:"Cell division, chromosome behavior, and comparison",color:"#7B5EA7",objs:2,
+{q:"O\u2082 produced during photosynthesis comes from:",opts:["Chlorophyll","Water","Carbon dioxide","Glucose"],ans:1},
+{q:"Gas exchange during photosynthesis:",opts:["Water in, CO\u2082 out","O\u2082 out, CO\u2082 in","O\u2082 in, CO\u2082 in","O\u2082 in, CO\u2082 out"],ans:1},
+{q:"O\u2082+glucose\u2192CO\u2082+H\u2082O+ATP is called:",opts:["Cellular respiration","Photosynthesis","Fermentation","Glycolysis"],ans:0},
+{q:"Builds up in muscle cells during exercise:",opts:["Pyruvic acid","Acetyl CoA","Lactic acid","NADPH"],ans:2},
+{q:"Yeast under anaerobic conditions perform:",opts:["Alcohol fermentation","Krebs cycle","Cellular respiration","Lactic acid fermentation"],ans:0},
+{q:"Preventing O\u2082: rate of photosynthesis will:",opts:["Slow down","Stop quickly","Not be affected","Speed up"],ans:2},
+{q:"DIRECTLY adds carbon to atmosphere:",opts:["Cellular respiration and combustion","Photosynthesis and burial","Burial and dissolution","Dissolution only"],ans:0},
+{q:"DIRECTLY adds carbon to hydrosphere:",opts:["Combustion","Burial","Dissolution","Photosynthesis"],ans:2},
+{q:"Van Helmont concluded mass came from:",opts:["Soil","Water","Sunlight","Carbon dioxide"],ans:1},
+{q:"Which processes produce ATP?",opts:["Light+dark reactions only","Glycolysis, Krebs, ETC","Fermentation only","Photosynthesis only"],ans:1},
+{q:"In light reaction, water is split to release:",opts:["Carbon dioxide","Glucose","Oxygen gas","ATP only"],ans:2},
+{q:"TWO bonds broken from ATP becomes:",opts:["ADP","ABP","AMP","Acetyl CoA"],ans:2},
+{q:"During photosynthesis light reaction:",opts:["Sugar is made","CO\u2082 is used","Water is split and ATP is produced","Glucose is broken down"],ans:2}
+]},
+{id:3,title:"Mitosis and Meiosis",subtitle:"Cell division, chromosome behavior, and comparison",color:"#7B5EA7",objs:2,
 guide:[
-{title:"Cell Division Overview",parts:[
-{t:'p',s:"Cells divide to allow growth, repair, and reproduction. Mitosis and meiosis are the two main types of cell division."},
+{title:"Mitosis vs. Meiosis: Comparison Table",parts:[
 {t:'tbl',headers:["Feature","Mitosis","Meiosis"],rows:[
 ["Purpose","Growth, repair, replacement","Sexual reproduction, genetic diversity"],
 ["Occurs in","Somatic (body) cells","Reproductive organs (gonads)"],
-["DNA replications","1","1"],
-["Division steps","1","2"],
-["Daughter cells produced","2","4"],
-["Chromosome # in parent","2n (diploid)","2n (diploid)"],
-["Chromosome # in daughter","2n (diploid)","n (haploid)"],
-["Crossing over","No","Yes (Prophase I)"],
-["Daughter cell genetics","Identical to parent","Genetically unique"],
+["DNA replications","1","1"],["Division steps","1","2"],["Daughter cells","2","4"],
+["Parent cell","2n (diploid)","2n (diploid)"],["Daughter cells","2n (diploid)","n (haploid)"],
+["Crossing over","No","Yes (Prophase I)"],["Daughter genetics","Identical to parent","Genetically unique"],
 ["Homologous pairing","No","Yes (Meiosis I)"]
 ]}
 ]},
 {title:"Phases of Mitosis (PMAT)",parts:[
-{t:'p',s:"Mitosis follows interphase (where DNA replicates) and consists of four phases, followed by cytokinesis."},
 {t:'tbl',headers:["Phase","Key Events"],rows:[
-["Interphase (before mitosis)","Cell grows; DNA replicates (S phase); chromosomes not yet visible"],
-["Prophase (P)","Chromosomes condense and become visible; nuclear envelope dissolves; spindle forms"],
-["Metaphase (M)","Chromosomes line up at the cell's equator (metaphase plate)"],
-["Anaphase (A)","Sister chromatids separate and are pulled to opposite poles"],
-["Telophase (T)","Nuclear envelope reforms; chromosomes decondense; cytokinesis divides the cell"]
+["Interphase","Cell grows; DNA replicates"],
+["Prophase (P)","Chromosomes condense; nuclear envelope dissolves; spindle forms"],
+["Metaphase (M)","Chromosomes line up at cell equator"],
+["Anaphase (A)","Sister chromatids separate to opposite poles"],
+["Telophase (T)","Nuclear envelope reforms; cytokinesis divides cell"]
+]}
 ]},
-{t:'ul',items:["Memory trick: PMAT = Prophase, Metaphase, Anaphase, Telophase","Result: 2 diploid daughter cells, genetically identical to the parent"]}
-]},
-{title:"Phases of Meiosis",parts:[
-{t:'h4',s:"Meiosis I (Reductive Division)"},
-{t:'ul',items:["Prophase I: homologous chromosomes pair up (synapsis); crossing over occurs \u2192 genetic variation","Metaphase I: homologous PAIRS line up at the equator","Anaphase I: homologous chromosomes (NOT sister chromatids) pulled to opposite poles","Telophase I: two haploid cells form (each with still-duplicated chromosomes)"]},
-{t:'h4',s:"Meiosis II (Similar to Mitosis)"},
-{t:'ul',items:["No additional DNA replication between Meiosis I and II","Sister chromatids separate (same as mitosis anaphase)","Final result: 4 haploid cells, all genetically unique"]}
-]},
-{title:"Crossing Over and Genetic Diversity",parts:[
-{t:'ul',items:["Crossing over occurs during Prophase I of meiosis only","Homologous chromosomes exchange segments of DNA at points called chiasmata","Creates new combinations of alleles on chromosomes","Key source of genetic variation; why siblings look different from each other","Mitosis does NOT involve crossing over; daughter cells are genetically identical"]}
+{title:"Meiosis and Crossing Over",parts:[
+{t:'ul',items:["Meiosis I: homologous chromosomes separate. Prophase I has crossing over.","Meiosis II: sister chromatids separate (like mitosis). No extra DNA replication.","Crossing over: occurs Prophase I. Homologs exchange DNA segments. Key source of genetic variation.","Mitosis has NO crossing over; daughter cells are genetically identical."]}
 ]}
 ],
 practice:[
-{type:"mc",q:"How many daughter cells does meiosis produce?",opts:["1","2","3","4"],ans:3,expl:"Meiosis has two rounds of cell division (I and II), producing 4 haploid daughter cells."},
-{type:"mc",q:"In which phase of mitosis do chromosomes line up at the cell's equator?",opts:["Prophase","Metaphase","Anaphase","Telophase"],ans:1,expl:"During metaphase, chromosomes align along the metaphase plate (cell equator), attached to spindle fibers."},
-{type:"mc",q:"In which phase do sister chromatids separate and move to opposite poles?",opts:["Prophase","Metaphase","Anaphase","Telophase"],ans:2,expl:"During anaphase, spindle fibers shorten and pull sister chromatids apart to opposite poles."},
-{type:"mc",q:"Crossing over occurs during:",opts:["Mitosis prophase","Meiosis I prophase","Meiosis II prophase","Telophase of both"],ans:1,expl:"Crossing over (DNA exchange between homologous chromosomes) occurs during Prophase I of meiosis."},
-{type:"mc",q:"A human body cell has 46 chromosomes. After mitosis, each daughter cell has:",opts:["23","46","92","12"],ans:1,expl:"Mitosis preserves the diploid number. Each daughter cell receives a complete copy: 46 chromosomes."},
-{type:"mc",q:"The PRIMARY purpose of mitosis is:",opts:["Sexual reproduction","Genetic diversity","Growth and repair of body cells","Reducing chromosome number"],ans:2,expl:"Mitosis is used for growth, repair, and replacement of somatic (body) cells."},
-{type:"tf",q:"Meiosis occurs in all body cells for growth and repair.",ans:false,expl:"FALSE. Meiosis only occurs in reproductive organs (gonads) to make gametes. Growth and repair use mitosis."},
-{type:"tf",q:"Daughter cells from mitosis are genetically identical to the parent cell.",ans:true,expl:"TRUE. Mitosis produces two genetically identical diploid cells. There is no crossing over or independent assortment."},
-{type:"tf",q:"DNA replicates twice during meiosis.",ans:false,expl:"FALSE. DNA replicates only ONCE in meiosis (before Meiosis I). There are two division rounds but only one replication."},
-{type:"sa",q:"Explain why meiosis produces genetically unique daughter cells while mitosis produces identical ones.",ans:"In meiosis, <strong>crossing over</strong> during Prophase I exchanges DNA between homologous chromosomes, creating new allele combinations. Additionally, homologous chromosomes assort <strong>independently</strong> during Metaphase I. Mitosis has neither process, so daughter cells are exact genetic copies of the parent."},
-{type:"sa",q:"A parent cell has 12 chromosomes (diploid = 12). How many chromosomes in daughter cells after (a) mitosis and (b) meiosis?",ans:"(a) <strong>Mitosis:</strong> 12 chromosomes in each daughter cell (diploid, same as parent).<br>(b) <strong>Meiosis:</strong> 6 chromosomes in each daughter cell (haploid, half of parent)."},
-{type:"sa",q:"What is the key difference between Meiosis I and Meiosis II?",ans:"<strong>Meiosis I</strong> separates homologous chromosome PAIRS, reducing the cell from diploid to haploid. Crossing over occurs in Prophase I. <strong>Meiosis II</strong> separates sister chromatids (like mitosis). No DNA replication occurs between the two divisions."}
+{type:"mc",q:"How many daughter cells does meiosis produce?",opts:["1","2","3","4"],ans:3,expl:"Meiosis has two division rounds, producing 4 haploid daughter cells."},
+{type:"mc",q:"In which phase do chromosomes line up at the cell's equator?",opts:["Prophase","Metaphase","Anaphase","Telophase"],ans:1,expl:"During metaphase, chromosomes align along the metaphase plate."},
+{type:"mc",q:"Crossing over occurs during:",opts:["Mitosis prophase","Meiosis I prophase","Meiosis II prophase","Telophase"],ans:1,expl:"Crossing over occurs during Prophase I of meiosis."},
+{type:"mc",q:"Human body cell has 46 chromosomes. After mitosis, each daughter cell has:",opts:["23","46","92","12"],ans:1,expl:"Mitosis preserves the diploid number."},
+{type:"mc",q:"Primary purpose of mitosis:",opts:["Sexual reproduction","Genetic diversity","Growth and repair","Reducing chromosome number"],ans:2,expl:"Mitosis is for growth, repair, and replacement of somatic cells."},
+{type:"mc",q:"Meiosis II most resembles:",opts:["Meiosis I","Mitosis","DNA replication","Interphase"],ans:1,expl:"Meiosis II separates sister chromatids, just like mitosis."},
+{type:"tf",q:"Meiosis occurs in all body cells for growth and repair.",ans:false,expl:"FALSE. Meiosis only occurs in reproductive organs. Growth/repair use mitosis."},
+{type:"tf",q:"Daughter cells from mitosis are genetically identical to the parent cell.",ans:true,expl:"TRUE. No crossing over or independent assortment in mitosis."},
+{type:"tf",q:"DNA replicates twice during meiosis.",ans:false,expl:"FALSE. DNA replicates only ONCE before Meiosis I."},
+{type:"sa",q:"Why does meiosis produce genetically unique cells while mitosis produces identical ones?",ans:"In meiosis, <strong>crossing over</strong> during Prophase I exchanges DNA between homologous chromosomes. <strong>Independent assortment</strong> during Metaphase I further randomizes which chromosomes end up in each cell. Mitosis has neither process."},
+{type:"sa",q:"A parent cell has 12 chromosomes (diploid). Chromosomes in daughter cells after (a) mitosis and (b) meiosis?",ans:"(a) <strong>Mitosis:</strong> 12 chromosomes (diploid).<br>(b) <strong>Meiosis:</strong> 6 chromosomes (haploid)."},
+{type:"sa",q:"Key difference between Meiosis I and Meiosis II?",ans:"<strong>Meiosis I</strong> separates homologous chromosome PAIRS (diploid to haploid). Crossing over in Prophase I.<br><strong>Meiosis II</strong> separates sister chromatids. No additional DNA replication."}
 ],
 test:[
 {q:"Mitosis produces how many daughter cells?",opts:["1","2","3","4"],ans:1},
 {q:"Meiosis produces how many daughter cells?",opts:["1","2","3","4"],ans:3},
-{q:"Daughter cells from mitosis are:",opts:["Haploid and genetically unique","Diploid and genetically identical to parent","Haploid and identical","Diploid and genetically unique"],ans:1},
-{q:"Daughter cells from meiosis are:",opts:["Diploid and identical to parent","Haploid and genetically identical","Haploid and genetically unique","Diploid and genetically unique"],ans:2},
-{q:"Crossing over occurs in:",opts:["Mitosis only","Meiosis only","Both mitosis and meiosis","Neither"],ans:1},
+{q:"Daughter cells from mitosis are:",opts:["Haploid and genetically unique","Diploid and genetically identical","Haploid and identical","Diploid and genetically unique"],ans:1},
+{q:"Daughter cells from meiosis are:",opts:["Diploid and identical","Haploid and genetically identical","Haploid and genetically unique","Diploid and genetically unique"],ans:2},
+{q:"Crossing over occurs in:",opts:["Mitosis only","Meiosis only","Both","Neither"],ans:1},
 {q:"How many times does DNA replicate in meiosis?",opts:["0","1","2","4"],ans:1},
-{q:"How many cell division steps occur in meiosis?",opts:["1","2","3","4"],ans:1},
-{q:"Mitosis occurs in:",opts:["Sex cells (gametes)","Somatic (body) cells","Only in bacteria","Only in plants"],ans:1},
-{q:"Meiosis occurs in:",opts:["All body cells","Reproductive organs (gonads)","Only in animals","Liver and skin cells"],ans:1},
-{q:"A human cell with 46 chromosomes: after mitosis, each daughter cell has:",opts:["23","46","92","12"],ans:1},
-{q:"A human cell with 46 chromosomes: after meiosis, each daughter cell has:",opts:["23","46","92","12"],ans:0},
-{q:"The PRIMARY purpose of mitosis is:",opts:["Sexual reproduction","Genetic diversity","Growth and repair","Reducing chromosome number"],ans:2},
-{q:"The PRIMARY purpose of meiosis is:",opts:["Growth and repair","Sexual reproduction and genetic diversity","DNA replication","Asexual reproduction"],ans:1},
-{q:"In which phase do chromosomes line up at the cell's equator?",opts:["Prophase","Metaphase","Anaphase","Telophase"],ans:1},
-{q:"In which phase do sister chromatids separate to opposite poles?",opts:["Prophase","Metaphase","Anaphase","Telophase"],ans:2},
-{q:"In which phase do chromosomes condense and the nuclear envelope dissolves?",opts:["Prophase","Metaphase","Anaphase","Telophase"],ans:0},
-{q:"In which phase does the nuclear envelope reform and the cell divide?",opts:["Prophase","Metaphase","Anaphase","Telophase"],ans:3},
+{q:"How many cell division steps in meiosis?",opts:["1","2","3","4"],ans:1},
+{q:"Mitosis occurs in:",opts:["Sex cells","Somatic (body) cells","Only in bacteria","Only in plants"],ans:1},
+{q:"Meiosis occurs in:",opts:["All body cells","Reproductive organs","Only animals","Liver and skin"],ans:1},
+{q:"Human cell (46 chr): after mitosis each daughter has:",opts:["23","46","92","12"],ans:1},
+{q:"Human cell (46 chr): after meiosis each daughter has:",opts:["23","46","92","12"],ans:0},
+{q:"Primary purpose of mitosis:",opts:["Sexual reproduction","Genetic diversity","Growth and repair","Reducing chromosome number"],ans:2},
+{q:"Primary purpose of meiosis:",opts:["Growth and repair","Sexual reproduction and diversity","DNA replication","Asexual reproduction"],ans:1},
+{q:"Chromosomes line up at equator in:",opts:["Prophase","Metaphase","Anaphase","Telophase"],ans:1},
+{q:"Sister chromatids separate in:",opts:["Prophase","Metaphase","Anaphase","Telophase"],ans:2},
+{q:"Chromosomes condense and nuclear envelope dissolves in:",opts:["Prophase","Metaphase","Anaphase","Telophase"],ans:0},
+{q:"Nuclear envelope reforms and cell divides in:",opts:["Prophase","Metaphase","Anaphase","Telophase"],ans:3},
 {q:"Meiosis I separates:",opts:["Sister chromatids","Homologous chromosomes","DNA strands","Nuclear membranes"],ans:1},
-{q:"Meiosis II is most similar to:",opts:["DNA replication","Meiosis I","Mitosis","Interphase"],ans:2},
+{q:"Meiosis II most resembles:",opts:["DNA replication","Meiosis I","Mitosis","Interphase"],ans:2},
 {q:"Homologous chromosomes pair up during:",opts:["Mitosis prophase","Meiosis I prophase","Meiosis II prophase","Cytokinesis"],ans:1}
-]
-},
-{
-id:4,title:"Genetics",subtitle:"Inheritance, Punnett squares, pedigrees, and patterns",color:"#C4883E",objs:6,
+]},
+{id:4,title:"Genetics",subtitle:"Inheritance, Punnett squares, pedigrees, and patterns",color:"#C4883E",objs:6,
 guide:[
 {title:"Key Genetics Vocabulary",parts:[
-{t:'tbl',headers:["Term","Definition","Example"],rows:[
-["Gene","Section of DNA coding for a specific trait","Eye color gene"],
-["Allele","Different versions of the same gene","B (brown) and b (blue)"],
-["Genotype","Organism's actual genetic makeup","BB, Bb, or bb"],
-["Phenotype","Physical expression of the genotype","Brown eyes or blue eyes"],
-["Dominant allele","Expressed whenever present; capital letter","B in Bb \u2192 brown eyes"],
-["Recessive allele","Only expressed when homozygous","b in bb \u2192 blue eyes"],
-["Homozygous dominant","Two dominant alleles","BB"],
-["Homozygous recessive","Two recessive alleles","bb"],
-["Heterozygous (hybrid)","One of each allele","Bb"],
-["Carrier","Heterozygous; shows dominant phenotype but carries recessive","Bb"]
+{t:'tbl',headers:["Term","Definition"],rows:[
+["Genotype","Organism's actual genetic makeup (BB, Bb, or bb)"],["Phenotype","Physical expression of the genotype"],
+["Dominant allele","Expressed whenever present; capital letter"],["Recessive allele","Only expressed when homozygous; lowercase"],
+["Homozygous","Two identical alleles (AA or aa)"],["Heterozygous","Two different alleles (Aa); carrier"],
+["Incomplete dominance","Heterozygote shows a BLEND of both traits"],["Codominance","Both alleles fully expressed simultaneously"]
 ]}
 ]},
-{title:"Monohybrid Punnett Squares",parts:[
-{t:'p',s:"A Punnett square shows all possible offspring genotypes from a cross. A monohybrid cross involves ONE trait and uses a 2x2 grid."},
-{t:'ul',items:["Aa \u00d7 Aa: gives 1 AA : 2 Aa : 1 aa (3 dominant phenotype : 1 recessive)","Aa \u00d7 aa: gives 1 Aa : 1 aa (50% dominant, 50% recessive phenotype)","AA \u00d7 Aa: gives 1 AA : 1 Aa (100% dominant phenotype)","Homozygous dominant \u00d7 homozygous recessive: all heterozygous dominant (Aa)"]}
+{title:"Punnett Squares and Patterns",parts:[
+{t:'ul',items:["Monohybrid cross: 1 trait, 2x2 grid","Dihybrid cross: 2 traits, 4x4 grid (16 boxes)","Aa x Aa: 1 AA:2 Aa:1 aa (75% dominant : 25% recessive)","AaBb x AaBb: 9:3:3:1 phenotype ratio"]},
+{t:'h4',s:"Incomplete Dominance vs. Codominance"},
+{t:'ul',items:["Incomplete dominance: BLEND. Red x White snapdragon = Pink (RW)","Codominance: BOTH fully expressed. Blood type AB (both A and B antigens)"]}
 ]},
-{title:"Dihybrid Crosses",parts:[
-{t:'p',s:"A dihybrid cross involves TWO traits simultaneously, using a 4x4 Punnett square (16 boxes)."},
-{t:'ul',items:["Each parent with two heterozygous traits (AaBb) makes 4 gamete types: AB, Ab, aB, ab","AaBb \u00d7 AaBb result: 9 A_B_ : 3 A_bb : 3 aaB_ : 1 aabb","9 show both dominant traits; 3 show only trait A dominant; 3 only B dominant; 1 shows both recessive"]}
-]},
-{title:"Incomplete Dominance and Codominance",parts:[
-{t:'h4',s:"Incomplete Dominance"},
-{t:'ul',items:["Neither allele is fully dominant; heterozygote shows a BLEND of both traits","Example: Red snapdragon (R\u1d3fR\u1d3f) \u00d7 White (R\u1d42R\u1d42) \u2192 Pink (R\u1d3fR\u1d42)","Phenotype is intermediate between both homozygous forms"]},
-{t:'h4',s:"Codominance"},
-{t:'ul',items:["BOTH alleles are fully and equally expressed in the heterozygote (no blending)","Example: Blood type AB (I\u1d2eI\u1d2e) \u2014 both A and B antigens are present on red blood cells","Roan cattle: red and white patches (not pink) in heterozygotes"]}
-]},
-{title:"Sex-Linked Traits",parts:[
-{t:'p',s:"Genes on the X chromosome are called X-linked (sex-linked). Males have one X and one Y chromosome."},
-{t:'ul',items:["Females (XX): need TWO recessive alleles to be affected","Males (XY): need only ONE recessive allele (their single X) to be affected","This is why X-linked recessive traits are more common in males","Examples: red-green colorblindness, hemophilia"]},
-{t:'tbl',headers:["Genotype","Sex","Phenotype"],rows:[
-["X\u1d3f X\u1d3f","Female","Normal"],
-["X\u1d3f X\u207f","Female","Carrier (normal)"],
-["X\u207f X\u207f","Female","Affected"],
-["X\u1d3f Y","Male","Normal"],
-["X\u207f Y","Male","Affected"]
-]}
-]},
-{title:"Pedigree Charts",parts:[
-{t:'ul',items:["Circle = female; Square = male","Filled/shaded shape = affected individual","Half-filled circle = carrier female (for X-linked traits)","Horizontal line between circle and square = mating pair","Vertical line dropping down = offspring","Roman numerals (I, II, III) = generation numbers","Arabic numbers = individual IDs within a generation"]}
+{title:"Sex-Linked Traits and Pedigrees",parts:[
+{t:'ul',items:["X-linked: gene on X chromosome","Males (XY): need only ONE recessive allele to be affected","Females (XX): need TWO recessive alleles","Examples: colorblindness, hemophilia"]},
+{t:'ul',items:["Pedigree: circle = female, square = male, filled = affected","Half-filled circle = carrier female","Roman numerals = generations"]}
 ]},
 {title:"ABO Blood Types",parts:[
-{t:'p',s:"ABO blood type is controlled by three alleles (I\u1d2e, I\u1d2e, and i), making it an example of multiple alleles."},
-{t:'tbl',headers:["Blood Type","Possible Genotypes","Inheritance Pattern"],rows:[
-["Type A","I\u1d2eI\u1d2e or I\u1d2ei","I\u1d2e dominant over i"],
-["Type B","I\u1d2eI\u1d2e or I\u1d2ei","I\u1d2e dominant over i"],
-["Type AB","I\u1d2eI\u1d2e only","Codominance (both expressed)"],
-["Type O","ii only","Both alleles recessive"]
+{t:'tbl',headers:["Blood Type","Possible Genotypes","Pattern"],rows:[
+["Type A","I\u1d2eI\u1d2e or I\u1d2ei","Dominant over i"],["Type B","I\u1d2eI\u1d2e or I\u1d2ei","Dominant over i"],
+["Type AB","I\u1d2eI\u1d2e only","Codominance"],["Type O","ii only","Homozygous recessive"]
 ]}
 ]}
 ],
 practice:[
-{type:"mc",q:"In pea plants, tall (T) is dominant to short (t). TT \u00d7 tt will produce:",opts:["All tall offspring","All short offspring","50% tall, 50% short","25% tall, 75% short"],ans:0,expl:"TT \u00d7 tt produces all Tt offspring. Since T is dominant, ALL show the tall phenotype."},
-{type:"mc",q:"Ww \u00d7 Ww (W = wrinkled dominant, w = round recessive). What % show the round phenotype?",opts:["0%","25%","50%","75%"],ans:1,expl:"Ww \u00d7 Ww gives 1WW:2Ww:1ww. Only ww = round phenotype = 25%."},
-{type:"mc",q:"Colorblind female (X\u1e9c X\u1e9c) \u00d7 normal male (X\u1d3f Y). What fraction of SONS are colorblind?",opts:["0%","25%","50%","100%"],ans:3,expl:"All sons receive X\u1e9c from mom and Y from dad, giving X\u1e9c Y (colorblind). 100% of sons are colorblind."},
-{type:"mc",q:"A woman is blood type B (I\u1d2ei) and man is blood type B (I\u1d2ei). What blood types can children have?",opts:["A and O only","B and O only","A and B only","All four types"],ans:1,expl:"I\u1d2ei \u00d7 I\u1d2ei gives: I\u1d2eI\u1d2e (B), I\u1d2ei (B), I\u1d2ei (B), ii (O). Only B and O are possible."},
-{type:"mc",q:"In a pedigree chart, a filled circle represents:",opts:["An unaffected female","An affected female","An affected male","A carrier male"],ans:1,expl:"Circles = females; squares = males. Filled shapes indicate affected individuals."},
-{type:"mc",q:"A dihybrid Punnett square contains how many boxes?",opts:["4","8","16","32"],ans:2,expl:"Each parent of genotype AaBb makes 4 gamete types (AB, Ab, aB, ab). 4 \u00d7 4 = 16 boxes."},
-{type:"tf",q:"A heterozygous individual (Aa) always shows the recessive phenotype.",ans:false,expl:"FALSE. A heterozygous individual (Aa) shows the DOMINANT phenotype. The dominant allele masks the recessive one. Only aa shows the recessive phenotype."},
-{type:"tf",q:"In incomplete dominance, the heterozygote shows a blend of both parental phenotypes.",ans:true,expl:"TRUE. In incomplete dominance (e.g. red \u00d7 white = pink in snapdragons), neither allele fully dominates, so the heterozygote is intermediate."},
-{type:"tf",q:"X-linked recessive traits are more common in males than females.",ans:true,expl:"TRUE. Males (XY) have only one X; they need only one recessive allele to show the trait. Females (XX) need two copies."},
-{type:"sa",q:"Solve this cross: carrier female for hemophilia (X\u1d3f X\u02b0) \u00d7 normal male (X\u1d3f Y). What fraction of daughters are carriers? What fraction of sons have hemophilia?",ans:"X\u1d3fX\u02b0 \u00d7 X\u1d3fY \u2192 X\u1d3fX\u1d3f (normal female), X\u1d3fX\u02b0 (carrier female), X\u1d3fY (normal male), X\u02b0Y (hemophiliac male).<br><strong>1/2 of daughters are carriers. 1/2 of sons have hemophilia.</strong>"},
-{type:"sa",q:"Explain the difference between incomplete dominance and codominance with an example of each.",ans:"<strong>Incomplete dominance:</strong> the heterozygote shows a BLEND of both traits. Example: red (RR) \u00d7 white (WW) snapdragon \u2192 pink (RW).<br><strong>Codominance:</strong> BOTH alleles are fully expressed simultaneously. Example: I\u1d2eI\u1d2e = blood type AB (both A and B antigens present)."},
-{type:"sa",q:"A woman has blood type A and a man has blood type O. They have a child with blood type O. What is the woman's genotype? Explain.",ans:"The woman must be <strong>I\u1d2ei (heterozygous)</strong>. The man is ii. Their type-O child (ii) received one i from each parent. Since dad provides i, mom must also have an i allele \u2014 so she is I\u1d2ei, not I\u1d2eI\u1d2e."}
+{type:"mc",q:"TT x tt (T=tall dominant): offspring?",opts:["All tall","All short","50% tall, 50% short","25% tall, 75% short"],ans:0,expl:"TT x tt produces all Tt. Since T is dominant, ALL are tall."},
+{type:"mc",q:"Ww x Ww (W=wrinkled dominant, w=round). % showing round phenotype?",opts:["0%","25%","50%","75%"],ans:1,expl:"Ww x Ww gives 1WW:2Ww:1ww. Only ww = round = 25%."},
+{type:"mc",q:"Colorblind female (X\u1e9cX\u1e9c) x normal male (X\u1d3fY). % of SONS colorblind?",opts:["0%","25%","50%","100%"],ans:3,expl:"All sons get X\u1e9c from mom, Y from dad = X\u1e9cY (colorblind). 100%."},
+{type:"mc",q:"Woman type B (I\u1d2ei) x man type B (I\u1d2ei). Possible child blood types?",opts:["A and O only","B and O only","A and B only","All four"],ans:1,expl:"I\u1d2ei x I\u1d2ei: I\u1d2eI\u1d2e(B), I\u1d2ei(B), I\u1d2ei(B), ii(O). Only B and O possible."},
+{type:"mc",q:"Pedigree chart: a filled circle represents:",opts:["Unaffected female","Affected female","Affected male","Carrier male"],ans:1,expl:"Circles = females; squares = males. Filled = affected."},
+{type:"mc",q:"A dihybrid Punnett square contains how many boxes?",opts:["4","8","16","32"],ans:2,expl:"AaBb parent makes 4 gamete types. 4 x 4 = 16 boxes."},
+{type:"tf",q:"A heterozygous individual (Aa) always shows the recessive phenotype.",ans:false,expl:"FALSE. Aa shows the DOMINANT phenotype. Only aa shows recessive."},
+{type:"tf",q:"In incomplete dominance, the heterozygote shows a blend of both parental phenotypes.",ans:true,expl:"TRUE. Example: red x white = pink in snapdragons."},
+{type:"tf",q:"X-linked recessive traits are more common in males than females.",ans:true,expl:"TRUE. Males have only one X; they need just one recessive allele."},
+{type:"sa",q:"Carrier female for hemophilia (X\u1d3fX\u02b0) x normal male (X\u1d3fY). Fraction of carrier daughters? Fraction of affected sons?",ans:"Gives: X\u1d3fX\u1d3f, X\u1d3fX\u02b0, X\u1d3fY, X\u02b0Y.<br><strong>1/2 of daughters are carriers. 1/2 of sons are affected.</strong>"},
+{type:"sa",q:"Difference between incomplete dominance and codominance, with one example each.",ans:"<strong>Incomplete dominance:</strong> BLEND. Red x white snapdragon = pink.<br><strong>Codominance:</strong> BOTH fully expressed. Blood type AB shows both A and B antigens."},
+{type:"sa",q:"A woman (type A) and man (type O) have a type O child. What is the woman's genotype?",ans:"The woman must be <strong>I\u1d2ei</strong>. The type-O child (ii) received one i from each parent. Since dad is ii, mom must carry an i allele."}
 ],
 test:[
-{q:"A genotype of 'Bb' is:",opts:["Homozygous dominant","Homozygous recessive","Heterozygous","Codominant"],ans:2},
-{q:"The physical appearance based on an organism's genes is called:",opts:["Genotype","Phenotype","Allele","Locus"],ans:1},
-{q:"Ww \u00d7 Ww (W = wrinkled dominant): % showing ROUND phenotype:",opts:["0%","25%","50%","75%"],ans:1},
-{q:"Tall (T) dominant to short. Homozygous recessive \u00d7 hybrid plant. Probability of tall offspring:",opts:["0%","25%","50%","75%"],ans:2},
-{q:"In snapdragons, red \u00d7 white = pink. This is an example of:",opts:["Dominant-recessive","Codominance","Incomplete dominance","Sex linkage"],ans:2},
-{q:"Colorblind female (X\u1e9cX\u1e9c) \u00d7 normal male (X\u1d3fY). Probability of colorblind SONS:",opts:["0%","25%","50%","100%"],ans:3},
+{q:"Genotype 'Bb' is:",opts:["Homozygous dominant","Homozygous recessive","Heterozygous","Codominant"],ans:2},
+{q:"Physical appearance based on genes is:",opts:["Genotype","Phenotype","Allele","Locus"],ans:1},
+{q:"Ww x Ww (W=wrinkled dominant): % showing ROUND:",opts:["0%","25%","50%","75%"],ans:1},
+{q:"Homozygous recessive x hybrid plant (tall dominant). Probability of tall offspring:",opts:["0%","25%","50%","75%"],ans:2},
+{q:"Red x white = pink in snapdragons. This is:",opts:["Dominant-recessive","Codominance","Incomplete dominance","Sex linkage"],ans:2},
+{q:"Colorblind female (X\u1e9cX\u1e9c) x normal male (X\u1d3fY). Probability colorblind SONS:",opts:["0%","25%","50%","100%"],ans:3},
 {q:"Which genotype is heterozygous?",opts:["RR","rr","Rr","RRRR"],ans:2},
-{q:"Pedigree chart: a filled circle represents:",opts:["Unaffected female","Affected female","Affected male","Carrier male"],ans:1},
-{q:"AaBb \u00d7 AaBb: phenotype ratio is:",opts:["3:1","1:2:1","9:3:3:1","1:1:1:1"],ans:2},
+{q:"Pedigree: filled circle represents:",opts:["Unaffected female","Affected female","Affected male","Carrier male"],ans:1},
+{q:"AaBb x AaBb: phenotype ratio:",opts:["3:1","1:2:1","9:3:3:1","1:1:1:1"],ans:2},
 {q:"Blood type AB is an example of:",opts:["Dominant-recessive","Codominance","Incomplete dominance","Sex linkage"],ans:1},
-{q:"Blood type O has genotype:",opts:["I\u1d2eI\u1d2e","I\u1d2ei","I\u1d2eI\u1d2e","ii"],ans:3},
-{q:"I\u1d2ei \u00d7 I\u1d2ei: possible offspring blood types are:",opts:["A and O","B and O","A and B","All four types"],ans:1},
-{q:"Carrier female (X\u1d3fX\u02b0) \u00d7 normal male (X\u1d3fY). Fraction of SONS with hemophilia:",opts:["0","1/4 of all children","1/2 of sons","All sons"],ans:2},
-{q:"Pedigree chart: square symbol represents:",opts:["Female","Male","Carrier","Deceased"],ans:1},
-{q:"Incomplete dominance differs from codominance because:",opts:["Only dominant alleles expressed","Heterozygote shows a blend of traits","Both traits fully expressed","Only recessive alleles expressed"],ans:1},
-{q:"Both unaffected parents have an affected child with autosomal recessive trait. Parents are:",opts:["Homozygous dominant","Carriers (heterozygous)","Homozygous recessive","Sex-linked carriers"],ans:1},
-{q:"The law of segregation states that:",opts:["Different genes assort independently","Allele pairs separate during gamete formation","Dominant alleles always hide recessive","All offspring resemble parents"],ans:1},
-{q:"A test cross determines:",opts:["If a trait is sex-linked","The unknown genotype of a dominant phenotype individual","Chromosome number","If crossing over occurred"],ans:1},
-{q:"Cream-colored mice = heterozygous; yellow = homozygous dominant; white = homozygous recessive. This is:",opts:["Dominant-recessive","Sex-linked","Incomplete dominance","Codominance"],ans:2},
-{q:"AaBb \u00d7 AaBb: fraction showing BOTH dominant phenotypes (A_B_) is:",opts:["1/16","3/16","6/16","9/16"],ans:3}
-]
-},
-{
-id:5,title:"Protein Synthesis and Evolution",subtitle:"DNA, RNA, gene expression, mutations, and natural selection",color:"#B85450",objs:20,
+{q:"Blood type O has genotype:",opts:["I\u1d2eI\u1d2e","I\u1d2eI\u1d2e","I\u1d2ei","ii"],ans:3},
+{q:"I\u1d2ei x I\u1d2ei: possible offspring blood types:",opts:["A and O","B and O","A and B","All four"],ans:1},
+{q:"Carrier female (X\u1d3fX\u02b0) x normal male (X\u1d3fY). Fraction of SONS with hemophilia:",opts:["0","1/4 of all","1/2 of sons","All sons"],ans:2},
+{q:"Square in pedigree chart represents:",opts:["Female","Male","Carrier","Deceased"],ans:1},
+{q:"Incomplete dominance differs from codominance because:",opts:["Only dominant expressed","Heterozygote shows blend","Both traits fully expressed","Only recessive expressed"],ans:1},
+{q:"Both unaffected parents have an affected child (autosomal recessive). Parents are:",opts:["Homozygous dominant","Carriers (heterozygous)","Homozygous recessive","Sex-linked carriers"],ans:1},
+{q:"Law of segregation states:",opts:["Different genes assort independently","Allele pairs separate during gamete formation","Dominant alleles hide recessive","All offspring resemble parents"],ans:1},
+{q:"A test cross determines:",opts:["If trait is sex-linked","Unknown genotype of dominant phenotype individual","Chromosome number","If crossing over occurred"],ans:1},
+{q:"Cream mice = heterozygous; yellow = homozygous dominant; white = homozygous recessive. This is:",opts:["Dominant-recessive","Sex-linked","Incomplete dominance","Codominance"],ans:2},
+{q:"AaBb x AaBb: fraction showing BOTH dominant phenotypes:",opts:["1/16","3/16","6/16","9/16"],ans:3}
+]},
+{id:5,title:"Protein Synthesis and Evolution",subtitle:"DNA, RNA, gene expression, mutations, and natural selection",color:"#B85450",objs:20,
 guide:[
-{title:"DNA vs. RNA: Three Key Differences",parts:[
+{title:"DNA vs. RNA and Types of RNA",parts:[
 {t:'tbl',headers:["Feature","DNA","RNA"],rows:[
-["Sugar","Deoxyribose","Ribose"],
-["Bases","A, T, G, C","A, U (uracil), G, C"],
-["Strands","Double-stranded (helix)","Single-stranded"],
-["Location","Mainly in nucleus","Nucleus (made) \u2192 cytoplasm (used)"],
-["Stability","More stable; long-term storage","Less stable; temporary working copy"]
+["Sugar","Deoxyribose","Ribose"],["Bases","A, T, G, C","A, U (uracil), G, C"],
+["Strands","Double-stranded","Single-stranded"],["Location","Nucleus","Nucleus (made) + cytoplasm (used)"]
 ]},
-{t:'ul',items:["KEY: RNA uses URACIL instead of thymine","DNA base pairs: A-T and G-C","DNA \u2192 mRNA base pairs: A\u2192U, T\u2192A, G\u2192C, C\u2192G"]}
-]},
-{title:"Three Types of RNA",parts:[
-{t:'tbl',headers:["Type","Full Name","Function"],rows:[
-["mRNA","Messenger RNA","Carries genetic code (codons) from DNA in nucleus to ribosome in cytoplasm"],
-["tRNA","Transfer RNA","Carries specific amino acids to ribosome; has anticodon complementary to mRNA codon"],
-["rRNA","Ribosomal RNA","Structural component of ribosomes; most abundant RNA type in cell"]
+{t:'tbl',headers:["Type","Function"],rows:[
+["mRNA (messenger)","Carries genetic code (codons) from DNA to ribosome"],
+["tRNA (transfer)","Carries amino acids to ribosome; has anticodon"],
+["rRNA (ribosomal)","Structural component of ribosomes"]
 ]}
 ]},
-{title:"DNA Replication",parts:[
-{t:'p',s:"DNA replication copies the entire genome before cell division. It is semi-conservative: each new molecule has one original strand and one new strand."},
-{t:'ul',items:["Occurs during S phase of interphase (before mitosis or meiosis)","Helicase enzyme unwinds and unzips the double helix","Each original strand serves as a template","DNA polymerase adds complementary nucleotides to each template","Base pairing: A pairs with T; G pairs with C","Result: 2 identical DNA double helices"]}
-]},
-{title:"Transcription: DNA \u2192 mRNA",parts:[
-{t:'p',s:"Transcription copies DNA information into an mRNA strand. It occurs in the nucleus."},
-{t:'ul',items:["RNA polymerase unzips DNA and reads the template strand (3\u2019 to 5\u2019)","Builds mRNA strand (5\u2019 to 3\u2019) with complementary bases","DNA to mRNA base pairing: A\u2192U, T\u2192A, G\u2192C, C\u2192G","The mRNA is a complementary copy of the coding strand","mRNA exits nucleus through nuclear pores to reach ribosomes"]}
-]},
-{title:"Translation: mRNA \u2192 Protein",parts:[
-{t:'p',s:"Translation reads the mRNA code and assembles a chain of amino acids. It occurs at ribosomes in the cytoplasm."},
-{t:'ul',items:["A codon = 3 nucleotides on mRNA; each codon codes for one amino acid","Ribosome reads mRNA codons 5\u2019 to 3\u2019","tRNA anticodon pairs with mRNA codon and delivers its amino acid","Start codon: AUG (codes for methionine; always the first amino acid)","Stop codons: UAA, UAG, UGA (signal end; no amino acid added)","Amino acids are linked by peptide bonds to form a polypeptide (protein)"]}
+{title:"Transcription and Translation",parts:[
+{t:'ul',items:["Transcription: DNA \u2192 mRNA. Occurs in NUCLEUS. RNA polymerase reads DNA template strand.","Translation: mRNA \u2192 protein. Occurs at RIBOSOMES in cytoplasm.","Codon: 3 nucleotides on mRNA; codes for one amino acid","Anticodon: 3 nucleotides on tRNA complementary to mRNA codon","Start codon: AUG (methionine; always first)","Stop codons: UAA, UAG, UGA (ends translation; no amino acid added)","DNA to mRNA: A\u2192U, T\u2192A, G\u2192C, C\u2192G"]}
 ]},
 {title:"Mutations",parts:[
-{t:'ul',items:["Mutation = any change in the DNA nucleotide sequence","Point mutation: one base changed (substitution)","Insertion: one or more bases added","Deletion: one or more bases removed","Frameshift mutation: insertion or deletion shifts the entire reading frame"]},
-{t:'h4',s:"Heritability"},
-{t:'ul',items:["Germline mutations: in sex cells (sperm/egg); CAN be passed to offspring","Somatic mutations: in body cells; CANNOT be passed to offspring"]},
-{t:'h4',s:"Sickle Cell Disease"},
-{t:'ul',items:["A point mutation in the hemoglobin gene changes one codon","One amino acid (glutamic acid \u2192 valine) causes hemoglobin to misfold","Misfolded hemoglobin makes red blood cells sickle-shaped","Sickle cells cannot carry oxygen efficiently and can block blood vessels"]}
+{t:'ul',items:["Mutation = change in DNA nucleotide sequence","Germline (sex cells): CAN be passed to offspring","Somatic (body cells): CANNOT be passed to offspring","Sickle cell disease: point mutation changes one amino acid in hemoglobin (glutamic acid \u2192 valine) \u2192 misfolded hemoglobin \u2192 sickle-shaped RBCs"]}
 ]},
-{title:"Theory of Evolution",parts:[
-{t:'p',s:"Evolution is the change in heritable traits in a population over time. Multiple lines of evidence support the theory."},
-{t:'ul',items:["Fossil record: shows progression of life forms over time; transition fossils link species","Comparative anatomy: homologous structures (same bones in different organisms) indicate common ancestry","DNA comparison: more similar DNA = more closely related organisms","Biogeography: geographic distribution of species matches evolutionary history","Embryology: similar developmental stages across vertebrates"]}
+{title:"Evolution and Natural Selection",parts:[
+{t:'ul',items:["Evolution = change in heritable traits in a population over time","Evidence: fossil record, homologous structures, DNA comparison, biogeography"]},
+{t:'h4',s:"Darwin's 4 Premises"},
+{t:'ul',items:["1. Overproduction: more offspring than can survive","2. Variation: individuals have heritable differences","3. Heritable variation: differences pass to offspring","4. Differential survival: favorable traits = more reproduction"]}
 ]},
-{title:"Charles Darwin and Natural Selection",parts:[
-{t:'p',s:"Charles Darwin (1809\u20131882) developed natural selection from his observations on the HMS Beagle voyage, especially Gal\u00e1pagos finches."},
-{t:'h4',s:"4 Premises of Natural Selection"},
-{t:'ul',items:["1. Overproduction: organisms produce more offspring than can survive","2. Variation: individuals in a population show heritable variation in traits","3. Heritable variation: variant traits can be passed to offspring","4. Differential survival and reproduction: individuals with favorable traits survive and reproduce more"]},
-{t:'ul',items:["Over many generations, favorable traits become more common in the population","This gradual change can eventually lead to new species"]}
-]},
-{title:"Speciation and the 5 Forces of Evolution",parts:[
-{t:'h4',s:"Types of Speciation"},
-{t:'ul',items:["Allopatric speciation: geographic barrier (mountain, river) separates a population \u2192 groups evolve independently \u2192 become reproductively isolated \u2192 new species","Sympatric speciation: new species form in the SAME geographic area (less common; requires strong selection)","Reproductive isolation is the key requirement: populations can no longer interbreed"]},
-{t:'h4',s:"5 Forces of Evolution"},
-{t:'ul',items:["1. Mutation: introduces new alleles into a population","2. Gene flow: movement of alleles between populations (immigration/emigration)","3. Genetic drift: random changes in allele frequencies; most impactful in small populations","4. Natural selection: non-random survival and reproduction based on fitness","5. Non-random mating: mate selection based on specific traits (sexual selection)"]}
+{title:"Speciation and 5 Forces of Evolution",parts:[
+{t:'ul',items:["Allopatric: geographic barrier separates population \u2192 new species. MORE COMMON.","Sympatric: new species in same area. LESS COMMON.","Reproductive isolation: required for speciation"]},
+{t:'ul',items:["5 Forces: 1. Mutation, 2. Gene flow, 3. Genetic drift, 4. Natural selection, 5. Non-random mating"]}
 ]}
 ],
 practice:[
-{type:"mc",q:"A DNA template strand reads 3\u2019-TACGCCAT-5\u2019. What is the mRNA sequence?",opts:["ATGCGGTA","AUGCGGUA","TACGCCAT","UACGCCAU"],ans:1,expl:"DNA to mRNA: T\u2192A, A\u2192U, C\u2192G, G\u2192C. Template 3\u2019-TACGCCAT-5\u2019 \u2192 mRNA 5\u2019-AUGCGGUA-3\u2019."},
-{type:"mc",q:"The start codon in mRNA is:",opts:["UAA","UGA","AUG","UAG"],ans:2,expl:"AUG is the universal start codon, coding for methionine. The ribosome always begins translation at AUG."},
-{type:"mc",q:"A mutation in a skin cell of a parent will:",opts:["Be passed to all offspring","Be passed to 50% of offspring","Not be passed to offspring","Always cause cancer"],ans:2,expl:"Somatic mutations (in body cells) affect only that individual. They cannot be inherited because they do not occur in sex cells."},
-{type:"mc",q:"Allopatric speciation requires a:",opts:["Mutation in both populations","Geographic barrier separating populations","Common food source","Shared habitat"],ans:1,expl:"Allopatric speciation is driven by geographic isolation (mountains, oceans, rivers) that prevents gene flow between populations."},
-{type:"mc",q:"Which is NOT considered evidence for evolution?",opts:["Fossil record","Homologous structures in different species","Similar DNA sequences","All individuals being genetically identical"],ans:3,expl:"Genetic uniformity would eliminate the variation natural selection needs. Evidence FOR evolution includes fossils, comparative anatomy, and DNA similarities."},
-{type:"mc",q:"Darwin's theory of natural selection does NOT require:",opts:["Heritable variation in traits","Overproduction of offspring","Inheritance of acquired traits (Lamarck)","Differential survival"],ans:2,expl:"Lamarck's idea that acquired traits are inherited is incorrect. Darwin requires heritable variation, overproduction, and differential survival/reproduction."},
-{type:"tf",q:"Transcription produces a protein directly from DNA.",ans:false,expl:"FALSE. Transcription produces mRNA from DNA. Translation (a separate process at the ribosome) produces protein from mRNA."},
-{type:"tf",q:"tRNA has an anticodon that is complementary to an mRNA codon.",ans:true,expl:"TRUE. Each tRNA carries a specific amino acid and has a 3-nucleotide anticodon that base-pairs with the corresponding mRNA codon at the ribosome."},
-{type:"tf",q:"All mutations in DNA are harmful to an organism.",ans:false,expl:"FALSE. Mutations can be neutral (no effect), harmful (reduce fitness), or beneficial (increase fitness). Beneficial mutations are the raw material for evolution."},
-{type:"sa",q:"Explain the central dogma of molecular biology (DNA \u2192 RNA \u2192 Protein). Briefly describe what happens at each step.",ans:"<strong>Transcription</strong> (nucleus): RNA polymerase reads the DNA template strand and builds a complementary mRNA strand.<br><strong>Translation</strong> (ribosome): the ribosome reads mRNA codons; tRNA brings matching amino acids; peptide bonds link them into a polypeptide (protein)."},
-{type:"sa",q:"Explain Darwin's 4 premises of natural selection and how they lead to evolution.",ans:"<strong>1. Overproduction:</strong> more offspring born than can survive. <strong>2. Variation:</strong> individuals have heritable differences. <strong>3. Heritable variation:</strong> those differences pass to offspring. <strong>4. Differential survival:</strong> individuals with favorable traits reproduce more. Over generations, favorable alleles become more common \u2014 the population evolves."},
-{type:"sa",q:"What is sickle cell disease? Explain its molecular cause.",ans:"Sickle cell disease is a blood disorder caused by a <strong>single point mutation</strong> in the hemoglobin gene. The mutation changes one codon, substituting valine for glutamic acid. This amino acid change causes hemoglobin to misfold, making red blood cells sickle-shaped \u2014 impairing oxygen transport and blocking blood vessels."}
+{type:"mc",q:"DNA template 3'-TACGCCAT-5'. mRNA sequence?",opts:["ATGCGGTA","AUGCGGUA","TACGCCAT","UACGCCAU"],ans:1,expl:"T\u2192A, A\u2192U, C\u2192G, G\u2192C. Template 3'-TACGCCAT-5' \u2192 mRNA 5'-AUGCGGUA-3'."},
+{type:"mc",q:"The start codon in mRNA is:",opts:["UAA","UGA","AUG","UAG"],ans:2,expl:"AUG is the universal start codon, coding for methionine."},
+{type:"mc",q:"A mutation in a parent's skin cell will:",opts:["Pass to all offspring","Pass to 50% of offspring","Not pass to offspring","Always cause cancer"],ans:2,expl:"Somatic mutations cannot be inherited."},
+{type:"mc",q:"Allopatric speciation requires a:",opts:["Mutation in both populations","Geographic barrier separating populations","Common food source","Shared habitat"],ans:1,expl:"Allopatric speciation is driven by geographic isolation."},
+{type:"mc",q:"Which is NOT evidence for evolution?",opts:["Fossil record","Homologous structures","Similar DNA sequences","All individuals genetically identical"],ans:3,expl:"Genetic uniformity eliminates the variation natural selection needs."},
+{type:"mc",q:"Darwin's natural selection does NOT require:",opts:["Heritable variation","Overproduction","Inheritance of acquired traits","Differential survival"],ans:2,expl:"Lamarck's idea of inherited acquired traits is incorrect."},
+{type:"tf",q:"Transcription produces a protein directly from DNA.",ans:false,expl:"FALSE. Transcription produces mRNA. Translation produces protein."},
+{type:"tf",q:"tRNA has an anticodon complementary to an mRNA codon.",ans:true,expl:"TRUE. Each tRNA carries an amino acid and an anticodon that pairs with the mRNA codon."},
+{type:"tf",q:"All mutations in DNA are harmful to an organism.",ans:false,expl:"FALSE. Mutations can be neutral, harmful, or beneficial."},
+{type:"sa",q:"Explain the central dogma (DNA to RNA to Protein). What happens at each step?",ans:"<strong>Transcription</strong> (nucleus): RNA polymerase reads DNA template and builds complementary mRNA.<br><strong>Translation</strong> (ribosome): ribosome reads mRNA codons; tRNA delivers amino acids; they link into a protein."},
+{type:"sa",q:"Explain Darwin's 4 premises and how they lead to evolution.",ans:"<strong>1. Overproduction:</strong> more offspring born than survive. <strong>2. Variation:</strong> heritable differences exist. <strong>3. Heritable variation:</strong> differences pass to offspring. <strong>4. Differential survival:</strong> favorable traits = more reproduction. Over generations, favorable alleles become more common."},
+{type:"sa",q:"What is sickle cell disease? Explain its molecular cause.",ans:"A blood disorder caused by a <strong>point mutation</strong> in the hemoglobin gene. One base change substitutes valine for glutamic acid, causing hemoglobin to misfold. Red blood cells become sickle-shaped, impairing O\u2082 transport."}
 ],
 test:[
 {q:"RNA uses __ instead of thymine.",opts:["Adenine","Guanine","Uracil","Cytosine"],ans:2},
 {q:"RNA differs from DNA in that RNA is:",opts:["Double-stranded","Single-stranded","Circular","Made of deoxyribose"],ans:1},
-{q:"Which RNA type carries the genetic message from DNA to the ribosome?",opts:["tRNA","rRNA","mRNA","dRNA"],ans:2},
-{q:"Which RNA type carries specific amino acids to the ribosome?",opts:["mRNA","rRNA","tRNA","cRNA"],ans:2},
+{q:"Which RNA carries the message from DNA to ribosome?",opts:["tRNA","rRNA","mRNA","dRNA"],ans:2},
+{q:"Which RNA carries amino acids to the ribosome?",opts:["mRNA","rRNA","tRNA","cRNA"],ans:2},
 {q:"Where does transcription take place?",opts:["Ribosome","Nucleus","Cytoplasm","Cell membrane"],ans:1},
 {q:"Transcription produces:",opts:["DNA from RNA","Protein from mRNA","mRNA from DNA","tRNA from DNA"],ans:2},
-{q:"Translation is the process of:",opts:["DNA \u2192 mRNA","mRNA \u2192 protein","DNA \u2192 DNA","RNA \u2192 DNA"],ans:1},
+{q:"Translation is:",opts:["DNA to mRNA","mRNA to protein","DNA to DNA","RNA to DNA"],ans:1},
 {q:"A codon is:",opts:["3 nucleotides on tRNA","3 nucleotides on mRNA","A single amino acid","A type of RNA"],ans:1},
-{q:"The start codon AUG codes for which amino acid?",opts:["Leucine","Glycine","Methionine","Proline"],ans:2},
-{q:"Which of these is a stop codon?",opts:["AUG","UAA","GGG","CCC"],ans:1},
+{q:"Start codon AUG codes for:",opts:["Leucine","Glycine","Methionine","Proline"],ans:2},
+{q:"Which is a stop codon?",opts:["AUG","UAA","GGG","CCC"],ans:1},
 {q:"In DNA, adenine always pairs with:",opts:["Guanine","Cytosine","Adenine","Thymine"],ans:3},
-{q:"A mutation in a parent's skin cell:",opts:["Will always be passed to offspring","Cannot be passed to offspring","Passes to 50% of offspring","Always causes cancer"],ans:1},
-{q:"Sickle cell disease is caused by:",opts:["Deletion of the hemoglobin gene","A point mutation changing one amino acid in hemoglobin","An extra chromosome","A viral infection"],ans:1},
-{q:"Darwin's natural selection requires:",opts:["All individuals are identical","Variation, heritability, and differential survival","Traits acquired during life are inherited","Perfect environmental stability"],ans:1},
-{q:"Which is evidence for evolution?",opts:["The fossil record","Creationist accounts","Individuals' lifetimes","Theory of spontaneous generation"],ans:0},
+{q:"Mutation in parent's skin cell:",opts:["Always passed to offspring","Cannot be passed to offspring","Passes to 50% of offspring","Always causes cancer"],ans:1},
+{q:"Sickle cell disease is caused by:",opts:["Deletion of hemoglobin gene","A point mutation changing one amino acid in hemoglobin","An extra chromosome","A viral infection"],ans:1},
+{q:"Darwin's natural selection requires:",opts:["All individuals identical","Variation, heritability, and differential survival","Traits acquired during life are inherited","Perfect environmental stability"],ans:1},
+{q:"Which is evidence for evolution?",opts:["The fossil record","Creationist accounts","Individuals' lifetimes","Spontaneous generation"],ans:0},
 {q:"Allopatric speciation occurs when:",opts:["Two populations in same area diverge","Geographic barrier separates a population","Genetic drift in large populations","Hybridization between species"],ans:1},
-{q:"Why is sympatric speciation less common than allopatric?",opts:["Requires more mutations","Without isolation, gene flow prevents divergence","Always takes longer","Requires only sexual reproduction"],ans:1},
-{q:"The 5 forces of evolution include mutation, gene flow, genetic drift, natural selection, and:",opts:["Random mating","Natural variation","Non-random mating","Speciation"],ans:2},
-{q:"Reproductive isolation is important to speciation because:",opts:["It prevents DNA errors","It prevents interbreeding, allowing populations to diverge","It speeds up mutations","It increases gene flow"],ans:1},
+{q:"Why is sympatric speciation less common than allopatric?",opts:["Requires more mutations","Gene flow prevents divergence without isolation","Always takes longer","Only requires sexual reproduction"],ans:1},
+{q:"5 forces of evolution: mutation, gene flow, genetic drift, natural selection, and:",opts:["Random mating","Natural variation","Non-random mating","Speciation"],ans:2},
+{q:"Reproductive isolation is important because:",opts:["Prevents DNA errors","Prevents interbreeding, allowing populations to diverge","Speeds up mutations","Increases gene flow"],ans:1},
 {q:"The genetic code is:",opts:["Different in every species","Nearly universal across all organisms","Found only in eukaryotes","Always 4 nucleotides per codon"],ans:1}
-]
-}
+]}
 ];
 
-const S={view:'dashboard',uid:1,tab:'guide',prac:{},test:{ans:new Array(20).fill(-1),cur:0,left:1200,timer:null,done:false}};
+const FC={
+1:[
+{f:"Osmosis",b:"Diffusion of WATER across a selectively permeable membrane, from high water concentration to low water concentration. Passive (no energy needed)."},
+{f:"Hypotonic solution",b:"FEWER solutes than the cell (more water). Water enters the cell by osmosis. Cell SWELLS."},
+{f:"Hypertonic solution",b:"MORE solutes than the cell (less water). Water leaves the cell by osmosis. Cell SHRINKS."},
+{f:"Isotonic solution",b:"EQUAL solute concentration to the cell. No net water movement."},
+{f:"Cell theory (3 parts)",b:"1) All living things are made of cells.\n2) The cell is the basic unit of life.\n3) All cells come from pre-existing cells."},
+{f:"Prokaryote",b:"Cell WITHOUT a membrane-bound nucleus or organelles. DNA floats in cytoplasm. Examples: bacteria, archaea. Appeared ~3.5 bya."},
+{f:"Eukaryote",b:"Cell WITH a membrane-bound nucleus and membrane-bound organelles. Examples: plants, animals, fungi, protists. Appeared ~2 bya."},
+{f:"Mitochondria",b:"Organelle that produces ATP through cellular respiration. The 'powerhouse' of the cell. Found in all eukaryotes."},
+{f:"Chloroplast",b:"Organelle that performs photosynthesis. Contains chlorophyll. Found ONLY in plant cells and algae."},
+{f:"Selectively permeable",b:"Property of the cell membrane: allows only CERTAIN substances to pass through. Large or charged molecules are blocked."},
+{f:"Phospholipid bilayer",b:"Double-layer structure of the cell membrane. Hydrophilic (water-loving) heads face outward; hydrophobic tails face inward."},
+{f:"Endosymbiosis theory",b:"Mitochondria and chloroplasts were once free-living prokaryotes engulfed by larger cells. Evidence: own DNA, own ribosomes, reproduce by binary fission."},
+{f:"SA:V ratio (cube)",b:"Surface Area = 6s², Volume = s³. Ratio = SA ÷ V.\nExample: 2 cm cube: SA=24, V=8, ratio = 3:1.\nSmaller cells have HIGHER SA:V ratios."},
+{f:"Robert Hooke",b:"Named cells 'cells' in 1665 after observing cork under a microscope."},
+{f:"Rudolf Virchow",b:"Stated 'all cells come from pre-existing cells' (1855). Third principle of cell theory."},
+{f:"Total magnification",b:"Eyepiece power x Objective lens power.\nExample: 10x eyepiece x 40x objective = 400x total magnification."},
+{f:"Staphylo- prefix",b:"Grape-like CLUSTER arrangement of bacteria. Example: Staphylococcus aureus."},
+{f:"Strepto- prefix",b:"CHAIN arrangement of bacteria. Example: Streptococcus pyogenes."},
+{f:"Gram-positive vs. Gram-negative",b:"Gram+: thick peptidoglycan wall; stains PURPLE; more antibiotic-susceptible.\nGram-: thin wall + outer lipopolysaccharide; stains PINK/RED; more resistant."},
+{f:"Diffusion",b:"Movement of molecules from HIGH to LOW concentration. Passive transport (no energy). Continues until equilibrium."}
+],
+2:[
+{f:"Photosynthesis equation",b:"6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + O₂\nOccurs in CHLOROPLASTS."},
+{f:"Cellular respiration equation",b:"C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + 38 ATP\nOccurs in MITOCHONDRIA."},
+{f:"Light reactions",b:"Occur in THYLAKOID MEMBRANES.\nReactants: sunlight, water, ADP, NADP+.\nProducts: ATP, NADPH, and O₂ (from photolysis of water)."},
+{f:"Dark reactions (Calvin Cycle)",b:"Occur in the STROMA.\nReactants: CO₂, ATP, NADPH.\nProducts: glucose, ADP, NADP+ (recycled back to light reactions)."},
+{f:"ATP",b:"Adenosine Triphosphate. The cell's primary energy currency.\n3 phosphate groups, 2 high-energy bonds.\nATP → ADP releases energy for cell work."},
+{f:"ADP vs AMP",b:"ADP (Adenosine Diphosphate): 2 phosphates, 1 high-energy bond.\nAMP (Adenosine Monophosphate): 1 phosphate, 0 high-energy bonds."},
+{f:"Glycolysis",b:"Breakdown of glucose into 2 pyruvic acid molecules.\nOccurs in CYTOPLASM. Anaerobic (no O₂ needed).\nProduces 2 ATP."},
+{f:"Krebs Cycle",b:"Aerobic stage in MITOCHONDRIA MATRIX.\nRequires O₂. Products: CO₂, NADH, FADH₂, 2 ATP per glucose."},
+{f:"Electron Transport Chain",b:"Final aerobic stage on INNER MITOCHONDRIAL MEMBRANE.\nRequires O₂. Produces ~34 ATP and water.\nMost ATP from aerobic respiration comes here."},
+{f:"Lactic acid fermentation",b:"Anaerobic process in muscle cells and bacteria.\nProducts: lactic acid + 2 ATP.\nNo CO₂ produced. Causes muscle fatigue."},
+{f:"Alcohol fermentation",b:"Anaerobic process in YEAST.\nProducts: ethanol + CO₂ + 2 ATP.\nUsed in brewing and baking."},
+{f:"Chlorophyll",b:"Green pigment inside chloroplasts.\nAbsorbs RED and BLUE light; reflects green.\nDrives the light reactions."},
+{f:"Stomata",b:"Small pores on leaf surfaces.\nAllow gas exchange: CO₂ IN, O₂ OUT during photosynthesis.\nOpened/closed by guard cells."},
+{f:"Guard cells",b:"Cells that surround each stoma.\nControl opening/closing of stomata.\nClose during drought to prevent water loss."},
+{f:"Van Helmont's experiment",b:"Willow tree grew ~74 kg; soil lost only 0.06 kg.\nConcluded (incorrectly) mass came from water.\nMost plant mass actually comes from CO₂."},
+{f:"Carbon cycle: adds to atmosphere",b:"Cellular respiration, combustion, and decomposition all release CO₂."},
+{f:"Carbon cycle: removes from atmosphere",b:"Photosynthesis removes CO₂ (carbon fixation). Dissolution moves it to hydrosphere."},
+{f:"Photolysis",b:"Splitting of water molecules by light during LIGHT REACTIONS.\nReleases O₂ as a byproduct. Source of the O₂ we breathe."},
+{f:"Total ATP from aerobic respiration",b:"Glycolysis: 2 ATP.\nKrebs: 2 ATP.\nETC: ~34 ATP.\nTOTAL: ~38 ATP per glucose molecule."},
+{f:"Why doesn't O₂ affect photosynthesis?",b:"O₂ is NOT a reactant in photosynthesis. Blocking O₂ from a plant will NOT affect photosynthesis rate. O₂ is only needed for cellular respiration."}
+],
+3:[
+{f:"Mitosis",b:"Cell division producing 2 genetically IDENTICAL diploid cells.\nPurpose: growth, repair, replacement of somatic (body) cells."},
+{f:"Meiosis",b:"Cell division producing 4 genetically UNIQUE haploid cells.\nPurpose: sexual reproduction. Occurs in gonads."},
+{f:"Diploid (2n)",b:"Cell with TWO complete sets of chromosomes (one from each parent). All normal body cells are diploid."},
+{f:"Haploid (n)",b:"Cell with only ONE set of chromosomes.\nGametes (sperm and egg) are haploid. Formed by meiosis."},
+{f:"Crossing over",b:"Exchange of DNA segments between HOMOLOGOUS chromosomes during PROPHASE I of meiosis.\nCreates new allele combinations. KEY source of genetic variation."},
+{f:"Prophase",b:"Phase 1 of mitosis: chromosomes CONDENSE. Nuclear envelope DISSOLVES. Spindle fibers FORM."},
+{f:"Metaphase",b:"Phase 2 of mitosis: chromosomes LINE UP at the cell EQUATOR (metaphase plate)."},
+{f:"Anaphase",b:"Phase 3 of mitosis: SISTER CHROMATIDS SEPARATE and move to OPPOSITE POLES."},
+{f:"Telophase",b:"Phase 4 of mitosis: nuclear envelope REFORMS. Chromosomes DECONDENSE. Cytokinesis divides cytoplasm."},
+{f:"Meiosis I vs. Meiosis II",b:"Meiosis I: separates HOMOLOGOUS CHROMOSOMES (diploid → haploid). Crossing over in Prophase I.\nMeiosis II: separates SISTER CHROMATIDS (like mitosis). No DNA replication between."},
+{f:"Why is meiosis genetically diverse?",b:"1. Crossing over in Prophase I exchanges DNA between homologs.\n2. Independent assortment during Metaphase I randomizes chromosome distribution.\nResult: each gamete is genetically unique."},
+{f:"DNA replication in meiosis",b:"DNA replicates only ONCE (before Meiosis I) even though there are TWO rounds of division.\nResult: 4 haploid cells from 1 diploid parent cell."},
+{f:"Sister chromatids",b:"Two IDENTICAL copies of a chromosome joined at the centromere after DNA replication.\nThey separate during anaphase."},
+{f:"Homologous chromosomes",b:"Chromosome PAIRS (one from each parent) carrying genes for the same traits.\nPair up during Meiosis I (not in mitosis)."},
+{f:"Interphase",b:"Stage BEFORE cell division. G1: cell grows. S phase: DNA REPLICATES. G2: cell prepares for division."}
+],
+4:[
+{f:"Genotype vs. Phenotype",b:"Genotype: actual GENETIC MAKEUP (BB, Bb, bb).\nPhenotype: physical EXPRESSION of the genotype (e.g. brown eyes)."},
+{f:"Homozygous vs. Heterozygous",b:"Homozygous: two IDENTICAL alleles (AA or aa).\nHeterozygous: two DIFFERENT alleles (Aa). Also called carrier or hybrid."},
+{f:"Dominant vs. Recessive allele",b:"Dominant: expressed WHENEVER present; capital letter.\nRecessive: only expressed when HOMOZYGOUS (aa); lowercase."},
+{f:"Incomplete dominance",b:"NEITHER allele is fully dominant. Heterozygote shows a BLEND.\nExample: red (RR) x white (WW) snapdragon = PINK (RW)."},
+{f:"Codominance",b:"BOTH alleles FULLY expressed in heterozygote (no blending).\nExample: blood type AB (both A and B antigens present on RBCs)."},
+{f:"Sex-linked (X-linked) trait",b:"Gene on the X chromosome.\nMales (XY): need only ONE recessive allele to show the trait.\nFemales (XX): need TWO copies.\nExamples: colorblindness, hemophilia."},
+{f:"Pedigree chart symbols",b:"Circle = female. Square = male.\nFilled/shaded = AFFECTED.\nHalf-filled circle = CARRIER female.\nHorizontal line = mating pair."},
+{f:"ABO blood type genotypes",b:"Type A: IᴬIᴬ or Iᴬi.\nType B: IᴮIᴮ or Iᴮi.\nType AB: IᴬIᴮ (codominant).\nType O: ii (homozygous recessive)."},
+{f:"Monohybrid cross Aa x Aa",b:"Genotype ratio: 1 AA : 2 Aa : 1 aa.\nPhenotype ratio: 3 dominant : 1 recessive (75%:25%)."},
+{f:"Dihybrid cross AaBb x AaBb",b:"4x4 Punnett square (16 boxes).\nPhenotype ratio: 9 A_B_ : 3 A_bb : 3 aaB_ : 1 aabb (9:3:3:1)."},
+{f:"Test cross",b:"Crossing organism with UNKNOWN dominant genotype with HOMOZYGOUS RECESSIVE (aa).\nReveals the unknown genotype."},
+{f:"Law of segregation",b:"Allele pairs SEPARATE during gamete formation.\nEach gamete receives only ONE allele per gene."},
+{f:"Carrier (genetics)",b:"HETEROZYGOUS individual who shows DOMINANT phenotype but carries one recessive allele.\nCan pass the recessive allele to offspring."},
+{f:"X-linked colorblindness cross",b:"Colorblind female (X^cX^c) x normal male (X^HY):\nAll sons are colorblind (X^cY).\nAll daughters are carriers (X^HX^c)."},
+{f:"Hemophilia carrier cross",b:"Carrier female (X^HX^h) x normal male (X^HY):\n1/2 daughters normal, 1/2 daughters carriers.\n1/2 sons normal, 1/2 sons have hemophilia."}
+],
+5:[
+{f:"DNA vs. RNA (3 key differences)",b:"1. Sugar: DNA = DEOXYRIBOSE; RNA = RIBOSE.\n2. Bases: DNA uses THYMINE; RNA uses URACIL.\n3. Strands: DNA = DOUBLE-stranded; RNA = SINGLE-stranded."},
+{f:"Three types of RNA",b:"mRNA (messenger): carries genetic code from nucleus to ribosome.\ntRNA (transfer): carries amino acids to ribosome; has anticodon.\nrRNA (ribosomal): structural component of ribosomes."},
+{f:"Transcription",b:"DNA → mRNA. Occurs in the NUCLEUS.\nRNA polymerase reads the DNA template strand and builds a complementary mRNA strand."},
+{f:"Translation",b:"mRNA → protein. Occurs at RIBOSOMES in the cytoplasm.\nRibosome reads mRNA codons; tRNA delivers amino acids; peptide bonds form a polypeptide."},
+{f:"Codon",b:"3 nucleotides on mRNA that code for one specific amino acid.\n64 possible codons (4³ = 64)."},
+{f:"Anticodon",b:"3 nucleotides on tRNA complementary to a specific mRNA codon.\nEnsures the correct amino acid is delivered during translation."},
+{f:"Start codon (AUG)",b:"The UNIVERSAL start codon. Codes for METHIONINE.\nTranslation always begins at AUG. If mutated, translation cannot start."},
+{f:"Stop codons",b:"UAA, UAG, and UGA.\nSignal the END of translation. No amino acid added.\nRibosome releases the completed polypeptide."},
+{f:"DNA to mRNA base pairing",b:"DNA A → mRNA U\nDNA T → mRNA A\nDNA G → mRNA C\nDNA C → mRNA G"},
+{f:"Germline vs. Somatic mutation",b:"Germline (sperm/egg): CAN be passed to offspring.\nSomatic (body cells): CANNOT be passed to offspring. Only affects that individual."},
+{f:"Sickle cell disease",b:"POINT MUTATION in hemoglobin gene. One base change substitutes VALINE for GLUTAMIC ACID.\nHemoglobin misfolds → sickle-shaped RBCs → poor O₂ transport and vessel blockage."},
+{f:"Theory of evolution",b:"Evolution = change in heritable traits in a population over time.\nEvidence: fossil record, homologous structures, DNA comparison, biogeography."},
+{f:"Darwin's 4 premises",b:"1. Overproduction: more offspring than can survive.\n2. Variation: heritable differences exist.\n3. Heritable variation: differences pass to offspring.\n4. Differential survival: favorable traits = more reproduction."},
+{f:"Allopatric vs. Sympatric speciation",b:"Allopatric: geographic BARRIER → independent evolution → reproductive isolation → new species. MORE COMMON.\nSympatric: new species in SAME area. LESS COMMON."},
+{f:"5 forces of evolution",b:"1. Mutation: new alleles.\n2. Gene flow: alleles move between populations.\n3. Genetic drift: random changes; strongest in small populations.\n4. Natural selection: differential survival.\n5. Non-random mating."},
+{f:"Reproductive isolation",b:"Populations that can no longer INTERBREED.\nRequired for speciation. Without it, gene flow prevents divergence."},
+{f:"Frameshift mutation",b:"Caused by INSERTION or DELETION of nucleotides.\nShifts the entire reading frame. Usually more damaging than substitution mutations."},
+{f:"DNA replication (overview)",b:"Occurs during S phase of INTERPHASE.\nHelicase unwinds DNA. DNA polymerase adds complementary nucleotides.\nResult: 2 identical DNA double helices (semi-conservative)."},
+{f:"Why is sympatric speciation rare?",b:"Without geographic separation, GENE FLOW between subpopulations mixes alleles.\nThis prevents populations from diverging enough to become reproductively isolated."},
+{f:"Coding vs. template strand",b:"Template strand: read by RNA polymerase (3' to 5').\nmRNA is complementary to the template.\nCoding strand: same sequence as mRNA (with T instead of U)."}
+]
+};
+
+const FINAL=[
+{unit:1,q:"A cube with sides of 2 cm has a surface area to volume ratio of:",opts:["6:1","3:1","2:1","1:1"],ans:1},
+{unit:1,q:"Which scientist stated all cells come from pre-existing cells?",opts:["Schleiden","Schwann","Hooke","Virchow"],ans:3},
+{unit:1,q:"Prokaryotes differ from eukaryotes in that prokaryotes:",opts:["Have more organelles","Lack membrane-bound organelles","Are always larger","Have a true nucleus"],ans:1},
+{unit:1,q:"A cell loses weight over time in a solution. The solution is:",opts:["Hypotonic","Isotonic","Hypertonic","Distilled water"],ans:2},
+{unit:1,q:"The cell membrane is best described as:",opts:["Permeable to all substances","Impermeable","Selectively permeable","A rigid structure"],ans:2},
+{unit:1,q:"Which organelle packages chemicals for transport?",opts:["Ribosome","Mitochondria","Golgi apparatus","Vacuole"],ans:2},
+{unit:1,q:"Endosymbiosis theory states that mitochondria and chloroplasts were once:",opts:["Part of the nucleus","Free-living prokaryotes","Types of ribosomes","Viral particles"],ans:1},
+{unit:1,q:"Which structure is in plant cells but NOT animal cells?",opts:["Mitochondria","Ribosome","Cell membrane","Chloroplast"],ans:3},
+{unit:1,q:"Spherical bacteria in grape-like clusters are called:",opts:["Streptococci","Staphylococci","Streptobacilli","Spirilli"],ans:1},
+{unit:1,q:"10x eyepiece, 40x objective: total magnification?",opts:["50x","400x","40x","4000x"],ans:1},
+{unit:2,q:"Where does photosynthesis take place?",opts:["Mitochondria","Nucleus","Chloroplasts","Ribosomes"],ans:2},
+{unit:2,q:"How many ATP from one glucose molecule aerobically?",opts:["2","12","36","38"],ans:3},
+{unit:2,q:"Oxygen released during photosynthesis comes from:",opts:["CO2","Water","Chlorophyll","Glucose"],ans:1},
+{unit:2,q:"Which stage of cellular respiration produces the MOST ATP?",opts:["Glycolysis","Krebs cycle","Electron transport chain","Fermentation"],ans:2},
+{unit:2,q:"Van Helmont incorrectly concluded that plant mass came from:",opts:["Soil","Air","Water","Sunlight"],ans:2},
+{unit:2,q:"Which process DIRECTLY removes CO2 from the atmosphere?",opts:["Cellular respiration","Combustion","Photosynthesis","Decomposition"],ans:2},
+{unit:2,q:"Lactic acid fermentation differs from alcohol fermentation because it:",opts:["Produces CO2","Occurs only in yeast","Produces lactic acid instead of ethanol","Requires oxygen"],ans:2},
+{unit:2,q:"Light reactions of photosynthesis occur in the:",opts:["Stroma","Thylakoid membranes","Cytoplasm","Nucleus"],ans:1},
+{unit:2,q:"Two high-energy bonds broken from ATP leaves:",opts:["ADP","ABP","AMP","Acetyl CoA"],ans:2},
+{unit:2,q:"Which produces ATP?",opts:["Dark reactions only","Glycolysis, Krebs, ETC, and light reactions","Photosynthesis only","Fermentation only"],ans:1},
+{unit:3,q:"Meiosis produces how many daughter cells?",opts:["1","2","3","4"],ans:3},
+{unit:3,q:"Crossing over occurs during which phase?",opts:["Mitosis Prophase","Meiosis I Prophase","Meiosis II Prophase","Metaphase I"],ans:1},
+{unit:3,q:"Mitosis produces:",opts:["4 haploid unique cells","2 identical diploid cells","4 identical diploid cells","2 haploid unique cells"],ans:1},
+{unit:3,q:"Human body cell (2n=46): after meiosis each daughter cell has:",opts:["92","46","23","12"],ans:2},
+{unit:3,q:"Chromosomes align at the cell equator in:",opts:["Prophase","Metaphase","Anaphase","Telophase"],ans:1},
+{unit:3,q:"Meiosis II is most similar to:",opts:["Mitosis","Meiosis I","DNA replication","Interphase"],ans:0},
+{unit:3,q:"PRIMARY purpose of meiosis:",opts:["Growth and repair","Asexual reproduction","Sexual reproduction and genetic diversity","DNA replication"],ans:2},
+{unit:3,q:"DNA replicates how many times during meiosis?",opts:["0","1","2","4"],ans:1},
+{unit:3,q:"Meiosis I separates:",opts:["Sister chromatids","Homologous chromosomes","DNA strands","Nuclear membranes"],ans:1},
+{unit:3,q:"Daughter cells from mitosis are:",opts:["Haploid and unique","Diploid and identical to parent","Haploid and identical","Diploid and unique"],ans:1},
+{unit:4,q:"Ww x Ww (W=wrinkled dominant, w=round): % showing round phenotype?",opts:["0%","25%","50%","75%"],ans:1},
+{unit:4,q:"Carrier female x normal male. Probability of SONS affected?",opts:["0%","25%","50%","100%"],ans:2},
+{unit:4,q:"Red x white = pink in snapdragons. This is:",opts:["Dominant-recessive","Codominance","Incomplete dominance","Sex linkage"],ans:2},
+{unit:4,q:"Blood type AB is an example of:",opts:["Incomplete dominance","Codominance","Dominant-recessive","Sex-linked inheritance"],ans:1},
+{unit:4,q:"Aa x aa: fraction showing dominant phenotype?",opts:["0%","25%","50%","100%"],ans:2},
+{unit:4,q:"Pedigree chart: filled SQUARE represents:",opts:["Unaffected female","Carrier female","Affected female","Affected male"],ans:3},
+{unit:4,q:"AaBb x AaBb: fraction showing BOTH dominant phenotypes?",opts:["1/16","3/16","9/16","12/16"],ans:2},
+{unit:4,q:"Blood type O has which genotype?",opts:["IAIA","IBIB","IAi","ii"],ans:3},
+{unit:4,q:"X-linked recessive more common in males because:",opts:["Males have two X chromosomes","Males have only one X and need just one copy","Females are immune","Males have no Y chromosome"],ans:1},
+{unit:4,q:"IAi x IAi: possible offspring blood types?",opts:["A and O only","B and O only","A and B only","All four types"],ans:0},
+{unit:5,q:"Transcription produces:",opts:["Protein from mRNA","mRNA from DNA","DNA from RNA","tRNA from mRNA"],ans:1},
+{unit:5,q:"Start codon AUG codes for:",opts:["Leucine","Glycine","Methionine","Proline"],ans:2},
+{unit:5,q:"Translation occurs at:",opts:["Nucleus","Cell membrane","Ribosomes in cytoplasm","Chloroplasts"],ans:2},
+{unit:5,q:"RNA differs from DNA in that RNA uses:",opts:["Thymine","Deoxyribose","Uracil instead of thymine","Double strands"],ans:2},
+{unit:5,q:"A mutation in a parent's liver cell will:",opts:["Always be passed to offspring","Pass to 50% of offspring","Not be passed to offspring","Always cause cancer"],ans:2},
+{unit:5,q:"Sickle cell disease is caused by:",opts:["Deletion of hemoglobin gene","A point mutation changing one amino acid","An extra chromosome","A viral infection"],ans:1},
+{unit:5,q:"Darwin's natural selection requires ALL EXCEPT:",opts:["Heritable variation","Overproduction of offspring","Inheritance of acquired traits","Differential survival"],ans:2},
+{unit:5,q:"Allopatric speciation requires a:",opts:["Sympatric event","Geographic barrier","Common food source","Shared habitat"],ans:1},
+{unit:5,q:"Which SUPPORTS the theory of evolution?",opts:["All individuals genetically identical","Fossil record shows transitional forms","Acquired traits are inherited","Environment never changes"],ans:1},
+{unit:5,q:"tRNA functions by:",opts:["Carrying genetic code from nucleus to ribosome","Making up ribosome structure","Carrying specific amino acids to ribosome","Copying DNA into RNA"],ans:2}
+];
+
+const DIAGRAMS={
+animal:{
+label:"Animal Cell",
+svg:`<svg viewBox="0 0 520 370" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="260" cy="188" rx="228" ry="168" fill="#EAF3FD" stroke="#5B9BD5" stroke-width="2.5"/>
+<ellipse cx="230" cy="170" rx="58" ry="52" fill="#C8DEFF" stroke="#4A7FC1" stroke-width="1.5"/>
+<ellipse cx="230" cy="170" rx="22" ry="20" fill="#9DB8E8" stroke="#4A7FC1" stroke-width="1"/>
+<ellipse cx="370" cy="125" rx="28" ry="15" fill="#FFD6B0" stroke="#C4883E" stroke-width="1.5"/>
+<line x1="384" y1="125" x2="356" y2="125" stroke="#C4883E" stroke-width="1.2"/>
+<ellipse cx="375" cy="230" rx="24" ry="13" fill="#FFD6B0" stroke="#C4883E" stroke-width="1.5"/>
+<line x1="389" y1="230" x2="361" y2="230" stroke="#C4883E" stroke-width="1.2"/>
+<g transform="translate(128,245)">
+<ellipse rx="34" ry="8" fill="#C8E6C9" stroke="#4A8C6F" stroke-width="1.2"/>
+<ellipse cy="8" rx="32" ry="8" fill="#A5D6A7" stroke="#4A8C6F" stroke-width="1.2"/>
+<ellipse cy="16" rx="30" ry="8" fill="#81C784" stroke="#4A8C6F" stroke-width="1.2"/>
+</g>
+<path d="M305,158 Q325,143 345,153 Q365,163 385,153" fill="none" stroke="#9C6EDE" stroke-width="1.5" stroke-dasharray="5,3"/>
+<path d="M305,170 Q325,160 345,168 Q365,176 385,168" fill="none" stroke="#9C6EDE" stroke-width="1.5" stroke-dasharray="5,3"/>
+<circle cx="303" cy="153" r="4" fill="#7B5EA7"/>
+<circle cx="315" cy="146" r="4" fill="#7B5EA7"/>
+<circle cx="326" cy="143" r="4" fill="#7B5EA7"/>
+<ellipse cx="155" cy="295" rx="28" ry="17" fill="#FFFDE7" stroke="#F9A825" stroke-width="1.5"/>
+<circle cx="71" cy="125" r="12" fill="#3B6EA5" onclick="selectHS(0)" class="hotspot-circle"/><text x="71" y="125" class="hotspot-text">1</text>
+<circle cx="78" cy="240" r="12" fill="#3B6EA5" onclick="selectHS(1)" class="hotspot-circle"/><text x="78" y="240" class="hotspot-text">2</text>
+<circle cx="230" cy="148" r="12" fill="#3B6EA5" onclick="selectHS(2)" class="hotspot-circle"/><text x="230" y="148" class="hotspot-text">3</text>
+<circle cx="415" cy="112" r="12" fill="#3B6EA5" onclick="selectHS(3)" class="hotspot-circle"/><text x="415" y="112" class="hotspot-text">4</text>
+<circle cx="298" cy="140" r="12" fill="#3B6EA5" onclick="selectHS(4)" class="hotspot-circle"/><text x="298" y="140" class="hotspot-text">5</text>
+<circle cx="128" cy="225" r="12" fill="#3B6EA5" onclick="selectHS(5)" class="hotspot-circle"/><text x="128" y="225" class="hotspot-text">6</text>
+<circle cx="155" cy="274" r="12" fill="#3B6EA5" onclick="selectHS(6)" class="hotspot-circle"/><text x="155" y="274" class="hotspot-text">7</text>
+<circle cx="440" cy="218" r="12" fill="#3B6EA5" onclick="selectHS(7)" class="hotspot-circle"/><text x="440" y="218" class="hotspot-text">8</text>
+</svg>`,
+parts:["Cell membrane","Cytoplasm","Nucleus","Mitochondria","Ribosome","Golgi apparatus","Vacuole","Endoplasmic reticulum"]
+},
+plant:{
+label:"Plant Cell",
+svg:`<svg viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg">
+<rect x="15" y="15" width="470" height="330" rx="8" fill="#E8F5E9" stroke="#2E7D32" stroke-width="4"/>
+<rect x="28" y="28" width="444" height="304" rx="5" fill="#F1F8E9" stroke="#558B2F" stroke-width="1.5" stroke-dasharray="6,3"/>
+<ellipse cx="250" cy="200" rx="95" ry="75" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+<ellipse cx="250" cy="183" rx="36" ry="32" fill="#BBDEFB" stroke="#1565C0" stroke-width="1"/>
+<g transform="translate(95,95)"><ellipse rx="30" ry="14" fill="#A5D6A7" stroke="#2E7D32" stroke-width="1.5"/><line x1="-20" y1="0" x2="20" y2="0" stroke="#1B5E20" stroke-width="1"/></g>
+<g transform="translate(400,90)"><ellipse rx="28" ry="13" fill="#A5D6A7" stroke="#2E7D32" stroke-width="1.5"/><line x1="-18" y1="0" x2="18" y2="0" stroke="#1B5E20" stroke-width="1"/></g>
+<g transform="translate(98,272)"><ellipse rx="26" ry="13" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.5"/><line x1="-17" y1="0" x2="17" y2="0" stroke="#1B5E20" stroke-width="1"/></g>
+<ellipse cx="400" cy="242" rx="24" ry="13" fill="#FFD6B0" stroke="#C4883E" stroke-width="1.5"/>
+<line x1="414" y1="242" x2="386" y2="242" stroke="#C4883E" stroke-width="1.2"/>
+<circle cx="400" cy="155" r="4" fill="#7B5EA7"/>
+<circle cx="414" cy="162" r="4" fill="#7B5EA7"/>
+<circle cx="390" cy="165" r="4" fill="#7B5EA7"/>
+<circle cx="28" cy="28" r="12" fill="#3B6EA5" onclick="selectHS(0)" class="hotspot-circle"/><text x="28" y="28" class="hotspot-text">1</text>
+<circle cx="55" cy="48" r="12" fill="#3B6EA5" onclick="selectHS(1)" class="hotspot-circle"/><text x="55" y="48" class="hotspot-text">2</text>
+<circle cx="250" cy="168" r="12" fill="#3B6EA5" onclick="selectHS(2)" class="hotspot-circle"/><text x="250" y="168" class="hotspot-text">3</text>
+<circle cx="83" cy="82" r="12" fill="#3B6EA5" onclick="selectHS(3)" class="hotspot-circle"/><text x="83" y="82" class="hotspot-text">4</text>
+<circle cx="250" cy="288" r="12" fill="#3B6EA5" onclick="selectHS(4)" class="hotspot-circle"/><text x="250" y="288" class="hotspot-text">5</text>
+<circle cx="420" cy="228" r="12" fill="#3B6EA5" onclick="selectHS(5)" class="hotspot-circle"/><text x="420" y="228" class="hotspot-text">6</text>
+<circle cx="406" cy="148" r="12" fill="#3B6EA5" onclick="selectHS(6)" class="hotspot-circle"/><text x="406" y="148" class="hotspot-text">7</text>
+<circle cx="55" cy="175" r="12" fill="#3B6EA5" onclick="selectHS(7)" class="hotspot-circle"/><text x="55" y="175" class="hotspot-text">8</text>
+</svg>`,
+parts:["Cell wall","Cell membrane","Nucleus","Chloroplast","Central vacuole","Mitochondria","Ribosome","Cytoplasm"]
+},
+microscope:{
+label:"Microscope Parts",
+svg:`<svg viewBox="0 0 360 480" xmlns="http://www.w3.org/2000/svg">
+<rect x="138" y="22" width="42" height="52" rx="5" fill="#DDEEFF" stroke="#3B6EA5" stroke-width="2"/>
+<rect x="150" y="74" width="16" height="78" rx="2" fill="#C5D8F0" stroke="#3B6EA5" stroke-width="1.5"/>
+<ellipse cx="158" cy="156" rx="28" ry="12" fill="#B0C8E8" stroke="#3B6EA5" stroke-width="2"/>
+<rect x="145" y="167" width="13" height="32" rx="2" fill="#5B9BD5" stroke="#3B6EA5" stroke-width="1.5"/>
+<rect x="152" y="167" width="13" height="26" rx="2" fill="#7AB0DC" stroke="#3B6EA5" stroke-width="1.5"/>
+<rect x="160" y="167" width="13" height="20" rx="2" fill="#9AC4E8" stroke="#3B6EA5" stroke-width="1.5"/>
+<rect x="88" y="242" width="152" height="17" rx="3" fill="#CFE0F0" stroke="#3B6EA5" stroke-width="1.5"/>
+<ellipse cx="164" cy="250" rx="10" ry="8" fill="#F7F6F2" stroke="#888" stroke-width="1"/>
+<rect x="154" y="258" width="27" height="12" rx="2" fill="#B8CCE0" stroke="#3B6EA5" stroke-width="1.2"/>
+<rect x="148" y="212" width="20" height="32" rx="2" fill="#CFE0F0" stroke="#3B6EA5" stroke-width="1.5"/>
+<ellipse cx="242" cy="220" rx="18" ry="18" fill="#EEF4FF" stroke="#3B6EA5" stroke-width="2"/>
+<ellipse cx="242" cy="250" rx="13" ry="13" fill="#EEF4FF" stroke="#3B6EA5" stroke-width="1.5"/>
+<line x1="168" y1="212" x2="224" y2="220" stroke="#3B6EA5" stroke-width="1.5"/>
+<line x1="168" y1="226" x2="229" y2="250" stroke="#3B6EA5" stroke-width="1.5"/>
+<rect x="82" y="402" width="182" height="30" rx="6" fill="#DDEEFF" stroke="#3B6EA5" stroke-width="2"/>
+<rect x="150" y="270" width="18" height="132" rx="3" fill="#CFE0F0" stroke="#3B6EA5" stroke-width="1.5"/>
+<ellipse cx="159" cy="395" rx="14" ry="7" fill="#A0BCD8" stroke="#3B6EA5" stroke-width="1.5"/>
+<circle cx="158" cy="32" r="12" fill="#3B6EA5" onclick="selectHS(0)" class="hotspot-circle"/><text x="158" y="32" class="hotspot-text">1</text>
+<circle cx="112" cy="156" r="12" fill="#3B6EA5" onclick="selectHS(1)" class="hotspot-circle"/><text x="112" y="156" class="hotspot-text">2</text>
+<circle cx="188" cy="188" r="12" fill="#3B6EA5" onclick="selectHS(2)" class="hotspot-circle"/><text x="188" y="188" class="hotspot-text">3</text>
+<circle cx="70" cy="250" r="12" fill="#3B6EA5" onclick="selectHS(3)" class="hotspot-circle"/><text x="70" y="250" class="hotspot-text">4</text>
+<circle cx="158" cy="270" r="12" fill="#3B6EA5" onclick="selectHS(4)" class="hotspot-circle"/><text x="158" y="270" class="hotspot-text">5</text>
+<circle cx="272" cy="220" r="12" fill="#3B6EA5" onclick="selectHS(5)" class="hotspot-circle"/><text x="272" y="220" class="hotspot-text">6</text>
+<circle cx="272" cy="250" r="12" fill="#3B6EA5" onclick="selectHS(6)" class="hotspot-circle"/><text x="272" y="250" class="hotspot-text">7</text>
+</svg>`,
+parts:["Eyepiece (ocular lens)","Nosepiece","Objective lens","Stage","Diaphragm","Coarse adjustment knob","Fine adjustment knob"]
+}
+};
+
+let savedScores={};
+try{const s=localStorage.getItem('bio1adv');if(s)savedScores=JSON.parse(s);}catch(e){}
+
+const S={
+view:'dashboard',uid:1,tab:'guide',prac:{},
+test:{ans:new Array(20).fill(-1),cur:0,left:1200,timer:null,done:false},
+fc:{uid:'all',idx:0,flipped:false,known:[],unknown:[],order:[]},
+final:{ans:new Array(50).fill(-1),cur:0,left:3000,timer:null,done:false},
+diag:{which:'animal',selected:null,answers:{},wrong:null},
+scores:savedScores
+};
 
 function uc(){return UNITS.find(u=>u.id===S.uid)}
-function setColor(c){document.getElementById('app').style.setProperty('--uc',c||'#3B6EA5')}
+function setColor(c){document.documentElement.style.setProperty('--uc',c||'#3B6EA5')}
+function saveScores(){try{localStorage.setItem('bio1adv',JSON.stringify(S.scores));}catch(e){}}
 
-function goHome(){if(S.test.timer){clearInterval(S.test.timer);S.test.timer=null;}S.view='dashboard';setColor('#3B6EA5');render()}
-function openUnit(id){S.uid=id;S.tab='guide';S.view='unit';const u=uc();setColor(u.color);render();window.scrollTo(0,0)}
-function setTab(t){if(t==='test'&&!S.test.done){S.test.ans=new Array(20).fill(-1);S.test.cur=0;S.test.left=1200;S.test.done=false;}S.tab=t;render();window.scrollTo(0,0)}
+function goHome(){
+if(S.test.timer){clearInterval(S.test.timer);S.test.timer=null;}
+if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}
+S.view='dashboard';setColor('#3B6EA5');render();window.scrollTo(0,0);
+}
+function openUnit(id){S.uid=id;S.tab='guide';S.view='unit';setColor(uc().color);render();window.scrollTo(0,0);}
+function setTab(t){
+if(t==='test'&&!S.test.done){S.test.ans=new Array(20).fill(-1);S.test.cur=0;S.test.left=1200;S.test.done=false;if(S.test.timer){clearInterval(S.test.timer);S.test.timer=null;}}
+S.tab=t;render();window.scrollTo(0,0);
+}
+function openFC(){S.view='flashcards';setColor('#3B6EA5');initFC();render();window.scrollTo(0,0);}
+function openFinal(){
+S.view='final';setColor('#1A5E96');
+S.final.ans=new Array(50).fill(-1);S.final.cur=0;S.final.left=3000;S.final.done=false;
+if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}
+render();window.scrollTo(0,0);
+}
+function openDiag(){S.view='diagrams';setColor('#4A8C6F');S.diag={which:'animal',selected:null,answers:{},wrong:null};render();window.scrollTo(0,0);}
 
-function fmtTime(s){const m=Math.floor(s/60);const ss=s%60;return m+':'+(ss<10?'0':'')+ss}
+function initFC(){
+const uid=S.fc.uid;
+const cards=uid==='all'?[].concat(...Object.values(FC)):FC[uid]||[];
+const order=[...Array(cards.length).keys()];
+for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}
+S.fc.order=order;S.fc.idx=0;S.fc.flipped=false;S.fc.known=[];S.fc.unknown=[];
+}
+function fcSetUnit(uid){S.fc.uid=uid;initFC();render();}
+function fcFlip(){S.fc.flipped=!S.fc.flipped;const el=document.querySelector('.fc-inner');if(el)el.classList.toggle('flipped',S.fc.flipped);}
+function fcNext(){if(S.fc.idx<S.fc.order.length-1){S.fc.idx++;S.fc.flipped=false;render();}else{S.fc.idx=S.fc.order.length;render();}}
+function fcPrev(){if(S.fc.idx>0){S.fc.idx--;S.fc.flipped=false;render();}}
+function fcKnow(){S.fc.known.push(S.fc.idx);fcNext();}
+function fcUnknow(){S.fc.unknown.push(S.fc.idx);fcNext();}
 
-function startTest(){S.test.ans=new Array(20).fill(-1);S.test.cur=0;S.test.left=1200;S.test.done=false;S.tab='test';render();
+function fmtTime(s){const m=Math.floor(s/60),ss=s%60;return m+':'+(ss<10?'0':'')+ss;}
+
+function startTest(){
+S.test.ans=new Array(20).fill(-1);S.test.cur=0;S.test.left=1200;S.test.done=false;
+S.tab='test';render();
 S.test.timer=setInterval(()=>{
 S.test.left--;
 const el=document.getElementById('t-timer');
 if(el){el.textContent=fmtTime(S.test.left);if(S.test.left<=60)el.classList.add('red');}
 if(S.test.left<=0){clearInterval(S.test.timer);S.test.timer=null;finishTest();}
-},1000);}
+},1000);
+}
+function finishTest(){
+if(S.test.timer){clearInterval(S.test.timer);S.test.timer=null;}
+S.test.done=true;
+const u=uc();let score=0;
+u.test.forEach((q,i)=>{if(S.test.ans[i]===q.ans)score++;});
+const key='u'+u.id;
+if(!S.scores[key])S.scores[key]=[];
+S.scores[key].push({score,total:20,ts:Date.now()});
+saveScores();render();window.scrollTo(0,0);
+}
+function retakeTest(){S.test.done=false;startTest();}
+function selAns(i){if(S.test.done)return;S.test.ans[S.test.cur]=i;renderTestQ();}
+function goQ(n){S.test.cur=n;renderTestQ();}
+function nextQ(){if(S.test.cur<19){S.test.cur++;renderTestQ();}}
+function prevQ(){if(S.test.cur>0){S.test.cur--;renderTestQ();}}
 
-function finishTest(){if(S.test.timer){clearInterval(S.test.timer);S.test.timer=null;}S.test.done=true;render();window.scrollTo(0,0)}
-function retakeTest(){S.test.done=false;startTest()}
-function selAns(i){if(S.test.done)return;S.test.ans[S.test.cur]=i;renderTestQ()}
-function goQ(n){S.test.cur=n;renderTestQ()}
-function nextQ(){if(S.test.cur<19){S.test.cur++;renderTestQ()}}
-function prevQ(){if(S.test.cur>0){S.test.cur--;renderTestQ()}}
+function startFinal(){
+S.final.ans=new Array(50).fill(-1);S.final.cur=0;S.final.left=3000;S.final.done=false;
+render();
+S.final.timer=setInterval(()=>{
+S.final.left--;
+const el=document.getElementById('f-timer');
+if(el){el.textContent=fmtTime(S.final.left);if(S.final.left<=120)el.classList.add('red');}
+if(S.final.left<=0){clearInterval(S.final.timer);S.final.timer=null;finishFinal();}
+},1000);
+}
+function finishFinal(){
+if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}
+S.final.done=true;
+let score=0;FINAL.forEach((q,i)=>{if(S.final.ans[i]===q.ans)score++;});
+if(!S.scores.final)S.scores.final=[];
+S.scores.final.push({score,total:50,ts:Date.now()});
+saveScores();render();window.scrollTo(0,0);
+}
+function retakeFinal(){
+S.final.ans=new Array(50).fill(-1);S.final.cur=0;S.final.left=3000;S.final.done=false;
+if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}
+startFinal();
+}
+function selFinalAns(i){if(S.final.done)return;S.final.ans[S.final.cur]=i;renderFinalQ();}
+function goFQ(n){S.final.cur=n;renderFinalQ();}
+function nextFQ(){if(S.final.cur<49){S.final.cur++;renderFinalQ();}}
+function prevFQ(){if(S.final.cur>0){S.final.cur--;renderFinalQ();}}
+
+function selectHS(idx){
+const d=S.diag;
+if(d.answers[idx]!==undefined)return;
+d.selected=idx;
+document.querySelectorAll('.hotspot-circle').forEach((el,i)=>{
+const answered=d.answers[i]!==undefined;
+const isSel=i===idx;
+el.style.fill=answered?'#3D8C5A':isSel?'#E67E22':'#3B6EA5';
+});
+}
+function selectLabel(label){
+const d=S.diag;
+if(d.selected===null)return;
+const diag=DIAGRAMS[d.which];
+const correctLabel=diag.parts[d.selected];
+if(label===correctLabel){
+d.answers[d.selected]=label;
+const circles=document.querySelectorAll('.hotspot-circle');
+if(circles[d.selected])circles[d.selected].style.fill='#3D8C5A';
+document.querySelectorAll('.wb-btn').forEach(b=>{
+if(b.textContent.replace('✓ ','')===label){b.classList.add('used');b.disabled=true;}
+});
+d.selected=null;
+const correct=Object.keys(d.answers).length;
+const scoreEl=document.getElementById('diag-score-val');
+if(scoreEl)scoreEl.textContent=correct+'/'+diag.parts.length;
+if(correct===diag.parts.length){
+const msgEl=document.getElementById('diag-done-msg');
+if(msgEl)msgEl.style.display='block';
+}
+}else{
+const btn=document.querySelector('[data-lbl="'+label.replace(/"/g,'&quot;')+'"]');
+if(btn){
+btn.style.background='#FAE8E8';btn.style.borderColor='#C45252';
+setTimeout(()=>{btn.style.background='';btn.style.borderColor='';},500);
+}
+}
+}
+function switchDiag(which){
+S.diag={which,selected:null,answers:{},wrong:null};render();window.scrollTo(0,80);
+}
 
 function checkMC(uid,qi,ci){
 if(S.prac[uid]&&S.prac[uid][qi])return;
@@ -662,7 +952,6 @@ if(b){b.disabled=true;if(i===q.ans)b.classList.add('ok');else if(i===ci)b.classL
 }
 const e=document.getElementById('pqe-'+uid+'-'+qi);if(e)e.classList.add('show');
 }
-
 function checkTF(uid,qi,choice){
 if(S.prac[uid]&&S.prac[uid][qi])return;
 if(!S.prac[uid])S.prac[uid]={};
@@ -675,7 +964,6 @@ if(q.ans===true){if(bt)bt.classList.add('ok');if(!choice&&bf)bf.classList.add('n
 else{if(bf)bf.classList.add('ok');if(choice&&bt)bt.classList.add('no');}
 const e=document.getElementById('pqe-'+uid+'-'+qi);if(e)e.classList.add('show');
 }
-
 function revealSA(uid,qi){
 const a=document.getElementById('pqa-'+uid+'-'+qi);if(a)a.classList.add('show');
 const b=document.getElementById('pqr-'+uid+'-'+qi);if(b)b.style.display='none';
@@ -693,44 +981,100 @@ return '<div class="toverflow"><table class="gtable"><thead><tr>'+h+'</tr></thea
 return '';
 }
 
+function getScoreSummary(){
+const summary={};
+UNITS.forEach(u=>{
+const key='u'+u.id;const arr=S.scores[key]||[];
+if(arr.length===0){summary[u.id]=null;return;}
+const best=Math.max(...arr.map(a=>a.score));
+const avg=Math.round(arr.reduce((s,a)=>s+a.score,0)/arr.length);
+summary[u.id]={best,avg,count:arr.length,bestPct:Math.round(best/20*100)};
+});
+const farr=S.scores.final||[];
+if(farr.length>0){
+const best=Math.max(...farr.map(a=>a.score));
+summary.final={best,avg:Math.round(farr.reduce((s,a)=>s+a.score,0)/farr.length),count:farr.length,bestPct:Math.round(best/50*100)};
+}
+return summary;
+}
+
+function progColor(pct){
+if(pct>=80)return '#3D8C5A';if(pct>=60)return '#C4883E';return '#C45252';
+}
+
 function render(){
 const app=document.getElementById('app');
+if(!app)return;
 if(S.view==='dashboard'){renderDashboard();return;}
 if(S.view==='unit'){renderUnit();return;}
+if(S.view==='flashcards'){renderFC();return;}
+if(S.view==='final'){renderFinalView();return;}
+if(S.view==='diagrams'){renderDiagrams();return;}
 }
+
+function hdr(mid){return '<header class="hdr"><button class="logo" onclick="goHome()">BIO 1 ADV <em>Semester 2</em></button><span class="hdr-rt">'+(mid||'')+'</span></header>';}
 
 function renderDashboard(){
 const app=document.getElementById('app');
-let h='<header class="hdr"><button class="logo" onclick="goHome()">BIO 1 ADV <em>Semester 2</em></button><span class="hdr-rt">Study Hub</span></header>';
-h+='<main class="dash"><div class="kicker">BIO 1 Advanced &mdash; Semester 2</div>';
+const summary=getScoreSummary();
+const hasScores=Object.values(summary).some(v=>v!==null&&v!==undefined);
+let h=hdr('Study Hub');
+h+='<main class="dash">';
+h+='<div class="kicker">BIO 1 Advanced &mdash; Semester 2</div>';
 h+='<h1>Your Study Hub.</h1>';
-h+='<p class="dash-sub">Study guides, practice questions, and timed mock tests for all five units. Select a unit below to get started.</p>';
+h+='<p class="dash-sub">Study guides, practice questions, and timed mock tests. Select a unit or use a feature below.</p>';
+h+='<div class="section-label">Units</div>';
 h+='<div class="ugrid">';
 UNITS.forEach(u=>{
+const sc=summary[u.id];
 h+='<div class="ucard" style="--uc:'+u.color+'" onclick="openUnit('+u.id+')">';
 h+='<div class="card-num">Unit '+u.id+'</div>';
 h+='<div class="card-title">'+u.title+'</div>';
 h+='<div class="card-sub">'+u.subtitle+'</div>';
-h+='<div class="card-tags"><span class="ctag">'+u.guide.length+' sections</span><span class="ctag">'+u.practice.length+' practice Qs</span><span class="ctag">20Q mock test</span></div>';
+h+='<div class="card-tags"><span class="ctag">'+u.guide.length+' sections</span><span class="ctag">'+u.practice.length+' practice Qs</span><span class="ctag">20Q test</span></div>';
+if(sc){h+='<div style="margin-top:12px;height:3px;border-radius:2px;background:var(--bd);overflow:hidden"><div style="height:100%;width:'+sc.bestPct+'%;background:'+progColor(sc.bestPct)+';border-radius:2px"></div></div><div style="font-size:11px;color:'+progColor(sc.bestPct)+';margin-top:4px;font-weight:600">Best: '+sc.best+'/20</div>';}
 h+='</div>';
 });
-h+='</div></main>';
+h+='</div>';
+h+='<div class="section-label" style="margin-top:36px">Study Tools</div>';
+h+='<div class="fgrid">';
+h+='<div class="fcard" onclick="openFinal()" style="--uc:#1A5E96"><div class="fcard-icon">&#9998;</div><div><div class="fcard-title">Final Exam</div><div class="fcard-sub">50 questions &mdash; all 5 units &mdash; 50 min</div></div></div>';
+h+='<div class="fcard" onclick="openFC()"><div class="fcard-icon">&#9654;</div><div><div class="fcard-title">Flashcards</div><div class="fcard-sub">90+ flip cards with Know / Don\'t Know sorting</div></div></div>';
+h+='<div class="fcard" onclick="openDiag()" style="--uc:#4A8C6F"><div class="fcard-icon">&#10010;</div><div><div class="fcard-title">Diagram Labeling</div><div class="fcard-sub">Animal cell, plant cell, microscope</div></div></div>';
+h+='</div>';
+if(hasScores){
+h+='<div class="section-label" style="margin-top:4px">My Progress</div>';
+h+='<div class="prog-grid">';
+UNITS.forEach(u=>{
+const sc=summary[u.id];
+if(!sc){h+='<div class="prog-card"><div class="prog-unit">Unit '+u.id+'</div><div class="prog-score" style="color:var(--mu);font-size:18px">No data</div><div class="prog-detail">Take the test</div></div>';return;}
+const col=progColor(sc.bestPct);
+h+='<div class="prog-card"><div class="prog-unit">Unit '+u.id+'</div><div class="prog-score" style="color:'+col+'">'+sc.best+'<span style="font-size:14px;color:var(--mu)">/20</span></div><div class="prog-detail">'+sc.count+' attempt'+(sc.count>1?'s':'')+' &mdash; avg '+sc.avg+'</div><div class="prog-bar"><div class="prog-fill" style="width:'+sc.bestPct+'%;background:'+col+'"></div></div></div>';
+});
+const fsc=summary.final;
+if(fsc){const col=progColor(fsc.bestPct);h+='<div class="prog-card"><div class="prog-unit">Final Exam</div><div class="prog-score" style="color:'+col+'">'+fsc.best+'<span style="font-size:14px;color:var(--mu)">/50</span></div><div class="prog-detail">'+fsc.count+' attempt'+(fsc.count>1?'s':'')+' &mdash; avg '+fsc.avg+'</div><div class="prog-bar"><div class="prog-fill" style="width:'+fsc.bestPct+'%;background:'+col+'"></div></div></div>';}
+h+='</div>';
+const weak=UNITS.filter(u=>{const sc=summary[u.id];return sc&&sc.bestPct<70;});
+if(weak.length>0){
+h+='<div style="margin-top:14px;padding:12px 16px;background:#FFF8EE;border:1px solid #F9A825;border-radius:10px;font-size:13px">';
+h+='<strong style="color:#C4883E">Weak areas to review:</strong> ';
+h+=weak.map(u=>'<span style="cursor:pointer;color:#3B6EA5;text-decoration:underline" onclick="openUnit('+u.id+')">Unit '+u.id+': '+u.title+'</span>').join(', ');
+h+='</div>';
+}
+}
+h+='</main>';
 app.innerHTML=h;
 }
 
 function renderUnit(){
-const app=document.getElementById('app');
-const u=uc();
-let h='<header class="hdr"><button class="logo" onclick="goHome()">BIO 1 ADV <em>Semester 2</em></button><span class="hdr-rt">Unit '+u.id+' &mdash; '+u.title+'</span></header>';
+const app=document.getElementById('app');const u=uc();
+let h=hdr('Unit '+u.id+' &mdash; '+u.title);
 h+='<div class="upage">';
-h+='<aside class="sidebar">';
-h+='<button class="sb-back" onclick="goHome()">&#8592; All Units</button>';
-h+='<div class="sb-label">Unit '+u.id+'</div>';
-h+='<div class="sb-title">'+u.title+'</div>';
+h+='<aside class="sidebar"><button class="sb-back" onclick="goHome()">&#8592; All Units</button>';
+h+='<div class="sb-label">Unit '+u.id+'</div><div class="sb-title">'+u.title+'</div>';
 h+='<nav class="sb-nav">';
-['guide','practice','test'].forEach(tab=>{
-const labels={guide:'Study Guide',practice:'Practice',test:'Mock Test'};
-h+='<button class="sb-tab'+(S.tab===tab?' act':'')+'" onclick="setTab(\''+tab+'\')">'+labels[tab]+'</button>';
+[['guide','Study Guide'],['practice','Practice'],['test','Mock Test']].forEach(([tab,label])=>{
+h+='<button class="sb-tab'+(S.tab===tab?' act':'')+'" onclick="setTab(\''+tab+'\')">'+label+'</button>';
 });
 h+='</nav></aside>';
 h+='<main class="content">';
@@ -743,20 +1087,15 @@ app.innerHTML=h;
 
 function renderGuide(u){
 let h='';
-u.guide.forEach(sec=>{
-h+='<div class="gsec"><h3>'+sec.title+'</h3>';
-sec.parts.forEach(p=>{h+=renderPart(p);});
-h+='</div>';
-});
+u.guide.forEach(sec=>{h+='<div class="gsec"><h3>'+sec.title+'</h3>';sec.parts.forEach(p=>{h+=renderPart(p);});h+='</div>';});
 return h;
 }
 
 function renderPractice(u){
-let h='<div class="prac-hdr"><h2>Practice Questions</h2><p>'+u.practice.length+' questions &mdash; multiple choice, true/false, and short answer. Click to check your answer.</p></div>';
+let h='<div class="prac-hdr"><h2>Practice Questions</h2><p>'+u.practice.length+' questions. Click to check your answer.</p></div>';
 u.practice.forEach((q,qi)=>{
-const uid=u.id;
-const typeLabel={mc:'Multiple Choice',tf:'True / False',sa:'Short Answer'}[q.type];
-h+='<div class="pq"><div class="pq-meta"><span class="pq-n">Q'+( qi+1)+'</span><span class="pq-badge">'+typeLabel+'</span></div>';
+const uid=u.id;const typeLabel={mc:'Multiple Choice',tf:'True / False',sa:'Short Answer'}[q.type];
+h+='<div class="pq"><div class="pq-meta"><span class="pq-n">Q'+(qi+1)+'</span><span class="pq-badge">'+typeLabel+'</span></div>';
 h+='<div class="pq-q">'+q.q+'</div>';
 const already=S.prac[uid]&&S.prac[uid][qi];
 if(q.type==='mc'){
@@ -766,21 +1105,16 @@ let cls='pq-opt';
 if(already){if(oi===q.ans)cls+=' ok';else if(oi===already.c)cls+=' no';}
 h+='<button id="pqo-'+uid+'-'+qi+'-'+oi+'" class="'+cls+'" '+(already?'disabled':'')+' onclick="checkMC('+uid+','+qi+','+oi+')">'+opt+'</button>';
 });
-h+='</div>';
-h+='<div id="pqe-'+uid+'-'+qi+'" class="expl'+(already?' show':'')+'">'+q.expl+'</div>';
-} else if(q.type==='tf'){
-h+='<div class="pq-tfs">';
+h+='</div><div id="pqe-'+uid+'-'+qi+'" class="expl'+(already?' show':'')+'">'+q.expl+'</div>';
+}else if(q.type==='tf'){
 let tcls='pq-tf',fcls='pq-tf';
 if(already){if(q.ans===true){tcls+=' ok';if(!already.c)fcls+=' no';}else{fcls+=' ok';if(already.c)tcls+=' no';}}
-h+='<button id="pqt-'+uid+'-'+qi+'-T" class="'+tcls+'" '+(already?'disabled':'')+' onclick="checkTF('+uid+','+qi+',true)">True</button>';
-h+='<button id="pqt-'+uid+'-'+qi+'-F" class="'+fcls+'" '+(already?'disabled':'')+' onclick="checkTF('+uid+','+qi+',false)">False</button>';
-h+='</div>';
+h+='<div class="pq-tfs"><button id="pqt-'+uid+'-'+qi+'-T" class="'+tcls+'" '+(already?'disabled':'')+' onclick="checkTF('+uid+','+qi+',true)">True</button>';
+h+='<button id="pqt-'+uid+'-'+qi+'-F" class="'+fcls+'" '+(already?'disabled':'')+' onclick="checkTF('+uid+','+qi+',false)">False</button></div>';
 h+='<div id="pqe-'+uid+'-'+qi+'" class="expl'+(already?' show':'')+'">'+q.expl+'</div>';
-} else {
-const shown=already&&already.shown;
-h+='<button id="pqr-'+uid+'-'+qi+'" class="pq-rev" '+(shown?'style="display:none"':'')+' onclick="revealSA('+uid+','+qi+')">Reveal Answer</button>';
-h+='<div id="pqa-'+uid+'-'+qi+'" class="sa-ans'+(shown?' show':'')+'">';
-h+='<strong>Model Answer:</strong><br>'+q.ans+'</div>';
+}else{
+h+='<button id="pqr-'+uid+'-'+qi+'" class="pq-rev" onclick="revealSA('+uid+','+qi+')">Reveal Answer</button>';
+h+='<div id="pqa-'+uid+'-'+qi+'" class="sa-ans"><strong>Model Answer:</strong><br>'+q.ans+'</div>';
 }
 h+='</div>';
 });
@@ -788,131 +1122,235 @@ return h;
 }
 
 function renderTestView(u){
-if(!S.test.done&&S.tab==='test'&&S.test.ans.every(a=>a===-1)&&!S.test.timer){
-return renderTestStart(u);
+if(!S.test.done&&S.test.ans.every(a=>a===-1)&&!S.test.timer){
+return '<div class="test-wrap"><div class="test-start"><h2>Mock Test &mdash; Unit '+u.id+'</h2><p>'+u.title+'. 20 questions, 20 minutes. Auto-scored.</p><div class="ti-grid"><div class="ti"><div class="ti-val">20</div><div class="ti-lbl">Questions</div></div><div class="ti"><div class="ti-val">20</div><div class="ti-lbl">Minutes</div></div></div><button class="btn btn-p" onclick="startTest()">Begin Test</button></div></div>';
 }
-if(S.test.done) return renderResults(u);
+if(S.test.done)return renderResults(u);
 return renderTestInProgress(u);
 }
 
-function renderTestStart(u){
-return '<div class="test-wrap"><div class="test-start">'+
-'<h2>Mock Test &mdash; Unit '+u.id+'</h2>'+
-'<p>'+u.title+'. A timed mock test covering all learning objectives. Answer all 20 questions before time runs out.</p>'+
-'<div class="ti-grid">'+
-'<div class="ti"><div class="ti-val">20</div><div class="ti-lbl">Questions</div></div>'+
-'<div class="ti"><div class="ti-val">20</div><div class="ti-lbl">Minutes</div></div>'+
-'<div class="ti"><div class="ti-val">MC</div><div class="ti-lbl">Format</div></div>'+
-'</div>'+
-'<button class="btn btn-p" onclick="startTest()">Begin Test</button>'+
-'</div></div>';
-}
-
 function renderTestInProgress(u){
-const q=u.test[S.test.cur];
-const sel=S.test.ans[S.test.cur];
+const q=u.test[S.test.cur];const sel=S.test.ans[S.test.cur];
 const pct=Math.round((S.test.cur/20)*100);
-let h='<div class="test-wrap">';
-h+='<div class="test-top"><div class="test-title">Unit '+u.id+' Mock Test</div>';
-h+='<div class="timer'+(S.test.left<=60?' red':'')+'" id="t-timer">'+fmtTime(S.test.left)+'</div></div>';
+let h='<div class="test-wrap"><div class="test-top"><div class="test-title">Unit '+u.id+' Mock Test</div><div class="timer'+(S.test.left<=60?' red':'')+'" id="t-timer">'+fmtTime(S.test.left)+'</div></div>';
 h+='<div class="tprog"><div class="tprog-bar" style="width:'+pct+'%"></div></div>';
-h+='<div class="t-counter">Question '+(S.test.cur+1)+' of 20</div>';
-h+='<div class="t-q">'+q.q+'</div>';
+h+='<div class="t-counter">Question '+(S.test.cur+1)+' of 20</div><div class="t-q">'+q.q+'</div>';
 h+='<div class="t-opts">';
-q.opts.forEach((opt,i)=>{
-h+='<button class="t-opt'+(sel===i?' sel':'')+'" onclick="selAns('+i+')">'+opt+'</button>';
-});
+q.opts.forEach((opt,i)=>{h+='<button class="t-opt'+(sel===i?' sel':'')+'" onclick="selAns('+i+')">'+opt+'</button>';});
 h+='</div>';
-h+='<div class="t-nav">';
-h+='<button class="btn btn-s" onclick="prevQ()" '+(S.test.cur===0?'disabled':'')+'>&#8592; Prev</button>';
+h+='<div class="t-nav"><button class="btn btn-s" onclick="prevQ()" '+(S.test.cur===0?'disabled':'')+'>&#8592; Prev</button>';
 h+='<div class="q-dots">';
-for(let i=0;i<20;i++){
-let dc='q-dot';
-if(S.test.ans[i]>=0)dc+=' has';
-if(i===S.test.cur)dc+=' cur';
-h+='<button class="'+dc+'" onclick="goQ('+i+')" title="Q'+(i+1)+'"></button>';
-}
+for(let i=0;i<20;i++){let dc='q-dot';if(S.test.ans[i]>=0)dc+=' has';if(i===S.test.cur)dc+=' cur';h+='<button class="'+dc+'" onclick="goQ('+i+')"></button>';}
 h+='</div>';
-if(S.test.cur<19){h+='<button class="btn btn-p" onclick="nextQ()">Next &#8594;</button>';}
-else{h+='<button class="btn btn-p" onclick="finishTest()">Submit</button>';}
+if(S.test.cur<19)h+='<button class="btn btn-p" onclick="nextQ()">Next &#8594;</button>';
+else h+='<button class="btn btn-p" onclick="finishTest()">Submit</button>';
 h+='</div></div>';
 return h;
 }
 
 function renderTestQ(){
-const u=uc();
-const q=u.test[S.test.cur];
-const sel=S.test.ans[S.test.cur];
-const pct=Math.round((S.test.cur/20)*100);
-const el=document.getElementById('app');
-if(!el)return;
-const wrap=el.querySelector('.test-wrap');
-if(!wrap){render();return;}
-const counter=wrap.querySelector('.t-counter');
-if(counter)counter.textContent='Question '+(S.test.cur+1)+' of 20';
-const bar=wrap.querySelector('.tprog-bar');
-if(bar)bar.style.width=pct+'%';
-const qEl=wrap.querySelector('.t-q');
-if(qEl)qEl.textContent=q.q;
-const opts=wrap.querySelectorAll('.t-opt');
-opts.forEach((b,i)=>{
-if(i<q.opts.length){b.textContent=q.opts[i];b.className='t-opt'+(sel===i?' sel':'');}
-});
-const dots=wrap.querySelectorAll('.q-dot');
-dots.forEach((d,i)=>{
-d.className='q-dot'+(S.test.ans[i]>=0?' has':'')+(i===S.test.cur?' cur':'');
-});
-const prevBtn=wrap.querySelector('.t-nav .btn-s');
-if(prevBtn)prevBtn.disabled=S.test.cur===0;
-const nextBtns=wrap.querySelectorAll('.t-nav .btn-p');
-nextBtns.forEach(b=>{
-if(S.test.cur<19){b.textContent='Next \u2192';b.onclick=nextQ;}
-else{b.textContent='Submit';b.onclick=finishTest;}
-});
+const u=uc();const q=u.test[S.test.cur];const sel=S.test.ans[S.test.cur];
+const wrap=document.querySelector('.test-wrap');if(!wrap){render();return;}
+const counter=wrap.querySelector('.t-counter');if(counter)counter.textContent='Question '+(S.test.cur+1)+' of 20';
+const bar=wrap.querySelector('.tprog-bar');if(bar)bar.style.width=Math.round((S.test.cur/20)*100)+'%';
+const qEl=wrap.querySelector('.t-q');if(qEl)qEl.textContent=q.q;
+wrap.querySelectorAll('.t-opt').forEach((b,i)=>{if(i<q.opts.length){b.textContent=q.opts[i];b.className='t-opt'+(sel===i?' sel':'');}});
+wrap.querySelectorAll('.q-dot').forEach((d,i)=>{d.className='q-dot'+(S.test.ans[i]>=0?' has':'')+(i===S.test.cur?' cur':'');});
+const prevBtn=wrap.querySelector('.btn-s');if(prevBtn)prevBtn.disabled=S.test.cur===0;
+const actBtn=wrap.querySelector('.btn-p');if(actBtn){if(S.test.cur<19){actBtn.textContent='Next \u2192';actBtn.onclick=nextQ;}else{actBtn.textContent='Submit';actBtn.onclick=finishTest;}}
 }
 
-function calcScore(u){
-let s=0;
-u.test.forEach((q,i)=>{if(S.test.ans[i]===q.ans)s++;});
-return s;
-}
-
-function getGrade(n){
-const p=n/20;
-if(p>=.9)return{g:'A',m:'Outstanding performance!'};
-if(p>=.8)return{g:'B',m:'Great work, almost there.'};
-if(p>=.7)return{g:'C',m:'Decent effort. Review the missed topics.'};
-if(p>=.6)return{g:'D',m:'Needs improvement. Study the guide sections.'};
-return{g:'F',m:'Keep studying. Review the full unit guide.'};
+function calcGrade(n,total){
+const p=n/total;
+if(p>=.9)return{g:'A',m:'Outstanding work.'};if(p>=.8)return{g:'B',m:'Great job.'};
+if(p>=.7)return{g:'C',m:'Decent. Review missed topics.'};if(p>=.6)return{g:'D',m:'Needs improvement.'};
+return{g:'F',m:'Review the study guide thoroughly.'};
 }
 
 function renderResults(u){
-const score=calcScore(u);
-const {g,m}=getGrade(score);
-let h='<div class="test-wrap">';
-h+='<div class="res-top">';
-h+='<div class="res-score">'+score+'</div>';
-h+='<div class="res-frac">out of 20 &mdash; '+Math.round(score/20*100)+'%</div>';
-h+='<div class="res-grade">Grade: '+g+'</div>';
-h+='<div class="res-msg">'+m+'</div>';
-h+='<div class="res-btns">';
-h+='<button class="btn btn-s" onclick="retakeTest()">Retake Test</button>';
-h+='<button class="btn btn-p" onclick="setTab(\'guide\')">Review Study Guide</button>';
-h+='</div></div>';
-h+='<div class="rbk">';
-h+='<div class="rbk-hdr"><span>#</span><span>Question</span><span style="text-align:right">Result</span></div>';
+let score=0;u.test.forEach((q,i)=>{if(S.test.ans[i]===q.ans)score++;});
+const{g,m}=calcGrade(score,20);
+let h='<div class="test-wrap"><div class="res-top"><div class="res-score">'+score+'</div><div class="res-frac">out of 20 &mdash; '+Math.round(score/20*100)+'%</div><div class="res-grade">Grade: '+g+'</div><div class="res-msg">'+m+'</div><div class="res-btns"><button class="btn btn-s" onclick="retakeTest()">Retake</button><button class="btn btn-p" onclick="setTab(\'guide\')">Review Guide</button></div></div>';
+h+='<div class="rbk"><div class="rbk-hdr"><span>#</span><span>Question</span><span style="text-align:right">Result</span></div>';
 u.test.forEach((q,i)=>{
 const correct=S.test.ans[i]===q.ans;
-h+='<div class="rbk-row">';
-h+='<span class="rbk-n">'+(i+1)+'</span>';
-h+='<div class="rbk-q">'+q.q+(correct?'':'<div class="rbk-ca">Correct: '+q.opts[q.ans]+'</div>')+'</div>';
-h+='<span class="'+(correct?'rbk-ok':'rbk-no')+'">'+(correct?'&#10003; Correct':'&#10007; Wrong')+'</span>';
-h+='</div>';
+h+='<div class="rbk-row"><span class="rbk-n">'+(i+1)+'</span><div class="rbk-q">'+q.q+(correct?'':'<div class="rbk-ca">Correct: '+q.opts[q.ans]+'</div>')+'</div><span class="'+(correct?'rbk-ok':'rbk-no')+'">'+(correct?'&#10003;':'&#10007;')+'</span></div>';
 });
 h+='</div></div>';
 return h;
 }
 
+function renderFC(){
+const app=document.getElementById('app');
+const uid=S.fc.uid;
+const allCards=uid==='all'?[].concat(...Object.values(FC)):FC[uid]||[];
+const total=S.fc.order.length;
+const atEnd=S.fc.idx>=total;
+let h=hdr('Flashcards');
+h+='<div class="fc-wrap">';
+h+='<button class="sb-back" style="margin-bottom:20px" onclick="goHome()">&#8592; Home</button>';
+h+='<div class="fc-hdr"><h2>Flashcards</h2><p>Click a card to flip it. Mark Known or Review Again to sort your deck.</p></div>';
+h+='<div class="fc-unit-sel">';
+h+='<button class="fc-unit-btn'+(uid==='all'?' act':'')+'" onclick="fcSetUnit(\'all\')">All Units</button>';
+UNITS.forEach(u=>{h+='<button class="fc-unit-btn'+(uid===u.id?' act':'')+'" onclick="fcSetUnit('+u.id+')">Unit '+u.id+'</button>';});
+h+='</div>';
+if(total===0){h+='<div class="fc-done"><h3>No cards available</h3><p>Select a unit above.</p></div></div>';app.innerHTML=h;return;}
+if(atEnd){
+const k=S.fc.known.length;const uk=S.fc.unknown.length;
+h+='<div class="fc-done"><h3>Deck complete!</h3>';
+h+='<p>Known: <strong style="color:#3D8C5A">'+k+'</strong> &mdash; Review again: <strong style="color:#C45252">'+uk+'</strong> &mdash; Skipped: <strong>'+(total-k-uk)+'</strong></p>';
+h+='<div style="display:flex;gap:10px;justify-content:center"><button class="btn btn-p" onclick="initFC();render()">Restart Deck</button><button class="btn btn-s" onclick="goHome()">Back to Home</button></div></div>';
+h+='</div>';app.innerHTML=h;return;
+}
+const cardIdx=S.fc.order[S.fc.idx];
+const card=allCards[cardIdx];
+const pct=Math.round((S.fc.idx/total)*100);
+const unitName=uid==='all'?'All Units':'Unit '+uid+': '+UNITS.find(u=>u.id==uid)?.title;
+h+='<div class="fc-progress"><span class="fc-count">Card '+(S.fc.idx+1)+' of '+total+' &mdash; '+unitName+'</span>';
+h+='<span class="fc-stats"><span class="fc-k">&#10003; '+S.fc.known.length+'</span><span class="fc-u">&#10007; '+S.fc.unknown.length+'</span></span></div>';
+h+='<div class="fc-pbar"><div class="fc-pfill" style="width:'+pct+'%"></div></div>';
+h+='<div class="fc-scene" onclick="fcFlip()">';
+h+='<div class="fc-inner'+(S.fc.flipped?' flipped':'')+'">';
+h+='<div class="fc-face fc-front"><span class="fc-face-label">Term</span><div class="fc-q">'+card.f+'</div></div>';
+const backText=card.b.replace(/\n/g,'<br>');
+h+='<div class="fc-face fc-back"><span class="fc-face-label">Definition</span><div class="fc-a">'+backText+'</div></div>';
+h+='</div></div>';
+h+='<p class="fc-hint">Click card to flip &mdash; then mark below</p>';
+h+='<div class="fc-actions"><button class="fc-btn-u" onclick="fcUnknow()">&#10007; Review Again</button><button class="fc-btn-k" onclick="fcKnow()">&#10003; Got It</button></div>';
+h+='<div class="fc-nav-row"><button class="btn btn-s" style="font-size:13px" onclick="fcPrev()" '+(S.fc.idx===0?'disabled':'')+'>&#8592; Prev</button><button class="btn btn-s" style="font-size:13px" onclick="fcNext()" '+(S.fc.idx>=total-1?'disabled':'')+'>Next &#8594;</button></div>';
+h+='</div>';
+app.innerHTML=h;
+}
+
+function renderFinalView(){
+const app=document.getElementById('app');
+if(!S.final.done&&S.final.ans.every(a=>a===-1)&&!S.final.timer){
+let h=hdr('Final Exam');
+h+='<div class="test-wrap"><div class="test-start">';
+h+='<h2>Cumulative Final Exam</h2>';
+h+='<p>50 questions spanning all 5 units. 50 minutes. Auto-scored with unit breakdown.</p>';
+h+='<div class="ti-grid"><div class="ti"><div class="ti-val">50</div><div class="ti-lbl">Questions</div></div><div class="ti"><div class="ti-val">50</div><div class="ti-lbl">Minutes</div></div><div class="ti"><div class="ti-val">5</div><div class="ti-lbl">Units</div></div></div>';
+h+='<button class="btn btn-p" onclick="startFinal()">Begin Final Exam</button>';
+h+='<p style="margin-top:14px;font-size:12px;color:var(--mu)">Results are saved to your progress tracker.</p>';
+h+='</div></div>';
+app.innerHTML=h;return;
+}
+if(S.final.done){renderFinalResults();return;}
+renderFinalInProgress();
+}
+
+function renderFinalInProgress(){
+const app=document.getElementById('app');
+const q=FINAL[S.final.cur];const sel=S.final.ans[S.final.cur];
+const pct=Math.round((S.final.cur/50)*100);
+const uName=UNITS.find(u=>u.id===q.unit)?.title||'';
+let h=hdr('Final Exam');
+h+='<div class="test-wrap"><div class="test-top"><div class="test-title">Final Exam</div><div class="timer'+(S.final.left<=120?' red':'')+'" id="f-timer">'+fmtTime(S.final.left)+'</div></div>';
+h+='<div class="tprog"><div class="tprog-bar" style="width:'+pct+'%"></div></div>';
+h+='<div class="t-ubadge">Unit '+q.unit+': '+uName+'</div>';
+h+='<div class="t-counter">Question '+(S.final.cur+1)+' of 50</div>';
+h+='<div class="t-q">'+q.q+'</div><div class="t-opts">';
+q.opts.forEach((opt,i)=>{h+='<button class="t-opt'+(sel===i?' sel':'')+'" onclick="selFinalAns('+i+')">'+opt+'</button>';});
+h+='</div>';
+h+='<div class="t-nav"><button class="btn btn-s" onclick="prevFQ()" '+(S.final.cur===0?'disabled':'')+'>&#8592; Prev</button>';
+h+='<div class="q-dots">';
+for(let i=0;i<50;i++){let dc='q-dot';if(S.final.ans[i]>=0)dc+=' has';if(i===S.final.cur)dc+=' cur';h+='<button class="'+dc+'" onclick="goFQ('+i+')"></button>';}
+h+='</div>';
+if(S.final.cur<49)h+='<button class="btn btn-p" onclick="nextFQ()">Next &#8594;</button>';
+else h+='<button class="btn btn-p" onclick="finishFinal()">Submit</button>';
+h+='</div></div>';
+app.innerHTML=h;
+}
+
+function renderFinalQ(){
+const q=FINAL[S.final.cur];const sel=S.final.ans[S.final.cur];
+const wrap=document.querySelector('.test-wrap');if(!wrap){renderFinalInProgress();return;}
+const counter=wrap.querySelector('.t-counter');if(counter)counter.textContent='Question '+(S.final.cur+1)+' of 50';
+const bar=wrap.querySelector('.tprog-bar');if(bar)bar.style.width=Math.round((S.final.cur/50)*100)+'%';
+const badge=wrap.querySelector('.t-ubadge');
+const uName=UNITS.find(u=>u.id===q.unit)?.title||'';
+if(badge)badge.textContent='Unit '+q.unit+': '+uName;
+const qEl=wrap.querySelector('.t-q');if(qEl)qEl.textContent=q.q;
+wrap.querySelectorAll('.t-opt').forEach((b,i)=>{if(i<q.opts.length){b.textContent=q.opts[i];b.className='t-opt'+(sel===i?' sel':'');}});
+wrap.querySelectorAll('.q-dot').forEach((d,i)=>{d.className='q-dot'+(S.final.ans[i]>=0?' has':'')+(i===S.final.cur?' cur':'');});
+const prevBtn=wrap.querySelector('.btn-s');if(prevBtn)prevBtn.disabled=S.final.cur===0;
+const actBtn=wrap.querySelector('.btn-p');if(actBtn){if(S.final.cur<49){actBtn.textContent='Next \u2192';actBtn.onclick=nextFQ;}else{actBtn.textContent='Submit';actBtn.onclick=finishFinal;}}
+}
+
+function renderFinalResults(){
+const app=document.getElementById('app');
+let totalScore=0;
+FINAL.forEach((q,i)=>{if(S.final.ans[i]===q.ans)totalScore++;});
+const byUnit={};
+FINAL.forEach((q,i)=>{
+if(!byUnit[q.unit])byUnit[q.unit]={score:0,total:0};
+byUnit[q.unit].total++;
+if(S.final.ans[i]===q.ans)byUnit[q.unit].score++;
+});
+const{g,m}=calcGrade(totalScore,50);
+let h=hdr('Final Exam Results');
+h+='<div class="test-wrap"><div class="res-top">';
+h+='<div class="res-score">'+totalScore+'</div>';
+h+='<div class="res-frac">out of 50 &mdash; '+Math.round(totalScore/50*100)+'%</div>';
+h+='<div class="res-grade">Grade: '+g+'</div><div class="res-msg">'+m+'</div>';
+h+='<div class="res-btns"><button class="btn btn-s" onclick="retakeFinal()">Retake Final</button><button class="btn btn-p" onclick="goHome()">Dashboard</button></div></div>';
+h+='<div class="res-breakdown"><div class="res-bd-title">Breakdown by Unit</div>';
+UNITS.forEach(u=>{
+const d=byUnit[u.id];if(!d)return;
+const pct=Math.round(d.score/d.total*100);const col=progColor(pct);
+h+='<div class="res-bd-row"><div class="res-bd-name">Unit '+u.id+': '+u.title+'</div>';
+h+='<div><span style="color:'+col+';font-weight:600">'+d.score+'/'+d.total+' ('+pct+'%)</span>';
+if(pct<70)h+='<span class="res-bd-warn">Needs review</span>';
+h+='</div></div>';
+});
+h+='</div>';
+h+='<div class="rbk"><div class="rbk-hdr"><span>#</span><span>Question</span><span style="text-align:right">Result</span></div>';
+FINAL.forEach((q,i)=>{
+const correct=S.final.ans[i]===q.ans;
+h+='<div class="rbk-row"><span class="rbk-n">'+(i+1)+'</span><div class="rbk-q">';
+h+='<div style="font-size:10px;color:var(--mu);margin-bottom:2px">Unit '+q.unit+'</div>';
+h+=q.q+(correct?'':'<div class="rbk-ca">Correct: '+q.opts[q.ans]+'</div>');
+h+='</div><span class="'+(correct?'rbk-ok':'rbk-no')+'">'+(correct?'&#10003;':'&#10007;')+'</span></div>';
+});
+h+='</div></div>';
+app.innerHTML=h;
+}
+
+function renderDiagrams(){
+const app=document.getElementById('app');
+const diag=DIAGRAMS[S.diag.which];
+const d=S.diag;
+const correct=Object.keys(d.answers).length;
+const total=diag.parts.length;
+let h=hdr('Diagram Labeling');
+h+='<div class="diag-wrap">';
+h+='<button class="sb-back" style="margin-bottom:20px" onclick="goHome()">&#8592; Home</button>';
+h+='<div class="diag-hdr"><h2>Diagram Labeling</h2><p>Click a numbered hotspot, then click the correct label from the word bank.</p></div>';
+h+='<div class="diag-tabs">';
+Object.entries(DIAGRAMS).forEach(([key,dg])=>{
+h+='<button class="diag-tab'+(S.diag.which===key?' act':'')+'" onclick="switchDiag(\''+key+'\')">'+dg.label+'</button>';
+});
+h+='</div>';
+h+='<div class="diag-instr">Step 1: Click a numbered circle on the diagram (turns orange). Step 2: Click the correct label below. Correct answers turn green.</div>';
+h+='<div class="diag-canvas">'+diag.svg+'</div>';
+h+='<div class="word-bank-label">Word Bank</div>';
+h+='<div class="word-bank">';
+diag.parts.forEach((label)=>{
+const used=Object.values(d.answers).includes(label);
+h+='<button class="wb-btn'+(used?' used':'')+'" data-lbl="'+label+'" '+(used?'disabled':'')+' onclick="selectLabel(\''+label.replace(/'/g,"\\'")+'\')">'+(used?'&#10003; ':'')+label+'</button>';
+});
+h+='</div>';
+h+='<div id="diag-done-msg" style="display:none;text-align:center;padding:12px;color:#3D8C5A;font-weight:600;font-size:15px">All correct! Well done.</div>';
+h+='<div class="diag-score"><div><div class="diag-score-n" id="diag-score-val">'+correct+'/'+total+'</div><div class="diag-score-lbl">Labeled correctly</div></div>';
+h+='<div style="display:flex;gap:10px">';
+if(correct>0)h+='<button class="btn btn-s" style="font-size:13px" onclick="switchDiag(\''+S.diag.which+'\')">Reset</button>';
+if(correct===total&&total>0)h+='<span style="color:#3D8C5A;font-weight:600;line-height:1;align-self:center">Perfect &#10003;</span>';
+h+='</div></div>';
+h+='</div>';
+app.innerHTML=h;
+}
+
+if(S.fc.order.length===0)initFC();
 render();
 </script>
 </body>

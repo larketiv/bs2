@@ -198,6 +198,47 @@ body{font-family:var(--ff);background:var(--bg);color:var(--tx);min-height:100vh
 .diag-instr{font-size:13px;color:var(--mu);margin-bottom:16px;padding:10px 14px;background:var(--bg);border-radius:8px;line-height:1.6}
 .hotspot-circle{cursor:pointer;transition:fill .15s}
 .hotspot-text{font-size:11px;font-weight:700;fill:white;text-anchor:middle;dominant-baseline:central;pointer-events:none;user-select:none}
+.wr-wrap{max-width:760px;margin:0 auto;padding:44px 40px 80px}
+.wr-hdr h2{font-family:var(--fd);font-size:32px;font-weight:600;margin-bottom:6px}
+.wr-hdr p{font-size:13px;color:var(--mu);margin-bottom:24px}
+.wr-unit-sel{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.wr-unit-btn{padding:7px 16px;border-radius:20px;font-size:13px;cursor:pointer;border:1.5px solid var(--bd);background:var(--bg);color:var(--mu);font-family:var(--ff);transition:all .12s}
+.wr-unit-btn:hover{border-color:var(--uc)}
+.wr-unit-btn.act{background:var(--uc);color:white;border-color:var(--uc)}
+.wr-q{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:26px 28px;margin-bottom:16px}
+.wr-qnum{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--uc);margin-bottom:8px}
+.wr-qtext{font-size:15px;font-weight:500;line-height:1.6;margin-bottom:14px}
+.wr-textarea{width:100%;min-height:110px;padding:12px 14px;border:1.5px solid var(--bd);border-radius:8px;font-family:var(--ff);font-size:14px;line-height:1.65;background:var(--bg);color:var(--tx);resize:vertical;transition:border-color .12s}
+.wr-textarea:focus{outline:none;border-color:var(--uc)}
+.wr-textarea:disabled{opacity:.6;cursor:default}
+.wr-actions{display:flex;gap:10px;margin-top:10px;align-items:center}
+.grade-box{margin-top:14px;border-radius:10px;padding:16px 18px;font-size:13.5px;line-height:1.7;border:1px solid}
+.grade-box.s3{background:#E8F5EE;border-color:#3D8C5A}
+.grade-box.s2{background:#EEF4FF;border-color:#3B6EA5}
+.grade-box.s1{background:#FFF8EE;border-color:#C4883E}
+.grade-box.s0{background:#FAE8E8;border-color:#C45252}
+.grade-box.serr{background:var(--bg);border-color:var(--bd)}
+.grade-score{font-family:var(--fd);font-size:22px;font-weight:600;margin-bottom:6px}
+.grade-feedback{margin-bottom:6px}
+.grade-missing{font-size:12.5px;color:var(--mu)}
+.model-ans{background:var(--bg);border:1.5px solid var(--bd);border-radius:10px;padding:14px 16px;font-size:13.5px;line-height:1.75;margin-top:14px}
+.model-ans-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6B4FA0;margin-bottom:7px}
+.rubric-row{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.rub-btn{padding:9px 18px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid var(--bd);background:var(--bg);font-family:var(--ff);transition:all .12s;flex:1;min-width:80px;text-align:center}
+.rub-btn:hover{transform:translateY(-1px)}
+.rub-btn.r3{border-color:#3D8C5A;color:#1F5C38}
+.rub-btn.r3:hover,.rub-btn.r3.sel{background:#E8F5EE;border-color:#3D8C5A}
+.rub-btn.r2{border-color:#3B6EA5;color:#1A3F6E}
+.rub-btn.r2:hover,.rub-btn.r2.sel{background:#EEF4FF;border-color:#3B6EA5}
+.rub-btn.r1{border-color:#C4883E;color:#7B4A12}
+.rub-btn.r1:hover,.rub-btn.r1.sel{background:#FFF8EE;border-color:#C4883E}
+.rub-btn.r0{border-color:#C45252;color:#7A2020}
+.rub-btn.r0:hover,.rub-btn.r0.sel{background:#FAE8E8;border-color:#C45252}
+.rub-btn.sel{font-weight:600}
+.self-score-display{display:flex;align-items:center;gap:10px;margin-top:12px;padding:10px 14px;border-radius:8px;font-size:13.5px;font-weight:600}
+.wr-final-sa{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:28px;margin-bottom:16px}
+.wr-final-sa h3{font-family:var(--fd);font-size:20px;font-weight:600;margin-bottom:4px}
+.wr-final-sa p{font-size:13px;color:var(--mu);margin-bottom:20px}
 @media(max-width:780px){
 .dash{padding:32px 20px 60px}.dash h1{font-size:38px}.hdr{padding:0 20px}
 .upage{flex-direction:column;padding:0 20px 60px}.sidebar{width:100%;position:static;padding-top:20px}
@@ -794,6 +835,50 @@ parts:["Eyepiece (ocular lens)","Nosepiece","Objective lens","Stage","Diaphragm"
 }
 };
 
+const WQ={
+1:[
+{q:"Explain why cells cannot grow infinitely large. Use the concept of SA:V ratio and describe what happens to the ratio as cell size increases.",ans:"As a cell grows, its volume increases faster than its surface area. This lowers the SA:V ratio, meaning less membrane is available to supply the cell's growing metabolic needs. Nutrients and waste cannot move in and out fast enough, so cells must remain small to maintain an efficient ratio."},
+{q:"Compare prokaryotic and eukaryotic cells. Include at least four structural differences.",ans:"Prokaryotes lack a membrane-bound nucleus; eukaryotes have one. Prokaryotes have no membrane-bound organelles; eukaryotes do. Prokaryotic DNA is circular and floats in the cytoplasm; eukaryotic DNA is linear and housed in the nucleus. Prokaryotes appeared earlier (~3.5 bya); eukaryotes appeared ~2 bya. Prokaryotes are generally smaller."},
+{q:"Describe the process of osmosis. Define hypotonic, hypertonic, and isotonic solutions and explain what happens to a cell in each.",ans:"Osmosis is the passive movement of water across a selectively permeable membrane from a region of high water concentration to low water concentration. In a hypotonic solution (fewer solutes than the cell), water enters the cell and it swells. In a hypertonic solution (more solutes), water leaves and the cell shrinks. In an isotonic solution (equal solute concentration), there is no net water movement."},
+{q:"Explain the endosymbiosis theory. What does it propose, and what three pieces of evidence support it?",ans:"Endosymbiosis theory proposes that mitochondria and chloroplasts were once free-living prokaryotes that were engulfed by larger cells and eventually became permanent organelles. Evidence: (1) both organelles have their own circular DNA, (2) both have their own ribosomes similar to bacterial ribosomes, and (3) both reproduce independently by binary fission."},
+{q:"Describe the fluid mosaic model of the cell membrane. What does 'selectively permeable' mean and why is it important?",ans:"The fluid mosaic model describes the cell membrane as a flexible phospholipid bilayer with embedded proteins. Hydrophilic heads face outward and hydrophobic tails face inward. Selectively permeable means only certain molecules can pass through. This is important because it allows the cell to control what enters and exits, maintaining homeostasis and regulating transport of nutrients and waste."}
+],
+2:[
+{q:"Compare the light reactions and dark reactions of photosynthesis. For each stage, state the location, reactants, and products.",ans:"Light reactions occur in the thylakoid membranes. Reactants: sunlight, water, ADP, NADP+. Products: ATP, NADPH, and O2 (from photolysis). Dark reactions (Calvin cycle) occur in the stroma. Reactants: CO2, ATP, NADPH. Products: glucose, and ADP and NADP+ are recycled back to the light reactions."},
+{q:"Describe the three stages of aerobic cellular respiration. For each stage, state the location and key products.",ans:"Glycolysis occurs in the cytoplasm. No O2 needed. Products: 2 pyruvic acid, 2 ATP, 2 NADH. The Krebs cycle occurs in the mitochondrial matrix. Requires O2. Products: CO2, NADH, FADH2, 2 ATP. The electron transport chain occurs on the inner mitochondrial membrane. Requires O2. Products: ~34 ATP and water. Total: ~38 ATP per glucose."},
+{q:"Compare lactic acid fermentation and alcohol fermentation. Include organism, products, and one similarity.",ans:"Both are anaerobic processes that begin with glycolysis and produce only 2 ATP. Lactic acid fermentation occurs in muscle cells and bacteria, producing lactic acid. Alcohol fermentation occurs in yeast, producing ethanol and CO2."},
+{q:"Describe how carbon moves through the carbon cycle. Include the atmosphere, biosphere, and geosphere in your answer.",ans:"Carbon enters the biosphere when plants absorb CO2 through photosynthesis (carbon fixation). It returns to the atmosphere through cellular respiration, combustion, and decomposition. Carbon enters the geosphere when organic matter is buried over millions of years, forming fossil fuels. Burning fossil fuels (combustion) returns it to the atmosphere. Carbon also dissolves into the hydrosphere from the atmosphere."},
+{q:"Describe Van Helmont's experiment. What did he conclude, and what do we now know is the correct explanation?",ans:"Van Helmont planted a 2.3 kg willow in 90.9 kg of soil and watered it with rainwater for five years. The tree gained ~74 kg while the soil lost only 0.06 kg. He concluded mass came from water. We now know most plant mass comes from CO2 absorbed from the air via photosynthesis, not from water or soil."}
+],
+3:[
+{q:"Compare mitosis and meiosis. Include purpose, number of divisions, chromosome number in daughter cells, and whether daughter cells are genetically identical.",ans:"Mitosis: purpose is growth and repair; one division; daughter cells are diploid (2n); daughter cells are genetically identical. Meiosis: purpose is sexual reproduction; two divisions; daughter cells are haploid (n); daughter cells are genetically unique due to crossing over and independent assortment."},
+{q:"Explain why meiosis produces genetically unique cells. Include two specific mechanisms in your answer.",ans:"Meiosis produces genetic diversity through two mechanisms. First, crossing over during Prophase I exchanges DNA segments between homologous chromosomes, creating new allele combinations. Second, independent assortment during Metaphase I randomly determines which homolog moves to which pole, further randomizing the genetic content of each daughter cell."},
+{q:"Describe the four phases of mitosis in order. For each phase, state one key event.",ans:"Prophase: chromosomes condense and the nuclear envelope dissolves; spindle fibers form. Metaphase: chromosomes line up along the cell's equator (metaphase plate). Anaphase: sister chromatids are pulled to opposite poles by spindle fibers. Telophase: the nuclear envelope reforms and chromosomes decondense; cytokinesis divides the cytoplasm into two cells."},
+{q:"Explain the difference between Meiosis I and Meiosis II. What does each division accomplish?",ans:"Meiosis I is the reductive division. Homologous chromosome pairs are separated, reducing the cell from diploid (2n) to haploid (n). Crossing over occurs in Prophase I. Meiosis II resembles mitosis: sister chromatids are separated. No additional DNA replication occurs between the two divisions. The result is four haploid cells, all genetically unique."}
+],
+4:[
+{q:"Explain the difference between incomplete dominance and codominance. Give one example of each and describe the heterozygote phenotype.",ans:"Incomplete dominance: neither allele is fully dominant; the heterozygote shows a blend of both traits. Example: red x white snapdragon = pink. Codominance: both alleles are fully and equally expressed in the heterozygote with no blending. Example: blood type AB, where both A and B antigens are present on red blood cells."},
+{q:"Explain X-linked inheritance. Why are X-linked recessive traits more common in males than females? Use genotype notation in your answer.",ans:"X-linked traits are encoded on the X chromosome. Males (XY) have only one X chromosome, so a single recessive allele (X^hY) is sufficient to show the trait. Females (XX) need two copies of the recessive allele (X^hX^h) to be affected; one recessive allele makes them a carrier (X^HX^h). Because males cannot be carriers, they express any recessive X-linked allele they carry."},
+{q:"A carrier female for hemophilia (X^H X^h) has children with a normal male (X^H Y). Predict all possible offspring genotypes and phenotypes using a Punnett square.",ans:"Offspring: X^H X^H (normal female), X^H X^h (carrier female), X^H Y (normal male), X^h Y (affected male). 1/2 of daughters are carriers and 1/2 are normal; 1/2 of sons have hemophilia and 1/2 are normal. 1/4 of all offspring have hemophilia (all male)."},
+{q:"Explain ABO blood type inheritance. Why is blood type AB an example of codominance and blood type O an example of recessive inheritance?",ans:"ABO blood types are controlled by three alleles: I^A, I^B, and i. I^A and I^B are both dominant over i. Blood type AB (genotype I^A I^B) is codominance because both I^A and I^B are fully expressed simultaneously, producing both A and B antigens. Blood type O (genotype ii) is recessive because both alleles must be the recessive i allele for no antigens to be produced."}
+],
+5:[
+{q:"Explain the central dogma of molecular biology. Describe what happens during transcription and translation, including where each occurs.",ans:"The central dogma describes the flow of genetic information: DNA to mRNA to protein. Transcription occurs in the nucleus: RNA polymerase reads the DNA template strand and builds a complementary mRNA strand. Translation occurs at ribosomes in the cytoplasm: the ribosome reads mRNA codons (3-nucleotide sequences); tRNA molecules deliver matching amino acids; peptide bonds link them into a polypeptide (protein)."},
+{q:"What is sickle cell disease? Explain its molecular cause from the DNA mutation to the effect on red blood cells.",ans:"Sickle cell disease is a blood disorder caused by a point mutation in the hemoglobin gene. A single base change causes the amino acid glutamic acid to be replaced by valine. This causes hemoglobin molecules to misfold and stick together. Red blood cells become sickle-shaped, reducing their ability to carry oxygen and causing them to block blood vessels."},
+{q:"State Darwin's four premises of natural selection and explain how they lead to evolutionary change over generations.",ans:"(1) Overproduction: more offspring are born than can survive. (2) Variation: individuals have heritable differences in traits. (3) Heritable variation: those differences are passed to offspring. (4) Differential survival: individuals with favorable traits survive and reproduce more. Over generations, favorable alleles become more common in the population because their carriers leave more offspring, causing the population to change."},
+{q:"Compare allopatric and sympatric speciation. Which is more common, why does it occur, and what is required for any speciation to happen?",ans:"Allopatric speciation occurs when a geographic barrier separates a population. Isolated groups evolve independently and eventually become reproductively isolated, forming new species. It is the more common type. Sympatric speciation occurs within the same geographic area, usually requiring very strong selection pressures. Reproductive isolation is required for any speciation to occur: without it, gene flow between populations prevents them from diverging into separate species."},
+{q:"Describe the five forces of evolution. For each force, briefly explain how it changes allele frequencies in a population.",ans:"(1) Mutation: introduces new alleles by changing DNA sequences, creating raw material for evolution. (2) Gene flow: movement of individuals between populations transfers alleles, making populations more similar. (3) Genetic drift: random changes in allele frequency due to chance; strongest in small populations. (4) Natural selection: individuals with favorable traits survive and reproduce more, increasing their alleles over time. (5) Non-random mating (sexual selection): mate choice based on traits shifts allele frequencies toward preferred characteristics."}
+]
+};
+
+const FINAL_SA=[
+{unit:1,q:"Explain osmosis. Define hypotonic, hypertonic, and isotonic solutions and describe the effect on a cell in each.",ans:"Osmosis is the passive movement of water across a selectively permeable membrane from high to low water concentration. In a hypotonic solution (fewer solutes than the cell), water enters and the cell swells. In a hypertonic solution (more solutes), water leaves and the cell shrinks. In an isotonic solution (equal solute concentration), there is no net water movement."},
+{unit:2,q:"Compare the light reactions and dark reactions of photosynthesis. Include location, reactants, and products for each.",ans:"Light reactions occur in the thylakoid membranes. Reactants: sunlight, water, ADP, NADP+. Products: ATP, NADPH, O2. Dark reactions occur in the stroma. Reactants: CO2, ATP, NADPH. Products: glucose, recycled ADP and NADP+."},
+{unit:3,q:"Compare mitosis and meiosis. Include the purpose, number of divisions, ploidy of daughter cells, and whether daughter cells are genetically identical.",ans:"Mitosis: growth and repair; one division; diploid daughter cells; genetically identical. Meiosis: sexual reproduction; two divisions; haploid daughter cells; genetically unique due to crossing over and independent assortment."},
+{unit:4,q:"Explain the difference between incomplete dominance and codominance with one example of each.",ans:"Incomplete dominance: heterozygote shows a blend. Example: red x white snapdragon = pink. Codominance: both alleles fully expressed simultaneously. Example: blood type AB shows both A and B antigens."},
+{unit:5,q:"Explain Darwin's four premises of natural selection and how they lead to evolutionary change over time.",ans:"(1) Overproduction: more offspring than can survive. (2) Variation: heritable differences exist. (3) Heritable variation: differences pass to offspring. (4) Differential survival: favorable traits lead to more reproduction. Over generations favorable alleles accumulate, changing the population."}
+];
+
 let savedScores={};
 try{const s=localStorage.getItem('bio1adv');if(s)savedScores=JSON.parse(s);}catch(e){}
 
@@ -801,7 +886,8 @@ const S={
 view:'dashboard',uid:1,tab:'guide',prac:{},
 test:{ans:new Array(20).fill(-1),cur:0,end:0,timer:null,done:false},
 fc:{uid:'all',idx:0,flipped:false,known:[],unknown:[],order:[]},
-final:{ans:new Array(50).fill(-1),cur:0,end:0,timer:null,done:false},
+final:{ans:new Array(50).fill(-1),cur:0,end:0,timer:null,done:false,saAnswers:['','','','',''],saGrades:[null,null,null,null,null],saView:false,grading:false},
+writing:{uid:1,answers:{},grades:{}},
 diag:{which:'animal',selected:null,answers:{},wrong:null},
 scores:savedScores
 };
@@ -831,6 +917,81 @@ if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}
 render();window.scrollTo(0,0);
 }
 function openDiag(){S.view='diagrams';setColor('#4A8C6F');S.diag={which:'animal',selected:null,answers:{},wrong:null};render();window.scrollTo(0,0);}
+function openWriting(){S.view='writing';setColor('#6B4FA0');S.writing={uid:1,answers:{},grades:{}};render();window.scrollTo(0,0);}
+function writingSetUnit(uid){S.writing.uid=uid;render();}
+
+function revealWritingAnswer(uid,qi){
+const key=uid+'-'+qi;
+const ta=document.getElementById('wta-'+key);
+if(!ta)return;
+const userAns=ta.value.trim();
+if(!userAns){ta.style.borderColor='#C45252';setTimeout(()=>{ta.style.borderColor='';},800);return;}
+S.writing.answers[key]=userAns;
+ta.disabled=true;
+S.writing.grades[key]={revealed:true,score:null};
+const boxEl=document.getElementById('grade-box-'+key);
+if(boxEl)boxEl.innerHTML=buildRevealBox(WQ[uid][qi].ans,uid,qi,null,'writing');
+const actDiv=document.getElementById('wact-'+key);
+if(actDiv)actDiv.innerHTML='<button class="btn btn-s" style="font-size:13px" onclick="resetWritingAnswer('+uid+','+qi+')">Try Again</button>';
+}
+
+function selfScoreWriting(uid,qi,score){
+const key=uid+'-'+qi;
+if(!S.writing.grades[key])S.writing.grades[key]={revealed:true};
+S.writing.grades[key].score=score;
+const boxEl=document.getElementById('grade-box-'+key);
+if(boxEl)boxEl.innerHTML=buildRevealBox(WQ[uid][qi].ans,uid,qi,score,'writing');
+}
+
+function revealFinalSA(i){
+const ta=document.getElementById('fsa-'+i);
+if(!ta)return;
+const ans=ta.value.trim();
+if(!ans){ta.style.borderColor='#C45252';setTimeout(()=>{ta.style.borderColor='';},800);return;}
+S.final.saAnswers[i]=ans;
+ta.disabled=true;
+S.final.saGrades[i]={revealed:true,score:null};
+const boxEl=document.getElementById('fsa-grade-'+i);
+if(boxEl)boxEl.innerHTML=buildRevealBox(FINAL_SA[i].ans,null,i,null,'final');
+const actDiv=document.getElementById('fsa-act-'+i);
+if(actDiv)actDiv.innerHTML='';
+}
+
+function selfScoreFinal(i,score){
+if(!S.final.saGrades[i])S.final.saGrades[i]={revealed:true};
+S.final.saGrades[i].score=score;
+const boxEl=document.getElementById('fsa-grade-'+i);
+if(boxEl)boxEl.innerHTML=buildRevealBox(FINAL_SA[i].ans,null,i,score,'final');
+const allScored=S.final.saGrades.every(g=>g&&g.score!==null);
+const btn=document.getElementById('final-sa-continue');
+if(btn){btn.disabled=!allScored;btn.textContent=allScored?'View Final Results':'Score all answers to continue';}
+}
+
+function buildRevealBox(modelAns,uid,qi,score,ctx){
+const rubric=[
+{cls:'r3',label:'3 &mdash; Complete',desc:'All key concepts present and accurate'},
+{cls:'r2',label:'2 &mdash; Mostly correct',desc:'1-2 key points missing or slightly off'},
+{cls:'r1',label:'1 &mdash; Partial',desc:'Some understanding but significant gaps'},
+{cls:'r0',label:'0 &mdash; Off-topic',desc:'Incorrect or off-topic'}
+];
+const scoreColors={3:'#3D8C5A',2:'#3B6EA5',1:'#C4883E',0:'#C45252'};
+let h='<div class="model-ans"><div class="model-ans-label">Model Answer</div>'+modelAns+'</div>';
+if(score===null){
+const fn=ctx==='final'?'selfScoreFinal('+qi+',SCORE)':'selfScoreWriting('+uid+','+qi+',SCORE)';
+h+='<div class="rubric-row">';
+rubric.forEach(r=>{
+h+='<button class="rub-btn '+r.cls+'" title="'+r.desc+'" onclick="'+fn.replace('SCORE',r.label[0])+'">'+r.label+'</button>';
+});
+h+='</div>';
+h+='<div style="font-size:11px;color:var(--mu);margin-top:8px">Honestly compare your answer to the model, then pick a score.</div>';
+}else{
+const col=scoreColors[score];
+h+='<div class="self-score-display" style="background:'+col+'18;border:1px solid '+col+'40;color:'+col+'">';
+h+='Your self-score: <span style="font-size:20px;font-family:var(--fd)">'+score+'/3</span>';
+h+='</div>';
+}
+return h;
+}
 
 function initFC(){
 const uid=S.fc.uid;
@@ -889,14 +1050,12 @@ render();
 }
 function finishFinal(){
 if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}
-S.final.done=true;
-let score=0;FINAL.forEach((q,i)=>{if(S.final.ans[i]===q.ans)score++;});
-if(!S.scores.final)S.scores.final=[];
-S.scores.final.push({score,total:50,ts:Date.now()});
-saveScores();render();window.scrollTo(0,0);
+S.final.saAnswers=['','','','',''];S.final.saGrades=[null,null,null,null,null];
+renderFinalSA();window.scrollTo(0,0);
 }
 function retakeFinal(){
 S.final.ans=new Array(50).fill(-1);S.final.cur=0;S.final.end=0;S.final.done=false;
+S.final.saAnswers=['','','','',''];S.final.saGrades=[null,null,null,null,null];
 if(S.final.timer){clearInterval(S.final.timer);S.final.timer=null;}
 startFinal();
 }
@@ -1016,6 +1175,7 @@ if(S.view==='unit'){renderUnit();return;}
 if(S.view==='flashcards'){renderFC();return;}
 if(S.view==='final'){renderFinalView();return;}
 if(S.view==='diagrams'){renderDiagrams();return;}
+if(S.view==='writing'){renderWriting();return;}
 }
 
 function hdr(mid){return '<header class="hdr"><button class="logo" onclick="goHome()">BIO 1 ADV <em>Semester 2</em></button><span class="hdr-rt">'+(mid||'')+'</span></header>';}
@@ -1047,6 +1207,7 @@ h+='<div class="fgrid">';
 h+='<div class="fcard" onclick="openFinal()" style="--uc:#1A5E96"><div class="fcard-icon">&#9998;</div><div><div class="fcard-title">Final Exam</div><div class="fcard-sub">50 questions &mdash; all 5 units &mdash; 50 min</div></div></div>';
 h+='<div class="fcard" onclick="openFC()"><div class="fcard-icon">&#9654;</div><div><div class="fcard-title">Flashcards</div><div class="fcard-sub">90+ flip cards with Know / Don\'t Know sorting</div></div></div>';
 h+='<div class="fcard" onclick="openDiag()" style="--uc:#4A8C6F"><div class="fcard-icon">&#10010;</div><div><div class="fcard-title">Diagram Labeling</div><div class="fcard-sub">Animal cell, plant cell, microscope</div></div></div>';
+h+='<div class="fcard" onclick="openWriting()" style="--uc:#6B4FA0"><div class="fcard-icon">&#9998;</div><div><div class="fcard-title">Writing Practice</div><div class="fcard-sub">AI-graded short answers &mdash; all 5 units</div></div></div>';
 h+='</div>';
 if(hasScores){
 h+='<div class="section-label" style="margin-top:4px">My Progress</div>';
@@ -1235,8 +1396,8 @@ if(!S.final.done&&S.final.ans.every(a=>a===-1)&&!S.final.timer){
 let h=hdr('Final Exam');
 h+='<div class="test-wrap"><div class="test-start">';
 h+='<h2>Cumulative Final Exam</h2>';
-h+='<p>50 questions spanning all 5 units. 50 minutes. Auto-scored with unit breakdown.</p>';
-h+='<div class="ti-grid"><div class="ti"><div class="ti-val">50</div><div class="ti-lbl">Questions</div></div><div class="ti"><div class="ti-val">50</div><div class="ti-lbl">Minutes</div></div><div class="ti"><div class="ti-val">5</div><div class="ti-lbl">Units</div></div></div>';
+h+='<p>50 multiple-choice questions spanning all 5 units, followed by 5 AI-graded short answer questions. 50 minutes for the MC section.</p>';
+h+='<div class="ti-grid"><div class="ti"><div class="ti-val">50</div><div class="ti-lbl">MC Questions</div></div><div class="ti"><div class="ti-val">5</div><div class="ti-lbl">Written Qs</div></div><div class="ti"><div class="ti-val">50</div><div class="ti-lbl">MC Minutes</div></div></div>';
 h+='<button class="btn btn-p" onclick="startFinal()">Begin Final Exam</button>';
 h+='<p style="margin-top:14px;font-size:12px;color:var(--mu)">Results are saved to your progress tracker.</p>';
 h+='</div></div>';
@@ -1295,14 +1456,19 @@ if(!byUnit[q.unit])byUnit[q.unit]={score:0,total:0};
 byUnit[q.unit].total++;
 if(S.final.ans[i]===q.ans)byUnit[q.unit].score++;
 });
+let saTotal=0;
+S.final.saGrades.forEach(g=>{if(g&&g.score!=null)saTotal+=g.score;});
 const{g,m}=calcGrade(totalScore,50);
 let h=hdr('Final Exam Results');
 h+='<div class="test-wrap"><div class="res-top">';
 h+='<div class="res-score">'+totalScore+'</div>';
-h+='<div class="res-frac">out of 50 &mdash; '+Math.round(totalScore/50*100)+'%</div>';
-h+='<div class="res-grade">Grade: '+g+'</div><div class="res-msg">'+m+'</div>';
+h+='<div class="res-frac">out of 50 MC &mdash; '+Math.round(totalScore/50*100)+'%</div>';
+if(S.final.saGrades.some(g=>g!==null)){
+h+='<div style="margin:8px 0;font-size:15px;color:#6B4FA0;font-weight:600">Written: '+saTotal+'/15 points</div>';
+}
+h+='<div class="res-grade">MC Grade: '+g+'</div><div class="res-msg">'+m+'</div>';
 h+='<div class="res-btns"><button class="btn btn-s" onclick="retakeFinal()">Retake Final</button><button class="btn btn-p" onclick="goHome()">Dashboard</button></div></div>';
-h+='<div class="res-breakdown"><div class="res-bd-title">Breakdown by Unit</div>';
+h+='<div class="res-breakdown"><div class="res-bd-title">MC Breakdown by Unit</div>';
 UNITS.forEach(u=>{
 const d=byUnit[u.id];if(!d)return;
 const pct=Math.round(d.score/d.total*100);const col=progColor(pct);
@@ -1312,6 +1478,19 @@ if(pct<70)h+='<span class="res-bd-warn">Needs review</span>';
 h+='</div></div>';
 });
 h+='</div>';
+if(S.final.saGrades.some(g=>g!==null)){
+h+='<div class="res-breakdown" style="margin-top:16px"><div class="res-bd-title" style="color:#6B4FA0">Written Question Scores</div>';
+FINAL_SA.forEach((q,i)=>{
+const grade=S.final.saGrades[i];
+const score=grade&&grade.score!=null?grade.score:'-';
+const col=grade&&grade.score===3?'#3D8C5A':grade&&grade.score>=2?'#3B6EA5':grade&&grade.score===1?'#C4883E':'#C45252';
+h+='<div class="res-bd-row"><div class="res-bd-name" style="font-size:13px">Written Q'+(i+1)+': Unit '+q.unit+'</div>';
+h+='<div><span style="color:'+col+';font-weight:600">'+score+'/3</span>';
+if(grade&&grade.missing&&grade.score!==3)h+='<div style="font-size:11px;color:var(--mu);margin-top:2px">'+grade.missing+'</div>';
+h+='</div></div>';
+});
+h+='</div>';
+}
 h+='<div class="rbk"><div class="rbk-hdr"><span>#</span><span>Question</span><span style="text-align:right">Result</span></div>';
 FINAL.forEach((q,i)=>{
 const correct=S.final.ans[i]===q.ans;
@@ -1358,7 +1537,94 @@ h+='</div>';
 app.innerHTML=h;
 }
 
-if(S.fc.order.length===0)initFC();
+function renderWriting(){
+const app=document.getElementById('app');
+const uid=S.writing.uid;
+const qs=WQ[uid]||[];
+let h=hdr('Writing Practice');
+h+='<div class="wr-wrap">';
+h+='<button class="sb-back" style="margin-bottom:20px" onclick="goHome()">&#8592; Home</button>';
+h+='<div class="wr-hdr"><h2>Writing Practice</h2><p>Write your answer, then reveal the model answer and self-score 0&ndash;3. Try to write as much as you can before revealing.</p></div>';
+h+='<div class="wr-unit-sel">';
+UNITS.forEach(u=>{h+='<button class="wr-unit-btn'+(uid===u.id?' act':'')+'" onclick="writingSetUnit('+u.id+')">Unit '+u.id+'</button>';});
+h+='</div>';
+qs.forEach((q,qi)=>{
+const key=uid+'-'+qi;
+const grade=S.writing.grades[key];
+const savedAns=S.writing.answers[key]||'';
+const revealed=grade&&grade.revealed;
+h+='<div class="wr-q">';
+h+='<div class="wr-qnum">Question '+(qi+1)+' of '+qs.length+'</div>';
+h+='<div class="wr-qtext">'+q.q+'</div>';
+h+='<textarea class="wr-textarea" id="wta-'+key+'" placeholder="Write your answer here..."'+(revealed?' disabled':'')+'>'+savedAns+'</textarea>';
+h+='<div class="wr-actions" id="wact-'+key+'">';
+if(!revealed){
+h+='<button class="btn btn-p" style="font-size:13px;background:#6B4FA0" onclick="revealWritingAnswer('+uid+','+qi+')">Reveal Model Answer</button>';
+}else{
+h+='<button class="btn btn-s" style="font-size:13px" onclick="resetWritingAnswer('+uid+','+qi+')">Try Again</button>';
+}
+h+='</div>';
+h+='<div id="grade-box-'+key+'">';
+if(revealed){h+=buildRevealBox(q.ans,uid,qi,grade.score,'writing');}
+h+='</div>';
+h+='</div>';
+});
+h+='</div>';
+app.innerHTML=h;
+}
+
+function buildGradeBox(grade){
+if(!grade||!grade.revealed)return '';
+return buildRevealBox('',null,null,grade.score,null);
+}
+
+function submitWritingAnswer(uid,qi){revealWritingAnswer(uid,qi);}
+
+function resetWritingAnswer(uid,qi){
+const key=uid+'-'+qi;
+delete S.writing.answers[key];
+delete S.writing.grades[key];
+renderWriting();
+}
+
+function renderFinalSA(){
+const app=document.getElementById('app');
+const f=S.final;
+let h=hdr('Final Exam &mdash; Written Questions');
+h+='<div class="test-wrap">';
+h+='<div class="wr-final-sa"><h3>Written Section</h3><p>Write your answer, then reveal the model answer and self-score 0&ndash;3. You must score all 5 to see your final results.</p></div>';
+FINAL_SA.forEach((q,i)=>{
+const grade=f.saGrades[i];
+const saved=f.saAnswers[i]||'';
+const revealed=grade&&grade.revealed;
+h+='<div class="wr-q">';
+h+='<div class="wr-qnum" style="color:#6B4FA0">Written Q'+(i+1)+' &mdash; Unit '+q.unit+': '+UNITS.find(u=>u.id===q.unit)?.title+'</div>';
+h+='<div class="wr-qtext">'+q.q+'</div>';
+h+='<textarea class="wr-textarea" id="fsa-'+i+'" placeholder="Write your answer here..."'+(revealed?' disabled':'')+'>'+saved+'</textarea>';
+h+='<div class="wr-actions" id="fsa-act-'+i+'">';
+if(!revealed){h+='<button class="btn btn-p" style="font-size:13px;background:#6B4FA0" onclick="revealFinalSA('+i+')">Reveal Model Answer</button>';}
+h+='</div>';
+h+='<div id="fsa-grade-'+i+'">'+(revealed?buildRevealBox(q.ans,null,i,grade.score,'final'):'')+'</div>';
+h+='</div>';
+});
+const allScored=f.saGrades.every(g=>g&&g.score!==null);
+h+='<div style="margin-top:24px;display:flex;gap:12px;justify-content:center">';
+h+='<button class="btn btn-p" id="final-sa-continue" '+(allScored?'':'disabled')+' onclick="finalizeFinalSA()" style="background:#6B4FA0">'+(allScored?'View Final Results':'Score all answers to continue')+'</button>';
+h+='</div></div>';
+app.innerHTML=h;
+}
+
+function submitFinalSA(i){revealFinalSA(i);}
+
+function finalizeFinalSA(){
+S.final.done=true;
+if(!S.scores.final)S.scores.final=[];
+let mcScore=0;FINAL.forEach((q,i)=>{if(S.final.ans[i]===q.ans)mcScore++;});
+let saScore=0;S.final.saGrades.forEach(g=>{if(g&&g.score!=null)saScore+=g.score;});
+S.scores.final.push({score:mcScore,saScore,total:50,saTotal:15,ts:Date.now()});
+saveScores();
+renderFinalResults();
+}
 render();
 </script>
 </body>

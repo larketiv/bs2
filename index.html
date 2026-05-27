@@ -243,8 +243,57 @@ body{font-family:var(--ff);background:var(--bg);color:var(--tx);min-height:100vh
 .dash{padding:32px 20px 60px}.dash h1{font-size:38px}.hdr{padding:0 20px}
 .upage{flex-direction:column;padding:0 20px 60px}.sidebar{width:100%;position:static;padding-top:20px}
 .sb-nav{flex-direction:row;overflow-x:auto;padding-bottom:4px}
-.test-wrap,.fc-wrap,.diag-wrap{padding:32px 20px 60px}.ti-grid{flex-direction:column;align-items:center}
+.test-wrap,.fc-wrap,.diag-wrap,.ge-wrap,.pun-wrap{padding:32px 20px 60px}.ti-grid{flex-direction:column;align-items:center}
 }
+.ge-wrap{max-width:760px;margin:0 auto;padding:44px 40px 80px}
+.ge-wrap h2{font-family:var(--fd);font-size:32px;font-weight:600;margin-bottom:6px}
+.ge-wrap>p{font-size:13px;color:var(--mu);margin-bottom:24px}
+.ge-subtabs{display:flex;gap:8px;margin-bottom:28px;border-bottom:1px solid var(--bd);padding-bottom:14px}
+.ge-stab{padding:8px 20px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid var(--bd);background:var(--bg);color:var(--mu);font-family:var(--ff);transition:all .12s}
+.ge-stab.act{background:var(--uc);color:white;border-color:var(--uc)}
+.ge-qcard{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:26px 28px;margin-bottom:16px}
+.ge-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--uc);margin-bottom:8px}
+.ge-qtext{font-size:15px;font-weight:500;line-height:1.6;margin-bottom:16px}
+.ge-note{font-size:12px;color:var(--mu);padding:8px 12px;background:var(--bg);border-radius:6px;margin-top:10px;line-height:1.6}
+.dna-strand{font-family:'Courier New',monospace;font-size:20px;font-weight:700;letter-spacing:6px;padding:14px 18px;background:var(--bg);border:1px solid var(--bd);border-radius:8px;color:#3B6EA5;margin-bottom:12px;word-break:break-all}
+.strand-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:4px}
+.mrna-inp{font-family:'Courier New',monospace;font-size:20px;font-weight:700;letter-spacing:6px;width:100%;padding:12px 18px;border:1.5px solid var(--bd);border-radius:8px;background:var(--sf);color:var(--tx);text-transform:uppercase;transition:border-color .12s}
+.mrna-inp:focus{outline:none;border-color:var(--uc)}
+.nucl-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.nc{font-family:'Courier New',monospace;font-size:17px;font-weight:700;width:30px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:5px}
+.nc.ok{background:#E8F5EE;color:#1F5C38}
+.nc.no{background:#FAE8E8;color:#7A2020;text-decoration:line-through}
+.nc.ans{background:#EEF4FF;color:#3B6EA5}
+.trans-score{display:flex;gap:16px;font-size:13px;margin-bottom:20px}
+.trans-score span{font-weight:600}
+.codon-seq{font-size:15px;margin-bottom:16px;line-height:2;word-break:break-all}
+.codon{display:inline-block;padding:4px 10px;border-radius:5px;font-family:'Courier New',monospace;font-size:15px;font-weight:700;margin:3px;letter-spacing:1px}
+.codon.hl{background:#FFD600;color:#333;outline:2px solid #C4A000}
+.codon.start{background:#E8F5EE;color:#1F5C38}
+.codon.stop-c{background:#FAE8E8;color:#7A2020}
+.codon.plain{background:var(--bg);color:var(--tx)}
+.pun-wrap{max-width:760px;margin:0 auto;padding:44px 40px 80px}
+.pun-wrap h2{font-family:var(--fd);font-size:32px;font-weight:600;margin-bottom:6px}
+.pun-wrap>p{font-size:13px;color:var(--mu);margin-bottom:28px}
+.pun-inputs{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:24px;padding:20px;background:var(--sf);border:1px solid var(--bd);border-radius:12px}
+.pun-field{display:flex;flex-direction:column;gap:5px}
+.pun-field label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mu)}
+.pun-field input,.pun-field select{padding:9px 14px;border:1.5px solid var(--bd);border-radius:8px;font-family:'Courier New',monospace;font-size:16px;font-weight:700;background:var(--bg);color:var(--tx);width:120px;transition:border-color .12s}
+.pun-field input:focus,.pun-field select:focus{outline:none;border-color:var(--uc)}
+.pun-field select{font-family:var(--ff);font-size:14px;width:160px}
+.pun-grid-wrap{overflow-x:auto;margin:0 0 20px}
+.pun-tbl{border-collapse:collapse;margin:0 auto}
+.pun-tbl td,.pun-tbl th{width:78px;height:62px;text-align:center;vertical-align:middle;border:1.5px solid var(--bd);font-size:14px;padding:6px}
+.pun-tbl th{background:var(--bg);font-size:13px;color:#6B4FA0;font-family:'Courier New',monospace;font-weight:700;letter-spacing:1px}
+.pun-tbl td{font-family:'Courier New',monospace;font-weight:700;font-size:15px}
+.pun-cell-dom{color:#3B6EA5}
+.pun-cell-rec{color:#C45252}
+.pun-ratios{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
+.pun-ratio-box{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:14px 18px;min-width:160px}
+.pun-ratio-box h4{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:8px}
+.pun-ratio-box p{font-size:13.5px;line-height:1.8;font-family:'Courier New',monospace}
+.pun-error{font-size:13px;color:#C45252;padding:10px 14px;background:#FAE8E8;border-radius:8px;margin-top:8px}
+.fc-round-badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;background:#EEF4FF;color:#3B6EA5;border:1px solid #C5D8F0;margin-left:8px;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -832,6 +881,126 @@ svg:`<svg viewBox="0 0 360 480" xmlns="http://www.w3.org/2000/svg">
 <circle cx="272" cy="250" r="12" fill="#3B6EA5" onclick="selectHS(6)" class="hotspot-circle"/><text x="272" y="250" class="hotspot-text">7</text>
 </svg>`,
 parts:["Eyepiece (ocular lens)","Nosepiece","Objective lens","Stage","Diaphragm","Coarse adjustment knob","Fine adjustment knob"]
+},
+mitosis:{
+label:"Mitosis Phases",
+svg:`<svg viewBox="0 0 600 290" xmlns="http://www.w3.org/2000/svg">
+<text x="75" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#6B6860" font-family="Jost,sans-serif">PROPHASE</text>
+<text x="225" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#6B6860" font-family="Jost,sans-serif">METAPHASE</text>
+<text x="375" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#6B6860" font-family="Jost,sans-serif">ANAPHASE</text>
+<text x="525" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#6B6860" font-family="Jost,sans-serif">TELOPHASE</text>
+<ellipse cx="75" cy="155" rx="52" ry="62" fill="#EAF3FD" stroke="#5B9BD5" stroke-width="2"/>
+<path d="M58,130 Q65,122 72,130 Q79,138 86,130" stroke="#C45252" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M60,145 Q67,137 74,145 Q81,153 88,145" stroke="#C45252" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M55,162 Q62,154 69,162 Q76,170 83,162" stroke="#B85450" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M60,178 Q67,170 74,178 Q81,186 88,178" stroke="#B85450" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="225" cy="155" rx="52" ry="62" fill="#EAF3FD" stroke="#5B9BD5" stroke-width="2"/>
+<line x1="225" y1="100" x2="225" y2="210" stroke="#AAC8EE" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="208" y="138" width="18" height="8" rx="3" fill="#C45252" transform="rotate(-5,217,142)"/>
+<rect x="208" y="152" width="18" height="8" rx="3" fill="#B85450"/>
+<rect x="208" y="165" width="18" height="8" rx="3" fill="#C45252" transform="rotate(4,217,169)"/>
+<line x1="173" y1="115" x2="217" y2="142" stroke="#888" stroke-width="1.2" stroke-dasharray="3,2"/>
+<line x1="277" y1="115" x2="234" y2="142" stroke="#888" stroke-width="1.2" stroke-dasharray="3,2"/>
+<ellipse cx="375" cy="155" rx="52" ry="62" fill="#EAF3FD" stroke="#5B9BD5" stroke-width="2"/>
+<rect x="360" y="104" width="14" height="8" rx="3" fill="#C45252"/>
+<rect x="360" y="116" width="14" height="8" rx="3" fill="#B85450"/>
+<rect x="360" y="188" width="14" height="8" rx="3" fill="#C45252"/>
+<rect x="360" y="200" width="14" height="8" rx="3" fill="#B85450"/>
+<line x1="375" y1="112" x2="375" y2="135" stroke="#888" stroke-width="1.2" stroke-dasharray="3,2"/>
+<line x1="375" y1="175" x2="375" y2="196" stroke="#888" stroke-width="1.2" stroke-dasharray="3,2"/>
+<ellipse cx="525" cy="130" rx="48" ry="42" fill="#EAF3FD" stroke="#5B9BD5" stroke-width="2"/>
+<ellipse cx="525" cy="220" rx="48" ry="42" fill="#EAF3FD" stroke="#5B9BD5" stroke-width="2"/>
+<path d="M498,170 Q525,178 552,170" stroke="#5B9BD5" stroke-width="2" fill="none"/>
+<ellipse cx="519" cy="124" rx="14" ry="9" fill="#C8DEFF" stroke="#4A7FC1" stroke-width="1.2"/>
+<ellipse cx="519" cy="216" rx="14" ry="9" fill="#C8DEFF" stroke="#4A7FC1" stroke-width="1.2"/>
+<circle cx="75" cy="90" r="12" fill="#3B6EA5" onclick="selectHS(0)" class="hotspot-circle"/><text x="75" y="90" class="hotspot-text">1</text>
+<circle cx="225" cy="90" r="12" fill="#3B6EA5" onclick="selectHS(1)" class="hotspot-circle"/><text x="225" y="90" class="hotspot-text">2</text>
+<circle cx="375" cy="90" r="12" fill="#3B6EA5" onclick="selectHS(2)" class="hotspot-circle"/><text x="375" y="90" class="hotspot-text">3</text>
+<circle cx="525" cy="90" r="12" fill="#3B6EA5" onclick="selectHS(3)" class="hotspot-circle"/><text x="525" y="90" class="hotspot-text">4</text>
+<circle cx="28" cy="138" r="12" fill="#3B6EA5" onclick="selectHS(4)" class="hotspot-circle"/><text x="28" y="138" class="hotspot-text">5</text>
+<circle cx="178" cy="152" r="12" fill="#3B6EA5" onclick="selectHS(5)" class="hotspot-circle"/><text x="178" y="152" class="hotspot-text">6</text>
+<circle cx="328" cy="152" r="12" fill="#3B6EA5" onclick="selectHS(6)" class="hotspot-circle"/><text x="328" y="152" class="hotspot-text">7</text>
+<circle cx="478" cy="172" r="12" fill="#3B6EA5" onclick="selectHS(7)" class="hotspot-circle"/><text x="478" y="172" class="hotspot-text">8</text>
+</svg>`,
+parts:["Prophase","Metaphase","Anaphase","Telophase","Chromosomes condensing","Metaphase plate (equator)","Sister chromatids separating","Cytokinesis (cleavage furrow)"]
+},
+dna:{
+label:"DNA Structure",
+svg:`<svg viewBox="0 0 380 460" xmlns="http://www.w3.org/2000/svg">
+<text x="190" y="20" text-anchor="middle" font-size="13" font-weight="600" fill="#6B6860" font-family="Jost,sans-serif">DNA Double Helix</text>
+<path d="M120,40 C80,80 80,120 120,160 C160,200 160,240 120,280 C80,320 80,360 120,400" stroke="#5B9BD5" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M260,40 C300,80 300,120 260,160 C220,200 220,240 260,280 C300,320 300,360 260,400" stroke="#C4883E" stroke-width="5" fill="none" stroke-linecap="round"/>
+<line x1="130" y1="80" x2="250" y2="80" stroke="#888" stroke-width="2.5" stroke-dasharray="5,3"/>
+<line x1="110" y1="120" x2="270" y2="120" stroke="#888" stroke-width="2.5" stroke-dasharray="5,3"/>
+<line x1="120" y1="160" x2="260" y2="160" stroke="#888" stroke-width="2.5" stroke-dasharray="5,3"/>
+<line x1="130" y1="200" x2="250" y2="200" stroke="#888" stroke-width="2.5" stroke-dasharray="5,3"/>
+<line x1="120" y1="240" x2="260" y2="240" stroke="#888" stroke-width="2.5" stroke-dasharray="5,3"/>
+<line x1="130" y1="280" x2="250" y2="280" stroke="#888" stroke-width="2.5" stroke-dasharray="5,3"/>
+<line x1="120" y1="320" x2="260" y2="320" stroke="#888" stroke-width="2.5" stroke-dasharray="5,3"/>
+<line x1="130" y1="360" x2="250" y2="360" stroke="#888" stroke-width="2.5" stroke-dasharray="5,3"/>
+<circle cx="130" cy="80" r="10" fill="#5B9BD5"/>
+<text x="130" y="80" text-anchor="middle" dominant-baseline="central" font-size="9" font-weight="700" fill="white" font-family="Courier New">A</text>
+<circle cx="250" cy="80" r="10" fill="#C4883E"/>
+<text x="250" y="80" text-anchor="middle" dominant-baseline="central" font-size="9" font-weight="700" fill="white" font-family="Courier New">T</text>
+<circle cx="120" cy="160" r="10" fill="#4A8C6F"/>
+<text x="120" y="160" text-anchor="middle" dominant-baseline="central" font-size="9" font-weight="700" fill="white" font-family="Courier New">G</text>
+<circle cx="260" cy="160" r="10" fill="#7B5EA7"/>
+<text x="260" y="160" text-anchor="middle" dominant-baseline="central" font-size="9" font-weight="700" fill="white" font-family="Courier New">C</text>
+<circle cx="130" cy="240" r="10" fill="#C4883E"/>
+<text x="130" y="240" text-anchor="middle" dominant-baseline="central" font-size="9" font-weight="700" fill="white" font-family="Courier New">T</text>
+<circle cx="250" cy="240" r="10" fill="#5B9BD5"/>
+<text x="250" y="240" text-anchor="middle" dominant-baseline="central" font-size="9" font-weight="700" fill="white" font-family="Courier New">A</text>
+<circle cx="120" cy="320" r="10" fill="#7B5EA7"/>
+<text x="120" y="320" text-anchor="middle" dominant-baseline="central" font-size="9" font-weight="700" fill="white" font-family="Courier New">C</text>
+<circle cx="260" cy="320" r="10" fill="#4A8C6F"/>
+<text x="260" y="320" text-anchor="middle" dominant-baseline="central" font-size="9" font-weight="700" fill="white" font-family="Courier New">G</text>
+<circle cx="32" cy="65" r="12" fill="#3B6EA5" onclick="selectHS(0)" class="hotspot-circle"/><text x="32" y="65" class="hotspot-text">1</text>
+<circle cx="348" cy="65" r="12" fill="#3B6EA5" onclick="selectHS(1)" class="hotspot-circle"/><text x="348" y="65" class="hotspot-text">2</text>
+<circle cx="190" cy="82" r="12" fill="#3B6EA5" onclick="selectHS(2)" class="hotspot-circle"/><text x="190" y="82" class="hotspot-text">3</text>
+<circle cx="32" cy="160" r="12" fill="#3B6EA5" onclick="selectHS(3)" class="hotspot-circle"/><text x="32" y="160" class="hotspot-text">4</text>
+<circle cx="130" cy="430" r="12" fill="#3B6EA5" onclick="selectHS(4)" class="hotspot-circle"/><text x="130" y="430" class="hotspot-text">5</text>
+<circle cx="250" cy="430" r="12" fill="#3B6EA5" onclick="selectHS(5)" class="hotspot-circle"/><text x="250" y="430" class="hotspot-text">6</text>
+</svg>`,
+parts:["Phosphate group","Deoxyribose sugar","Hydrogen bonds","Nitrogenous base","Adenine-Thymine (A-T) pair","Guanine-Cytosine (G-C) pair"]
+},
+carbon:{
+label:"Carbon Cycle",
+svg:`<svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="260" cy="52" rx="120" ry="38" fill="#DDEEFF" stroke="#5B9BD5" stroke-width="2"/>
+<text x="260" y="48" text-anchor="middle" font-size="12" font-weight="600" fill="#1A3F6E" font-family="Jost,sans-serif">ATMOSPHERE</text>
+<text x="260" y="63" text-anchor="middle" font-size="11" fill="#3B6EA5" font-family="Courier New,monospace" font-weight="700">CO\u2082</text>
+<rect x="18" y="165" width="118" height="80" rx="10" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text x="77" y="196" text-anchor="middle" font-size="11" font-weight="600" fill="#1B5E20" font-family="Jost,sans-serif">BIOSPHERE</text>
+<text x="77" y="212" text-anchor="middle" font-size="10" fill="#2E7D32" font-family="Jost,sans-serif">Plants &amp; Animals</text>
+<text x="77" y="228" text-anchor="middle" font-size="10" fill="#2E7D32" font-family="Jost,sans-serif">Organic carbon</text>
+<rect x="384" y="165" width="118" height="80" rx="10" fill="#FFF8EE" stroke="#C4883E" stroke-width="2"/>
+<text x="443" y="196" text-anchor="middle" font-size="11" font-weight="600" fill="#7B3E00" font-family="Jost,sans-serif">INDUSTRY</text>
+<text x="443" y="212" text-anchor="middle" font-size="10" fill="#C4883E" font-family="Jost,sans-serif">Factories &amp; vehicles</text>
+<text x="443" y="228" text-anchor="middle" font-size="10" fill="#C4883E" font-family="Jost,sans-serif">burning fossil fuels</text>
+<rect x="170" y="300" width="180" height="75" rx="10" fill="#F3E5F5" stroke="#7B5EA7" stroke-width="2"/>
+<text x="260" y="328" text-anchor="middle" font-size="11" font-weight="600" fill="#4A148C" font-family="Jost,sans-serif">GEOSPHERE</text>
+<text x="260" y="344" text-anchor="middle" font-size="10" fill="#7B5EA7" font-family="Jost,sans-serif">Fossil fuels</text>
+<text x="260" y="359" text-anchor="middle" font-size="10" fill="#7B5EA7" font-family="Jost,sans-serif">(coal, oil, natural gas)</text>
+<path d="M155,90 Q110,120 110,162" stroke="#4A8C6F" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+<path d="M100,162 Q80,130 140,95" stroke="#C45252" stroke-width="2.5" fill="none" stroke-dasharray="6,3" marker-end="url(#arr2)"/>
+<path d="M415,162 Q415,120 370,90" stroke="#C4883E" stroke-width="2.5" fill="none" marker-end="url(#arr3)"/>
+<path d="M200,300 Q130,270 100,248" stroke="#888" stroke-width="2" fill="none" stroke-dasharray="5,3" marker-end="url(#arr4)"/>
+<path d="M380,300 Q430,270 443,248" stroke="#7B5EA7" stroke-width="2" fill="none" marker-end="url(#arr5)"/>
+<defs>
+<marker id="arr" markerWidth="7" markerHeight="7" refX="3" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4A8C6F"/></marker>
+<marker id="arr2" markerWidth="7" markerHeight="7" refX="3" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#C45252"/></marker>
+<marker id="arr3" markerWidth="7" markerHeight="7" refX="3" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#C4883E"/></marker>
+<marker id="arr4" markerWidth="7" markerHeight="7" refX="3" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#888"/></marker>
+<marker id="arr5" markerWidth="7" markerHeight="7" refX="3" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7B5EA7"/></marker>
+</defs>
+<circle cx="128" cy="128" r="12" fill="#3B6EA5" onclick="selectHS(0)" class="hotspot-circle"/><text x="128" y="128" class="hotspot-text">1</text>
+<circle cx="70" cy="128" r="12" fill="#3B6EA5" onclick="selectHS(1)" class="hotspot-circle"/><text x="70" y="128" class="hotspot-text">2</text>
+<circle cx="400" cy="128" r="12" fill="#3B6EA5" onclick="selectHS(2)" class="hotspot-circle"/><text x="400" y="128" class="hotspot-text">3</text>
+<circle cx="155" cy="282" r="12" fill="#3B6EA5" onclick="selectHS(3)" class="hotspot-circle"/><text x="155" y="282" class="hotspot-text">4</text>
+<circle cx="420" cy="282" r="12" fill="#3B6EA5" onclick="selectHS(4)" class="hotspot-circle"/><text x="420" y="282" class="hotspot-text">5</text>
+<circle cx="260" cy="14" r="12" fill="#3B6EA5" onclick="selectHS(5)" class="hotspot-circle"/><text x="260" y="14" class="hotspot-text">6</text>
+</svg>`,
+parts:["Photosynthesis","Cellular respiration","Combustion","Decomposition","Volcanic activity / uplift","CO\u2082 in atmosphere"]
 }
 };
 
@@ -879,15 +1048,41 @@ const FINAL_SA=[
 {unit:5,q:"Explain Darwin's four premises of natural selection and how they lead to evolutionary change over time.",ans:"(1) Overproduction: more offspring than can survive. (2) Variation: heritable differences exist. (3) Heritable variation: differences pass to offspring. (4) Differential survival: favorable traits lead to more reproduction. Over generations favorable alleles accumulate, changing the population."}
 ];
 
+
+const TRANS_EX=[
+{dna:'TAC',mrna:'AUG',label:'Start codon',note:'TAC on the template always produces AUG, the universal start codon.'},
+{dna:'TACCGA',mrna:'AUGGCU',label:'Short sequence',note:'Apply each rule: T\u2192A, A\u2192U, C\u2192G, G\u2192C.'},
+{dna:'TACGCAATT',mrna:'AUGCGUUAA',label:'Start + stop codon',note:'UAA is a stop codon. The sequence codes for one amino acid (Arg) then stops.'},
+{dna:'ATCGCA',mrna:'UAGCGU',label:'Immediate stop',note:'ATC on the template gives UAG, a stop codon right at position 1.'},
+{dna:'TACATGGCA',mrna:'AUGUACCGU',label:'AUG inside sequence',note:'Notice a second AUG within the sequence. The ribosome starts at the first one.'},
+{dna:'TACCTTTAC',mrna:'AUGGAAAUG',label:'Glutamic acid codon',note:'GAA codes for glutamic acid. This is the amino acid in NORMAL hemoglobin.'},
+{dna:'TACCAATAC',mrna:'AUGGUUAUG',label:'Sickle cell mutation',note:'GUU codes for valine. Replacing GAA with GUU causes sickle cell disease.'},
+{dna:'TACGGCATGATT',mrna:'AUGCCGUACUAA',label:'Full reading frame',note:'AUG (start), CCG (Pro), UAC (Tyr), UAA (stop). A complete mini-gene.'},
+{dna:'ATGCATACAATGCA',mrna:'UACGUAUGUUACGU',label:'Find the AUG',note:'The real reading frame starts at the AUG inside the sequence.'},
+{dna:'TACCCGATCATT',mrna:'AUGGGCUAGUAA',label:'Two stop codons?',note:'UAG and UAA are both stop codons. Translation stops at the first one encountered.'}
+];
+
+const TRANSL_EX=[
+{mrna:'AUG GCU UAA',hl:0,q:'What does the highlighted codon code for?',opts:['Start (Methionine)','Alanine','Stop','Glycine'],ans:0,note:'AUG is the universal start codon. It codes for methionine and signals the ribosome to begin building a protein.'},
+{mrna:'AUG GAA UGA',hl:1,q:'This codon is found in NORMAL hemoglobin. What does it code for?',opts:['Valine','Stop','Glutamic acid','Methionine'],ans:2,note:'GAA codes for glutamic acid. In sickle cell disease, a point mutation changes this to GUU (valine), causing hemoglobin to misfold.'},
+{mrna:'AUG GUU UAA',hl:1,q:'This codon causes sickle cell disease. What does it code for?',opts:['Glutamic acid','Glycine','Valine','Alanine'],ans:2,note:'GUU codes for valine. This single amino acid change (glutamic acid \u2192 valine) causes red blood cells to become sickle-shaped.'},
+{mrna:'GCU AUG CGU UAG',hl:0,q:'Is the highlighted codon a start codon?',opts:['Yes, GCU starts translation','No, AUG at position 2 is the start','GCU means methionine','The ribosome always starts at codon 1'],ans:1,note:'Ribosomes scan mRNA for AUG, not the first codon they encounter. GCU codes for alanine. Translation begins at AUG.'},
+{mrna:'AUG CCG UAA',hl:2,q:'What does the highlighted codon signal?',opts:['Codes for an amino acid','Starts translation','Ends translation and releases the protein','Codes for methionine'],ans:2,note:'UAA is a stop codon (along with UAG and UGA). No amino acid is added; the ribosome disassembles and releases the completed polypeptide chain.'}
+];
+
+const CODONS={'AUG':'Methionine (Start)','UAA':'Stop','UAG':'Stop','UGA':'Stop','GAA':'Glutamic acid','GAG':'Glutamic acid','GUU':'Valine','GUG':'Valine','GCU':'Alanine','GCA':'Alanine','GGC':'Glycine','GGU':'Glycine','CCG':'Proline','UAC':'Tyrosine','CGU':'Arginine'};
+
 let savedScores={};
 try{const s=localStorage.getItem('bio1adv');if(s)savedScores=JSON.parse(s);}catch(e){}
 
 const S={
 view:'dashboard',uid:1,tab:'guide',prac:{},
 test:{ans:new Array(20).fill(-1),cur:0,end:0,timer:null,done:false},
-fc:{uid:'all',idx:0,flipped:false,known:[],unknown:[],order:[]},
+fc:{uid:'all',idx:0,flipped:false,known:[],unknown:[],order:[],round:1},
 final:{ans:new Array(50).fill(-1),cur:0,end:0,timer:null,done:false,saAnswers:['','','','',''],saGrades:[null,null,null,null,null],saView:false,grading:false},
 writing:{uid:1,answers:{},grades:{}},
+ge:{tab:'trans',idx:0,input:'',checked:false,wrongMap:{},translAnswers:{}},
+punnett:{type:'mono',p1:'Aa',p2:'Aa'},
 diag:{which:'animal',selected:null,answers:{},wrong:null},
 scores:savedScores
 };
@@ -998,7 +1193,15 @@ const uid=S.fc.uid;
 const cards=uid==='all'?[].concat(...Object.values(FC)):FC[uid]||[];
 const order=[...Array(cards.length).keys()];
 for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}
-S.fc.order=order;S.fc.idx=0;S.fc.flipped=false;S.fc.known=[];S.fc.unknown=[];
+S.fc.order=order;S.fc.idx=0;S.fc.flipped=false;S.fc.known=[];S.fc.unknown=[];S.fc.round=1;
+}
+function fcReviewMissed(){
+const missed=S.fc.unknown.map(pos=>S.fc.order[pos]);
+const shuf=[...missed];
+for(let i=shuf.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuf[i],shuf[j]]=[shuf[j],shuf[i]];}
+S.fc.order=shuf;S.fc.idx=0;S.fc.flipped=false;
+S.fc.known=[];S.fc.unknown=[];S.fc.round++;
+render();
 }
 function fcSetUnit(uid){S.fc.uid=uid;initFC();render();}
 function fcFlip(){S.fc.flipped=!S.fc.flipped;const el=document.querySelector('.fc-inner');if(el)el.classList.toggle('flipped',S.fc.flipped);}
@@ -1176,6 +1379,8 @@ if(S.view==='flashcards'){renderFC();return;}
 if(S.view==='final'){renderFinalView();return;}
 if(S.view==='diagrams'){renderDiagrams();return;}
 if(S.view==='writing'){renderWriting();return;}
+if(S.view==='ge'){renderGE();return;}
+if(S.view==='punnett'){renderPunnett();return;}
 }
 
 function hdr(mid){return '<header class="hdr"><button class="logo" onclick="goHome()">BIO 1 ADV <em>Semester 2</em></button><span class="hdr-rt">'+(mid||'')+'</span></header>';}
@@ -1208,6 +1413,8 @@ h+='<div class="fcard" onclick="openFinal()" style="--uc:#1A5E96"><div class="fc
 h+='<div class="fcard" onclick="openFC()"><div class="fcard-icon">&#9654;</div><div><div class="fcard-title">Flashcards</div><div class="fcard-sub">90+ flip cards with Know / Don\'t Know sorting</div></div></div>';
 h+='<div class="fcard" onclick="openDiag()" style="--uc:#4A8C6F"><div class="fcard-icon">&#10010;</div><div><div class="fcard-title">Diagram Labeling</div><div class="fcard-sub">Animal cell, plant cell, microscope</div></div></div>';
 h+='<div class="fcard" onclick="openWriting()" style="--uc:#6B4FA0"><div class="fcard-icon">&#9998;</div><div><div class="fcard-title">Writing Practice</div><div class="fcard-sub">AI-graded short answers &mdash; all 5 units</div></div></div>';
+h+='<div class="fcard" onclick="openGE()" style="--uc:#3B6EA5"><div class="fcard-icon">&#129516;</div><div><div class="fcard-title">Gene Expression</div><div class="fcard-sub">Transcription typing &amp; codon identification</div></div></div>';
+h+='<div class="fcard" onclick="openPunnett()" style="--uc:#7B5EA7"><div class="fcard-icon">&#9781;</div><div><div class="fcard-title">Punnett Square</div><div class="fcard-sub">Interactive mono &amp; dihybrid grid builder</div></div></div>';
 h+='</div>';
 if(hasScores){
 h+='<div class="section-label" style="margin-top:4px">My Progress</div>';
@@ -1365,16 +1572,23 @@ h+='</div>';
 if(total===0){h+='<div class="fc-done"><h3>No cards available</h3><p>Select a unit above.</p></div></div>';app.innerHTML=h;return;}
 if(atEnd){
 const k=S.fc.known.length;const uk=S.fc.unknown.length;
-h+='<div class="fc-done"><h3>Deck complete!</h3>';
-h+='<p>Known: <strong style="color:#3D8C5A">'+k+'</strong> &mdash; Review again: <strong style="color:#C45252">'+uk+'</strong> &mdash; Skipped: <strong>'+(total-k-uk)+'</strong></p>';
-h+='<div style="display:flex;gap:10px;justify-content:center"><button class="btn btn-p" onclick="initFC();render()">Restart Deck</button><button class="btn btn-s" onclick="goHome()">Back to Home</button></div></div>';
+h+='<div class="fc-done">';
+if(S.fc.round>1)h+='<div style="font-size:12px;color:var(--uc);font-weight:600;margin-bottom:8px">Round '+S.fc.round+' complete</div>';
+h+='<h3>'+(uk===0?'All cards known!':'Deck complete')+'</h3>';
+h+='<p>Known: <strong style="color:#3D8C5A">'+k+'</strong> &mdash; Review again: <strong style="color:#C45252">'+uk+'</strong>'+(total-k-uk>0?' &mdash; Skipped: <strong>'+(total-k-uk)+'</strong>':'')+'</p>';
+h+='<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">';
+if(uk>0)h+='<button class="btn btn-p" onclick="fcReviewMissed()">Review Missed ('+uk+')</button>';
+h+='<button class="btn btn-s" onclick="initFC();render()">Restart Full Deck</button>';
+h+='<button class="btn btn-s" onclick="goHome()">Home</button>';
+h+='</div></div>';
 h+='</div>';app.innerHTML=h;return;
 }
 const cardIdx=S.fc.order[S.fc.idx];
 const card=allCards[cardIdx];
 const pct=Math.round((S.fc.idx/total)*100);
 const unitName=uid==='all'?'All Units':'Unit '+uid+': '+UNITS.find(u=>u.id==uid)?.title;
-h+='<div class="fc-progress"><span class="fc-count">Card '+(S.fc.idx+1)+' of '+total+' &mdash; '+unitName+'</span>';
+const roundBadge=S.fc.round>1?'<span class="fc-round-badge">Round '+S.fc.round+'</span>':'';
+h+='<div class="fc-progress"><span class="fc-count">Card '+(S.fc.idx+1)+' of '+total+' &mdash; '+unitName+roundBadge+'</span>';
 h+='<span class="fc-stats"><span class="fc-k">&#10003; '+S.fc.known.length+'</span><span class="fc-u">&#10007; '+S.fc.unknown.length+'</span></span></div>';
 h+='<div class="fc-pbar"><div class="fc-pfill" style="width:'+pct+'%"></div></div>';
 h+='<div class="fc-scene" onclick="fcFlip()">';
@@ -1625,7 +1839,222 @@ S.scores.final.push({score:mcScore,saScore,total:50,saTotal:15,ts:Date.now()});
 saveScores();
 renderFinalResults();
 }
+
+function openGE(){S.view='ge';setColor('#3B6EA5');S.ge={tab:'trans',idx:0,input:'',checked:false,wrongMap:{},translAnswers:{}};render();window.scrollTo(0,0);}
+function geSetTab(t){S.ge.tab=t;S.ge.idx=0;S.ge.input='';S.ge.checked=false;S.ge.wrongMap={};S.ge.translAnswers={};render();}
+function openPunnett(){S.view='punnett';setColor('#6B4FA0');render();window.scrollTo(0,0);}
+
+function transCheck(){
+const inp=document.getElementById('trans-inp');if(!inp)return;
+const val=inp.value.trim().toUpperCase().replace(/\s/g,'');
+if(!val)return;
+S.ge.input=val;S.ge.checked=true;
+const correct=TRANS_EX[S.ge.idx].mrna;
+const map={};
+for(let i=0;i<Math.max(val.length,correct.length);i++){
+if(i<val.length&&i<correct.length)map[i]=val[i]===correct[i]?'ok':'no';
+else if(i>=val.length)map[i]='ans';
+else map[i]='no';
+}
+S.ge.wrongMap=map;render();
+}
+function transNext(){
+if(S.ge.idx<TRANS_EX.length-1){S.ge.idx++;S.ge.input='';S.ge.checked=false;S.ge.wrongMap={};}
+else{S.ge.idx=TRANS_EX.length;}
 render();
+}
+function transReset(){S.ge.input='';S.ge.checked=false;S.ge.wrongMap={};render();}
+function translCheck(qi,choice){
+if(S.ge.translAnswers[qi]!==undefined)return;
+S.ge.translAnswers[qi]=choice;
+const q=TRANSL_EX[qi];
+for(let i=0;i<q.opts.length;i++){
+const b=document.getElementById('tro-'+qi+'-'+i);
+if(b){b.disabled=true;if(i===q.ans)b.classList.add('ok');else if(i===choice)b.classList.add('no');}
+}
+const note=document.getElementById('tr-note-'+qi);if(note)note.style.display='block';
+}
+
+function getGametes(geno){
+const pairs=[];
+for(let i=0;i<geno.length;i+=2){if(geno[i]&&geno[i+1])pairs.push([geno[i],geno[i+1]]);}
+let gametes=[''];
+pairs.forEach(pair=>{
+const next=[];
+pair.forEach(a=>gametes.forEach(g=>next.push(g+a)));
+gametes=next;
+});
+return gametes;
+}
+function combineGametes(g1,g2){
+let r='';
+for(let i=0;i<g1.length;i++){
+const a=g1[i],b=g2[i];
+if(a&&b){const aUp=a===a.toUpperCase(),bUp=b===b.toUpperCase();r+=(!aUp&&bUp)?b+a:a+b;}
+}
+return r;
+}
+function genoPheno(geno){
+const parts=[];
+for(let i=0;i<geno.length;i+=2){
+const p=geno[i]+geno[i+1];
+parts.push(p[0]===p[0].toUpperCase()?p[0].toUpperCase()+'_':p);
+}
+return parts.join('');
+}
+function validateGeno(g,type){
+if(type==='mono')return /^[A-Za-z]{2}$/.test(g)&&g[0].toLowerCase()===g[1].toLowerCase();
+return /^[A-Za-z]{4}$/.test(g)&&g[0].toLowerCase()===g[1].toLowerCase()&&g[2].toLowerCase()===g[3].toLowerCase();
+}
+
+function renderGE(){
+const app=document.getElementById('app');
+let h=hdr('Gene Expression');
+h+='<div class="ge-wrap">';
+h+='<button class="sb-back" style="margin-bottom:20px" onclick="goHome()">&#8592; Home</button>';
+h+='<h2>Gene Expression Practice</h2>';
+h+='<p>Practice DNA transcription and translation codon identification.</p>';
+h+='<div class="ge-subtabs">';
+h+='<button class="ge-stab'+(S.ge.tab==='trans'?' act':'')+'" onclick="geSetTab(\'trans\')">Transcription</button>';
+h+='<button class="ge-stab'+(S.ge.tab==='transl'?' act':'')+'" onclick="geSetTab(\'transl\')">Translation</button>';
+h+='</div>';
+if(S.ge.tab==='trans')h+=renderGETrans();
+else h+=renderGETransl();
+h+='</div>';
+app.innerHTML=h;
+}
+
+function renderGETrans(){
+if(S.ge.idx>=TRANS_EX.length){
+return '<div class="fc-done"><h3>All exercises complete!</h3><p>You have worked through all '+TRANS_EX.length+' transcription exercises.</p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn btn-s" onclick="geSetTab(\'trans\')">Restart</button><button class="btn btn-p" style="background:#6B4FA0" onclick="geSetTab(\'transl\')">Try Translation &#8594;</button></div></div>';
+}
+const ex=TRANS_EX[S.ge.idx];
+let h='<div style="font-size:12px;color:var(--mu);margin-bottom:16px">Exercise '+(S.ge.idx+1)+' of '+TRANS_EX.length+'</div>';
+h+='<div class="ge-qcard">';
+h+='<div class="ge-label">'+ex.label+'</div>';
+h+='<div class="ge-qtext">Write the mRNA sequence produced from this DNA template strand (3\u2032 \u2192 5\u2032). Rules: T\u2192A, A\u2192U, G\u2192C, C\u2192G</div>';
+h+='<div class="strand-label">DNA Template</div>';
+h+='<div class="dna-strand">'+ex.dna.split('').join(' ')+'</div>';
+h+='<div class="strand-label" style="margin-top:14px">Your mRNA answer</div>';
+if(!S.ge.checked){
+h+='<input class="mrna-inp" id="trans-inp" type="text" maxlength="'+(ex.mrna.length*2)+'" placeholder="e.g. AUGCGU..." value="'+S.ge.input+'" oninput="S.ge.input=this.value.toUpperCase()" onkeydown="if(event.key===\'Enter\')transCheck()">';
+h+='<div style="margin-top:12px;display:flex;gap:10px">';
+h+='<button class="btn btn-p" onclick="transCheck()">Check Answer</button>';
+if(S.ge.idx>0)h+='<button class="btn btn-s" onclick="S.ge.idx--;S.ge.input=\'\';S.ge.checked=false;S.ge.wrongMap={};render()">&#8592; Prev</button>';
+h+='</div>';
+}else{
+const correct=ex.mrna;
+const val=S.ge.input;
+const score=Object.values(S.ge.wrongMap).filter(v=>v==='ok').length;
+const total=correct.length;
+const pct=Math.round(score/total*100);
+const col=pct===100?'#3D8C5A':pct>=70?'#3B6EA5':pct>=40?'#C4883E':'#C45252';
+h+='<div style="margin:4px 0 10px;font-weight:600;font-size:14px;color:'+col+'">'+score+'/'+total+' nucleotides correct ('+pct+'%)</div>';
+h+='<div class="nucl-row">';
+for(let i=0;i<correct.length;i++){
+const v=S.ge.wrongMap[i];
+const typed=val[i]||'';
+h+='<div class="nc '+(v||'ans')+'">'+(v==='ok'?typed:typed&&v==='no'?'<span style="text-decoration:line-through;opacity:.5">'+typed+'</span>':''+(v==='ans'?correct[i]:''))+'</div>';
+if(v==='no')h+='<div class="nc ans">'+correct[i]+'</div>';
+}
+h+='</div>';
+h+='<div style="font-size:11px;color:var(--mu);margin-top:6px">Blue = correct answer for missed positions. White strikethrough = your wrong input.</div>';
+h+='<div class="ge-note">&#9432; '+ex.note+'</div>';
+h+='<div style="margin-top:14px;display:flex;gap:10px">';
+h+='<button class="btn btn-s" onclick="transReset()">Try Again</button>';
+h+='<button class="btn btn-p" onclick="transNext()">'+(S.ge.idx<TRANS_EX.length-1?'Next &#8594;':'Finish')+'</button>';
+h+='</div>';
+}
+h+='</div>';
+return h;
+}
+
+function renderGETransl(){
+let h='<div class="ge-label" style="margin-bottom:16px">Identify what each highlighted codon codes for.</div>';
+TRANSL_EX.forEach((q,qi)=>{
+const answered=S.ge.translAnswers[qi]!==undefined;
+const codons=q.mrna.split(' ');
+h+='<div class="ge-qcard">';
+h+='<div class="ge-label">Q'+(qi+1)+'</div>';
+h+='<div class="codon-seq">';
+codons.forEach((c,ci)=>{h+='<span class="codon '+(ci===q.hl?'hl':'plain')+'">'+c+'</span>';});
+h+='</div>';
+h+='<div class="ge-qtext">'+q.q+'</div>';
+h+='<div class="pq-opts">';
+q.opts.forEach((opt,oi)=>{
+let cls='pq-opt';
+if(answered){if(oi===q.ans)cls+=' ok';else if(oi===S.ge.translAnswers[qi])cls+=' no';}
+h+='<button id="tro-'+qi+'-'+oi+'" class="'+cls+'" '+(answered?'disabled':'')+' onclick="translCheck('+qi+','+oi+')">'+opt+'</button>';
+});
+h+='</div>';
+h+='<div id="tr-note-'+qi+'" class="ge-note" style="display:'+(answered?'block':'none')+'">'+q.note+'</div>';
+h+='</div>';
+});
+return h;
+}
+
+function renderPunnett(){
+const app=document.getElementById('app');
+const{type,p1,p2}=S.punnett;
+let h=hdr('Punnett Square Builder');
+h+='<div class="pun-wrap">';
+h+='<button class="sb-back" style="margin-bottom:20px" onclick="goHome()">&#8592; Home</button>';
+h+='<h2>Punnett Square Builder</h2>';
+h+='<p>Enter parent genotypes. The grid builds automatically. Uppercase = dominant, lowercase = recessive.</p>';
+h+='<div class="pun-inputs">';
+h+='<div class="pun-field"><label>Cross type</label><select onchange="S.punnett.type=this.value;if(this.value===\'mono\'){S.punnett.p1=\'Aa\';S.punnett.p2=\'Aa\';}else{S.punnett.p1=\'AaBb\';S.punnett.p2=\'AaBb\';}renderPunnett()">';
+h+='<option value="mono"'+(type==='mono'?' selected':'')+'>Monohybrid (1 trait)</option>';
+h+='<option value="di"'+(type==='di'?' selected':'')+'>Dihybrid (2 traits)</option>';
+h+='</select></div>';
+h+='<div class="pun-field"><label>Parent 1 genotype</label><input type="text" maxlength="4" value="'+p1+'" oninput="S.punnett.p1=this.value.trim();renderPunnett()" placeholder="'+(type==='di'?'AaBb':'Aa')+'"></div>';
+h+='<div class="pun-field"><label>Parent 2 genotype</label><input type="text" maxlength="4" value="'+p2+'" oninput="S.punnett.p2=this.value.trim();renderPunnett()" placeholder="'+(type==='di'?'AaBb':'Aa')+'"></div>';
+h+='</div>';
+if(!validateGeno(p1,type)||!validateGeno(p2,type)){
+h+='<div class="pun-error">&#9888; Enter valid genotypes. Monohybrid: 2 letters same locus (Aa, TT, tt). Dihybrid: 4 letters two loci (AaBb, TTRr).</div>';
+h+='</div>';app.innerHTML=h;return;
+}
+const g1=getGametes(p1),g2=getGametes(p2);
+const cells=[];
+g2.forEach(r=>g1.forEach(c=>cells.push(combineGametes(c,r))));
+h+='<div class="pun-grid-wrap"><table class="pun-tbl"><thead><tr><th style="background:var(--bg)"></th>';
+g1.forEach(g=>h+='<th>'+g+'</th>');
+h+='</tr></thead><tbody>';
+g2.forEach((rg,ri)=>{
+h+='<tr><th>'+rg+'</th>';
+g1.forEach((_,ci)=>{
+const cell=cells[ri*g1.length+ci];
+const dom=genoPheno(cell).includes('_');
+h+='<td class="'+(dom?'pun-cell-dom':'pun-cell-rec')+'">'+cell+'</td>';
+});
+h+='</tr>';
+});
+h+='</tbody></table></div>';
+const genoCount={},phenoCount={};
+cells.forEach(c=>{genoCount[c]=(genoCount[c]||0)+1;const p=genoPheno(c);phenoCount[p]=(phenoCount[p]||0)+1;});
+const total=cells.length;
+h+='<div class="pun-ratios">';
+h+='<div class="pun-ratio-box"><h4>Genotype Ratio</h4><p>';
+Object.entries(genoCount).sort((a,b)=>b[1]-a[1]).forEach(([g,n])=>{h+=n+' <strong>'+g+'</strong><br>';});
+h+='</p></div>';
+h+='<div class="pun-ratio-box"><h4>Phenotype Ratio</h4><p>';
+Object.entries(phenoCount).sort((a,b)=>b[1]-a[1]).forEach(([p,n])=>{
+const pct=Math.round(n/total*100);
+const col=p.includes('_')?'#3B6EA5':'#C45252';
+h+='<span style="color:'+col+';font-weight:700">'+n+'/'+total+'</span> ('+pct+'%) '+p.replace(/_/g,'(dom)').replace('dom)dom)','dom dom)')+'<br>';
+});
+h+='</p></div>';
+h+='</div>';
+const presets=type==='mono'?[['Aa \u00d7 Aa','Aa','Aa'],['Aa \u00d7 aa','Aa','aa'],['AA \u00d7 aa','AA','aa'],['Aa \u00d7 AA','Aa','AA']]:
+[['AaBb \u00d7 AaBb','AaBb','AaBb'],['AaBb \u00d7 aabb','AaBb','aabb'],['AABB \u00d7 aabb','AABB','aabb']];
+h+='<div style="margin-top:20px"><div class="strand-label">Quick presets</div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">';
+presets.forEach(([label,pp1,pp2])=>{
+h+='<button class="btn btn-s" style="font-size:12px" onclick="S.punnett.p1=\''+pp1+'\';S.punnett.p2=\''+pp2+'\';renderPunnett()">'+label+'</button>';
+});
+h+='</div></div>';
+h+='</div>';
+app.innerHTML=h;
+}
+initFC();render();
 </script>
 </body>
 </html>
